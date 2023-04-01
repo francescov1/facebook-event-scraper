@@ -1,0 +1,330 @@
+{
+  "require": [
+    [
+      "PublicEventCometRSVPButtonGroupRenderer_rsvpStyleRenderer$normalization.graphql"
+    ],
+    [
+      "PublicEventCometRSVPButtonGroupRenderer.react"
+    ],
+    [
+      "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+    ],
+    [
+      "PublicEventCometRSVPButtonRenderer.react"
+    ],
+    [
+      "EventCometPermalinkHeaderCoverPhotoRenderer_coverMedia$normalization.graphql"
+    ],
+    [
+      "EventCometPermalinkHeaderCoverPhotoRenderer.react"
+    ],
+    [
+      "emptyFunction",
+      "thatReturns",
+      [
+        "RequireDeferredReference"
+      ],
+      [
+        [
+          {
+            "__dr": "PublicEventCometRSVPButtonGroupRenderer_rsvpStyleRenderer$normalization.graphql"
+          },
+          {
+            "__dr": "PublicEventCometRSVPButtonGroupRenderer.react"
+          },
+          {
+            "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+          },
+          {
+            "__dr": "PublicEventCometRSVPButtonRenderer.react"
+          },
+          {
+            "__dr": "EventCometPermalinkHeaderCoverPhotoRenderer_coverMedia$normalization.graphql"
+          },
+          {
+            "__dr": "EventCometPermalinkHeaderCoverPhotoRenderer.react"
+          }
+        ]
+      ]
+    ],
+    [
+      "RelayPrefetchedStreamCache",
+      "next",
+      [],
+      [
+        "adp_EventCometPermalinkHeaderQueryRelayPreloader_64276b137a8df7973985183",
+        {
+          "__bbox": {
+            "complete": true,
+            "result": {
+              "data": {
+                "viewer": {
+                  "actor": {
+                    "__typename": "LoggedOutUser",
+                    "id": "0",
+                    "name": null,
+                    "profile_image": {
+                      "uri": "https:\/\/scontent.fyyc3-1.fna.fbcdn.net\/v\/t1.30497-1\/85215299_479381239411958_7755129104415850496_n.jpg?stp=c12.0.40.40a_cp0_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=6edbb6&_nc_ohc=VXzauJUBiSEAX-vwPhQ&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfAokhf4_vGRKkvJ35AVlmFAPppNAZhF9oj0iAVf7leWsQ&oe=644EF156"
+                    }
+                  }
+                },
+                "event": {
+                  "unified_tournament": null,
+                  "page_as_owner": {
+                    "id": "276076433043811"
+                  },
+                  "can_viewer_edit": false,
+                  "id": "941510027277450",
+                  "is_past": false,
+                  "is_viewer_admin": false,
+                  "is_event_draft": false,
+                  "parent_if_exists_or_self": {
+                    "id": "941510027277450",
+                    "is_online": false,
+                    "online_event_setup": null,
+                    "is_event_draft": false,
+                    "event_declined_cohosts": {
+                      "nodes": []
+                    },
+                    "event_pending_cohosts": {
+                      "nodes": []
+                    },
+                    "event_viewer": null,
+                    "is_viewer_host": false,
+                    "event_accepted_cohosts": {
+                      "nodes": []
+                    },
+                    "event_frequency": "SINGLE",
+                    "is_remote_learning_course": false,
+                    "child_events": {
+                      "count": 0
+                    },
+                    "can_viewer_edit": false,
+                    "viewer_inviters_connection": {
+                      "nodes": []
+                    },
+                    "is_remote_learning_class": false,
+                    "viewer_has_pending_invite": false
+                  },
+                  "paid_online_event_context": null,
+                  "online_event_setup": null,
+                  "can_boost_event_button_renderer": null,
+                  "online_cta_renderer": null,
+                  "pay_to_access_event_cta_renderer": null,
+                  "name": "All Elite Wrestling (AEW) House Rules Calgary, Alberta Debut!",
+                  "is_canceled": false,
+                  "day_time_sentence": "Saturday, July 15, 2023 at 9:30 PM EDT",
+                  "event_place": {
+                    "__typename": "Page",
+                    "name": "Calgary Stampede",
+                    "contextual_name": "Calgary Stampede",
+                    "__isNode": "Page",
+                    "id": "104371842930883"
+                  },
+                  "is_live_audio_room_event": false,
+                  "is_online": false,
+                  "is_paid_online_event": false,
+                  "price_info": null,
+                  "current_start_timestamp": 1689471000,
+                  "start_timestamp": 1689471000,
+                  "start_time_formatted": "SAT, JUL 15 AT 9:30 PM EDT",
+                  "cover_media_renderer": {
+                    "__typename": "EventCoverPhotoRenderer",
+                    "cover_photo": {
+                      "photo": {
+                        "viewer_image": {
+                          "height": 1080,
+                          "width": 1920
+                        },
+                        "accessibility_caption": "May be an image of 5 people, beard, people standing and text that says 'TOUR RULES HOUSE TOUR RULES HOUSE ChoRE ACW ALLELITE HOUSE W\u201dG RULES TOUR CALGARY, AB JULY SAT,JULY 15 SS SADDLEDOME Calgary Stampede 7:30PM BELLTIME ON SALE NOW AEWTIX.COM TICKETMASTER.CA'",
+                        "image": {
+                          "height": 540,
+                          "uri": "https:\/\/scontent.fyyc3-1.fna.fbcdn.net\/v\/t39.30808-6\/337426874_933360507788749_7891141665167867105_n.jpg?stp=dst-jpg_p180x540&_nc_cat=105&ccb=1-7&_nc_sid=340051&_nc_ohc=PMqm3d9U5JwAX8-bINu&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfD34v8qaKB4SPXck6QKnSmU83UIsFpT8zeHxaWtNkZNWw&oe=642C1833",
+                          "width": 960
+                        },
+                        "blurred_image": {
+                          "uri": "https:\/\/scontent.fyyc3-1.fna.fbcdn.net\/v\/t39.30808-6\/337426874_933360507788749_7891141665167867105_n.jpg?stp=dst-jpg_fb50_s320x320&_nc_cat=105&ccb=1-7&_nc_sid=340051&_nc_ohc=PMqm3d9U5JwAX8-bINu&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfDesvaa2g06VIqvj_FfCXNDMXHbhDhrhyC_z_ZmB1k_Tw&oe=642C1833",
+                          "width": 320,
+                          "height": 180
+                        },
+                        "url": "https:\/\/www.facebook.com\/AEW\/photos\/gm.947600896668363\/1243141893003922\/",
+                        "id": "1243141893003922"
+                      },
+                      "focus": {
+                        "x": 0.5,
+                        "y": 0.53401360544218
+                      }
+                    },
+                    "gif_cover_photo_url": null,
+                    "is_gif_cover_photo_tiled": false,
+                    "__module_operation_EventCometPermalinkHeaderMediaBlock_event": {
+                      "__dr": "EventCometPermalinkHeaderCoverPhotoRenderer_coverMedia$normalization.graphql"
+                    },
+                    "__module_component_EventCometPermalinkHeaderMediaBlock_event": {
+                      "__dr": "EventCometPermalinkHeaderCoverPhotoRenderer.react"
+                    }
+                  },
+                  "event_creator": {
+                    "__typename": "Page",
+                    "id": "276076433043811"
+                  },
+                  "event_kind": "PUBLIC_TYPE",
+                  "live_virtual_event_info": null,
+                  "comet_neighboring_siblings": [],
+                  "utc_scheduled_publish_timestamp": null,
+                  "is_pay_to_access_content": false,
+                  "rsvp_style": "PUBLIC_RSVP_STYLE",
+                  "event_permalink_header_info_banner_content": null,
+                  "header_notice_items": [],
+                  "arenas": {
+                    "count": 0
+                  },
+                  "__isProfile": "Event",
+                  "profile_picture_for_sticky_bar": {
+                    "uri": "https:\/\/scontent.fyyc3-1.fna.fbcdn.net\/v\/t39.30808-6\/337426874_933360507788749_7891141665167867105_n.jpg?stp=c19.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=105&ccb=1-7&_nc_sid=c39e3b&_nc_ohc=PMqm3d9U5JwAX8-bINu&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfAb-HUJspO6v8mksKlDV0EYLpP2bIj6bY5jdZfj3YkmMQ&oe=642C1833"
+                  },
+                  "__isEntity": "Event",
+                  "__typename": "Event",
+                  "url": "https:\/\/www.facebook.com\/events\/941510027277450\/",
+                  "available_actors": {
+                    "count": 0,
+                    "nodes": []
+                  },
+                  "__isSupportsScopedActors": "Event",
+                  "__isNode": "Event",
+                  "created_for_group": null,
+                  "rsvp_button_renderer": {
+                    "__typename": "PublicRsvpStyleRenderer",
+                    "event": {
+                      "id": "941510027277450",
+                      "connection_style": "INTERESTED",
+                      "can_viewer_join": false,
+                      "can_viewer_watch": false,
+                      "can_viewer_unwatch": false,
+                      "viewer_watch_status": "UNWATCHED",
+                      "if_viewer_can_see_going_button": null,
+                      "event_connection_data_privacy_scope": null,
+                      "privacy_scope_for_toast": null,
+                      "can_join_group_chat": false,
+                      "created_for_group": null,
+                      "chat": null
+                    },
+                    "__module_operation_EventCometUniversalRSVPButton_event": {
+                      "__dr": "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql"
+                    },
+                    "__module_component_EventCometUniversalRSVPButton_event": {
+                      "__dr": "PublicEventCometRSVPButtonRenderer.react"
+                    }
+                  },
+                  "rsvp_button_group_renderer": {
+                    "__typename": "PublicRsvpStyleRenderer",
+                    "event": {
+                      "id": "941510027277450",
+                      "connection_style": "INTERESTED",
+                      "can_viewer_watch": false,
+                      "viewer_watch_status": "UNWATCHED",
+                      "is_past": false,
+                      "if_viewer_can_see_going_button": null,
+                      "can_join_group_chat": false,
+                      "created_for_group": null,
+                      "chat": null
+                    },
+                    "__module_operation_EventCometUniversalRSVPButtonGroup_event": {
+                      "__dr": "PublicEventCometRSVPButtonGroupRenderer_rsvpStyleRenderer$normalization.graphql"
+                    },
+                    "__module_component_EventCometUniversalRSVPButtonGroup_event": {
+                      "__dr": "PublicEventCometRSVPButtonGroupRenderer.react"
+                    }
+                  },
+                  "privacy_scope_for_toast": null,
+                  "viewer_guest_status": null,
+                  "viewer_watch_status": "UNWATCHED",
+                  "can_viewer_invite": false,
+                  "can_page_viewer_invite_as_user": false,
+                  "eventUrl": "https:\/\/www.facebook.com\/events\/941510027277450\/",
+                  "can_boost_event_renderer": null,
+                  "can_viewer_see_rsvp_button": false,
+                  "can_viewer_share": true,
+                  "can_viewer_create_repeat_event": false,
+                  "header_action_menu_items": [
+                    {
+                      "__typename": "EventHeaderInviteMoreMenuActionMenuItemRenderer"
+                    },
+                    {
+                      "__typename": "EventHeaderShareMoreMenuActionMenuItemRenderer"
+                    }
+                  ],
+                  "if_viewer_can_invite_off_fb": null,
+                  "if_viewer_can_publish_draft_event": null,
+                  "event_for_edit_flow": {
+                    "if_viewer_can_edit": null,
+                    "id": "941510027277450"
+                  },
+                  "is_eligible_for_poe_view_as_visitor_button": false,
+                  "chat": null,
+                  "after_creation_key_prompt_type": null,
+                  "parent_group": null
+                },
+                "poe_education_modal": null
+              },
+              "extensions": {
+                "is_final": true
+              }
+            },
+            "sequence_number": 0
+          }
+        }
+      ]
+    ],
+    [
+      "CometEntityHeaderCoverDraggable.react"
+    ],
+    [
+      "Bootloader",
+      "markComponentsAsImmediate",
+      [],
+      [
+        [
+          "CometPrivacySelectorDialog.react",
+          "CometPrivacySelectorPickerContainer.react"
+        ]
+      ]
+    ],
+    [
+      "RequireDeferredReference",
+      "unblock",
+      [],
+      [
+        [
+          "PublicEventCometRSVPButtonGroupRenderer_rsvpStyleRenderer$normalization.graphql",
+          "PublicEventCometRSVPButtonGroupRenderer.react",
+          "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql",
+          "PublicEventCometRSVPButtonRenderer.react",
+          "EventCometPermalinkHeaderCoverPhotoRenderer_coverMedia$normalization.graphql",
+          "EventCometPermalinkHeaderCoverPhotoRenderer.react",
+          "CometTooltipDeferredImpl.react",
+          "CometEntityHeaderCoverDraggable.react"
+        ],
+        "sd"
+      ]
+    ],
+    [
+      "RequireDeferredReference",
+      "unblock",
+      [],
+      [
+        [
+          "PublicEventCometRSVPButtonGroupRenderer_rsvpStyleRenderer$normalization.graphql",
+          "PublicEventCometRSVPButtonGroupRenderer.react",
+          "PublicEventCometRSVPButtonRenderer_rsvpStyleRenderer$normalization.graphql",
+          "PublicEventCometRSVPButtonRenderer.react",
+          "EventCometPermalinkHeaderCoverPhotoRenderer_coverMedia$normalization.graphql",
+          "EventCometPermalinkHeaderCoverPhotoRenderer.react",
+          "CometTooltipDeferredImpl.react",
+          "CometEntityHeaderCoverDraggable.react"
+        ],
+        "css"
+      ]
+    ]
+  ]
+}

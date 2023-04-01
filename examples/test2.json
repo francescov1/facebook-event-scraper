@@ -1,0 +1,1357 @@
+{
+  "define": [
+    [
+      "DateFormatConfig",
+      [],
+      {
+        "numericDateOrder": [
+          "m",
+          "d",
+          "y"
+        ],
+        "numericDateSeparator": "\/",
+        "shortDayNames": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "narrowDayNames": [
+          "M",
+          "T",
+          "W",
+          "T",
+          "F",
+          "S",
+          "S"
+        ],
+        "timeSeparator": ":",
+        "weekStart": 6,
+        "formats": {
+          "D": "D",
+          "D g:ia": "D g:ia",
+          "D M d": "D M d",
+          "D M d, Y": "D M d, Y",
+          "D M j": "D M j",
+          "D M j, g:ia": "D M j, g:ia",
+          "D M j, y": "D M j, y",
+          "D M j, Y g:ia": "D M j, Y g:ia",
+          "D, M j, Y": "D, M j, Y",
+          "F d": "F d",
+          "F d, Y": "F d, Y",
+          "F g": "F g",
+          "F j": "F j",
+          "F j, Y": "F j, Y",
+          "F j, Y \u0040 g:i A": "F j, Y \u0040 g:i A",
+          "F j, Y g:i a": "F j, Y g:i a",
+          "F jS": "F jS",
+          "F jS, g:ia": "F jS, g:ia",
+          "F jS, Y": "F jS, Y",
+          "F Y": "F Y",
+          "g A": "g A",
+          "g:i": "g:i",
+          "g:i A": "g:i A",
+          "g:i a": "g:i a",
+          "g:iA": "g:iA",
+          "g:ia": "g:ia",
+          "g:ia F jS, Y": "g:ia F jS, Y",
+          "g:iA l, F jS": "g:iA l, F jS",
+          "g:ia M j": "g:ia M j",
+          "g:ia M jS": "g:ia M jS",
+          "g:ia, F jS": "g:ia, F jS",
+          "g:iA, l M jS": "g:iA, l M jS",
+          "g:sa": "g:sa",
+          "H:I - M d, Y": "H:I - M d, Y",
+          "h:i a": "h:i a",
+          "h:m:s m\/d\/Y": "h:m:s m\/d\/Y",
+          "j": "j",
+          "l F d, Y": "l F d, Y",
+          "l g:ia": "l g:ia",
+          "l, F d, Y": "l, F d, Y",
+          "l, F j": "l, F j",
+          "l, F j, Y": "l, F j, Y",
+          "l, F jS": "l, F jS",
+          "l, F jS, g:ia": "l, F jS, g:ia",
+          "l, M j": "l, M j",
+          "l, M j, Y": "l, M j, Y",
+          "l, M j, Y g:ia": "l, M j, Y g:ia",
+          "M d": "M d",
+          "M d, Y": "M d, Y",
+          "M d, Y g:ia": "M d, Y g:ia",
+          "M d, Y ga": "M d, Y ga",
+          "M j": "M j",
+          "M j, Y": "M j, Y",
+          "M j, Y g:i A": "M j, Y g:i A",
+          "M j, Y g:ia": "M j, Y g:ia",
+          "M jS, g:ia": "M jS, g:ia",
+          "M Y": "M Y",
+          "M y": "M y",
+          "m-d-y": "m-d-y",
+          "M. d": "M. d",
+          "M. d, Y": "M. d, Y",
+          "j F Y": "j F Y",
+          "m.d.y": "m.d.y",
+          "m\/d": "m\/d",
+          "m\/d\/Y": "m\/d\/Y",
+          "m\/d\/y": "m\/d\/y",
+          "m\/d\/Y g:ia": "m\/d\/Y g:ia",
+          "m\/d\/y H:i:s": "m\/d\/y H:i:s",
+          "m\/d\/Y h:m": "m\/d\/Y h:m",
+          "n": "n",
+          "n\/j": "n\/j",
+          "n\/j, g:ia": "n\/j, g:ia",
+          "n\/j\/y": "n\/j\/y",
+          "Y": "Y",
+          "Y-m-d": "Y-m-d",
+          "Y\/m\/d": "Y\/m\/d",
+          "y\/m\/d": "y\/m\/d",
+          "j \/ F \/ Y": "j \/ F \/ Y"
+        },
+        "ordinalSuffixes": {
+          "1": "st",
+          "2": "nd",
+          "3": "rd",
+          "4": "th",
+          "5": "th",
+          "6": "th",
+          "7": "th",
+          "8": "th",
+          "9": "th",
+          "10": "th",
+          "11": "th",
+          "12": "th",
+          "13": "th",
+          "14": "th",
+          "15": "th",
+          "16": "th",
+          "17": "th",
+          "18": "th",
+          "19": "th",
+          "20": "th",
+          "21": "st",
+          "22": "nd",
+          "23": "rd",
+          "24": "th",
+          "25": "th",
+          "26": "th",
+          "27": "th",
+          "28": "th",
+          "29": "th",
+          "30": "th",
+          "31": "st"
+        }
+      },
+      165
+    ],
+    [
+      "CLDRDateRenderingClientRollout",
+      [],
+      {
+        "formatDateClientLoggerSamplingRate": 0.0001
+      },
+      3003
+    ],
+    [
+      "CLDRDateFormatConfig",
+      [],
+      {
+        "supportedPHPFormatsKeys": {
+          "D": "E",
+          "D g:ia": "Ejm",
+          "D M d": "MMMEd",
+          "D M d, Y": "yMMMEd",
+          "D M j": "MMMEd",
+          "D M j, y": "yMMMEd",
+          "D, M j": "MMMEd",
+          "D, M j, Y": "yMMMEd",
+          "F d": "MMMMd",
+          "F d, Y": "date_long",
+          "F j": "MMMMd",
+          "F j, Y": "date_long",
+          "F j, Y \u0040 g:i A": "dateTime_long_short",
+          "F j, Y g:i a": "dateTime_long_short",
+          "F j, Y \u0040 g:i:s A": "dateTime_long_medium",
+          "F jS": "MMMMd",
+          "F jS, g:ia": "dateTime_long_short",
+          "F jS, Y": "date_long",
+          "F Y": "yMMMM",
+          "g A": "j",
+          "G:i": "time_short",
+          "g:i": "time_short",
+          "g:i a": "time_short",
+          "g:i A": "time_short",
+          "g:i:s A": "time_medium",
+          "g:ia": "time_short",
+          "g:iA": "time_short",
+          "g:ia F jS, Y": "dateTime_long_short",
+          "g:iA l, F jS": "dateTime_full_short",
+          "g:ia M jS": "dateTime_medium_short",
+          "g:ia, F jS": "dateTime_long_short",
+          "g:iA, l M jS": "dateTime_full_short",
+          "h:i a": "time_short",
+          "h:m:s m\/d\/Y": "dateTime_short_short",
+          "j": "d",
+          "j F Y": "date_long",
+          "l F d, Y": "date_full",
+          "l, F d, Y": "date_full",
+          "l, F j": "date_full",
+          "l, F j, Y": "date_full",
+          "l, F jS": "date_full",
+          "l, F jS, g:ia": "dateTime_full_short",
+          "l, M j": "date_full",
+          "l, M j, Y": "date_full",
+          "l, M j, Y g:ia": "dateTime_full_short",
+          "M d": "MMMd",
+          "M d, Y": "date_medium",
+          "M d, Y g:ia": "dateTime_medium_short",
+          "M d, Y ga": "dateTime_medium_short",
+          "M j": "MMMd",
+          "M j, Y": "date_medium",
+          "M j, Y g:i A": "dateTime_medium_short",
+          "M j, Y g:ia": "dateTime_medium_short",
+          "M jS, g:ia": "dateTime_medium_short",
+          "M y": "yMMM",
+          "M Y": "yMMM",
+          "M. d": "MMMd",
+          "M. d, Y": "date_medium",
+          "m\/d": "Md",
+          "m\/d\/Y g:ia": "dateTime_short_short",
+          "m\/d\/y H:i:s": "dateTime_short_short",
+          "n": "M",
+          "n\/j": "Md",
+          "n\/j, g:ia": "dateTime_short_short",
+          "n\/j\/y": "date_short",
+          "Y": "y"
+        },
+        "isLocaleInConfigerator": true,
+        "CLDRConfigeratorFormats": {
+          "dateFormats": {
+            "full": "EEEE, MMMM d, y",
+            "long": "MMMM d, y",
+            "medium": "MMM d, y",
+            "short": "M\/d\/yy"
+          },
+          "timeFormats": {
+            "full": "h:mm:ss a zzzz",
+            "long": "h:mm:ss a z",
+            "medium": "h:mm:ss a",
+            "short": "h:mm a"
+          },
+          "dateTimeFormats": {
+            "full": "{1} 'at' {0}",
+            "long": "{1} 'at' {0}",
+            "medium": "{1}, {0}",
+            "short": "{1}, {0}"
+          },
+          "availableFormats": {
+            "Bh": "h B",
+            "Bhm": "h:mm B",
+            "Bhms": "h:mm:ss B",
+            "E": "ccc",
+            "EBhm": "E h:mm B",
+            "EBhms": "E h:mm:ss B",
+            "EHm": "E HH:mm",
+            "EHms": "E HH:mm:ss",
+            "Ed": "d E",
+            "Ehm": "E h:mm a",
+            "Ehms": "E h:mm:ss a",
+            "Gy": "y G",
+            "GyMMM": "MMM y G",
+            "GyMMMEd": "E, MMM d, y G",
+            "GyMMMd": "MMM d, y G",
+            "H": "HH",
+            "Hm": "HH:mm",
+            "Hms": "HH:mm:ss",
+            "Hmsv": "HH:mm:ss v",
+            "Hmv": "HH:mm v",
+            "M": "L",
+            "MEd": "E, M\/d",
+            "MMM": "LLL",
+            "MMMEd": "E, MMM d",
+            "MMMMW-count-one": "'week' W 'of' MMMM",
+            "MMMMW-count-other": "'week' W 'of' MMMM",
+            "MMMMd": "MMMM d",
+            "MMMd": "MMM d",
+            "Md": "M\/d",
+            "d": "d",
+            "h": "h a",
+            "hm": "h:mm a",
+            "hms": "h:mm:ss a",
+            "hmsv": "h:mm:ss a v",
+            "hmv": "h:mm a v",
+            "ms": "mm:ss",
+            "y": "y",
+            "yM": "M\/y",
+            "yMEd": "E, M\/d\/y",
+            "yMMM": "MMM y",
+            "yMMMEd": "E, MMM d, y",
+            "yMMMM": "MMMM y",
+            "yMMMd": "MMM d, y",
+            "yMd": "M\/d\/y",
+            "yQQQ": "QQQ y",
+            "yQQQQ": "QQQQ y",
+            "yw-count-one": "'week' w 'of' Y",
+            "yw-count-other": "'week' w 'of' Y"
+          }
+        },
+        "CLDRRegionalConfigeratorFormats": {
+          "dateFormats": {
+            "full": "EEEE, MMMM d, y",
+            "long": "MMMM d, y",
+            "medium": "MMM d, y",
+            "short": "M\/d\/yy"
+          },
+          "timeFormats": {
+            "full": "h:mm:ss a zzzz",
+            "long": "h:mm:ss a z",
+            "medium": "h:mm:ss a",
+            "short": "h:mm a"
+          },
+          "dateTimeFormats": {
+            "full": "{1} 'at' {0}",
+            "long": "{1} 'at' {0}",
+            "medium": "{1}, {0}",
+            "short": "{1}, {0}"
+          },
+          "availableFormats": {
+            "Bh": "h B",
+            "Bhm": "h:mm B",
+            "Bhms": "h:mm:ss B",
+            "E": "ccc",
+            "EBhm": "E h:mm B",
+            "EBhms": "E h:mm:ss B",
+            "EHm": "E HH:mm",
+            "EHms": "E HH:mm:ss",
+            "Ed": "d E",
+            "Ehm": "E h:mm a",
+            "Ehms": "E h:mm:ss a",
+            "Gy": "y G",
+            "GyMMM": "MMM y G",
+            "GyMMMEd": "E, MMM d, y G",
+            "GyMMMd": "MMM d, y G",
+            "H": "HH",
+            "Hm": "HH:mm",
+            "Hms": "HH:mm:ss",
+            "Hmsv": "HH:mm:ss v",
+            "Hmv": "HH:mm v",
+            "M": "L",
+            "MEd": "E, M\/d",
+            "MMM": "LLL",
+            "MMMEd": "E, MMM d",
+            "MMMMW-count-one": "'week' W 'of' MMMM",
+            "MMMMW-count-other": "'week' W 'of' MMMM",
+            "MMMMd": "MMMM d",
+            "MMMd": "MMM d",
+            "Md": "M\/d",
+            "d": "d",
+            "h": "h a",
+            "hm": "h:mm a",
+            "hms": "h:mm:ss a",
+            "hmsv": "h:mm:ss a v",
+            "hmv": "h:mm a v",
+            "ms": "mm:ss",
+            "y": "y",
+            "yM": "M\/y",
+            "yMEd": "E, M\/d\/y",
+            "yMMM": "MMM y",
+            "yMMMEd": "E, MMM d, y",
+            "yMMMM": "MMMM y",
+            "yMMMd": "MMM d, y",
+            "yMd": "M\/d\/y",
+            "yQQQ": "QQQ y",
+            "yQQQQ": "QQQQ y",
+            "yw-count-one": "'week' w 'of' Y",
+            "yw-count-other": "'week' w 'of' Y"
+          }
+        },
+        "CLDRToPHPSymbolConversion": {
+          "yyyy": "Y",
+          "yy": "y",
+          "y": "Y",
+          "MMMMM": "M",
+          "MMMM": "F",
+          "MMM": "M",
+          "MM": "m",
+          "M": "n",
+          "dd": "d",
+          "d": "j",
+          "EEEEE": "D",
+          "EEEE": "l",
+          "EEE": "D",
+          "EE": "D",
+          "E": "D",
+          "aaaaa": "A",
+          "aaaa": "A",
+          "aaa": "A",
+          "aa": "A",
+          "a": "A",
+          "bbbbb": "A",
+          "bbbb": "A",
+          "bbb": "A",
+          "bb": "A",
+          "b": "A",
+          "BBBBB": "A",
+          "BBBB": "A",
+          "BBB": "A",
+          "BB": "A",
+          "B": "A",
+          "HH": "H",
+          "H": "G",
+          "hh": "h",
+          "h": "g",
+          "K": "g",
+          "mm": "i",
+          "ss": "s",
+          "z": "",
+          "zz": "",
+          "zzz": "",
+          "ccccc": "D",
+          "cccc": "l",
+          "ccc": "D",
+          "cc": "D",
+          "c": "D",
+          "LLLLL": "M",
+          "LLLL": "f",
+          "LLL": "M",
+          "LL": "m",
+          "L": "n",
+          "G": ""
+        },
+        "intlDateSpecialChars": {
+          "cldrDelimiter": "'",
+          "singleQuote": "'",
+          "singleQuoteHolder": "*"
+        }
+      },
+      3019
+    ],
+    [
+      "IsInternSite",
+      [],
+      {
+        "is_intern_site": false
+      },
+      4517
+    ],
+    [
+      "IntlCompactDecimalNumberFormatConfig",
+      [],
+      {
+        "short_patterns": {
+          "3": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            }
+          },
+          "4": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            }
+          },
+          "5": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "K",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "K"
+            }
+          },
+          "6": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            }
+          },
+          "7": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            }
+          },
+          "8": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "M",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "M"
+            }
+          },
+          "9": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            }
+          },
+          "10": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            }
+          },
+          "11": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "B",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "B"
+            }
+          },
+          "12": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            }
+          },
+          "13": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            }
+          },
+          "14": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": "T",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": "T"
+            }
+          }
+        },
+        "long_patterns": {
+          "3": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            }
+          },
+          "4": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            }
+          },
+          "5": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " thousand",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " thousand"
+            }
+          },
+          "6": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            }
+          },
+          "7": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            }
+          },
+          "8": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " million",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " million"
+            }
+          },
+          "9": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            }
+          },
+          "10": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            }
+          },
+          "11": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " billion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " billion"
+            }
+          },
+          "12": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 1,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            }
+          },
+          "13": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 2,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            }
+          },
+          "14": {
+            "4": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            },
+            "24": {
+              "min_fraction_digits": null,
+              "min_integer_digits": 3,
+              "positive_prefix_pattern": "",
+              "positive_suffix_pattern": " trillion",
+              "negative_prefix_pattern": "-",
+              "negative_suffix_pattern": " trillion"
+            }
+          }
+        }
+      },
+      2981
+    ],
+    [
+      "cr:1408565",
+      [],
+      {
+        "__rc": [
+          null,
+          "Aa3UIqDtj119eSnDqIS5ixrsksxPCFvNarQDN0T9CE4Rho6KGh_YBAyk14l-Jzfzz9MXd8s_Af9ZalDhmNV4hes4K5t5zNbhWcn3zsQsMQ"
+        ]
+      },
+      -1
+    ]
+  ],
+  "require": [
+    [
+      "ProfileGeminiWeakReferenceLink_user$normalization.graphql"
+    ],
+    [
+      "ProfileGeminiWeakReferenceLink.react"
+    ],
+    [
+      "EventCometTicketOffsiteCardContent_ticketCardRenderer$normalization.graphql"
+    ],
+    [
+      "EventCometTicketOffsiteCardContent.react"
+    ],
+    [
+      "EventCometGoWithFriendsCardRenderer_renderer$normalization.graphql"
+    ],
+    [
+      "EventCometGoWithFriendsCardRenderer.react"
+    ],
+    [
+      "EventCometContextRowContentUniversalAttendance_canViewMembersRenderer$normalization.graphql"
+    ],
+    [
+      "EventCometContextRowContentUniversalAttendance.react"
+    ],
+    [
+      "EventCometContextRowContentAttendancePublic_rsvpStyleRenderer$normalization.graphql"
+    ],
+    [
+      "EventCometContextRowContentAttendancePublic.react"
+    ],
+    [
+      "emptyFunction",
+      "thatReturns",
+      [
+        "RequireDeferredReference"
+      ],
+      [
+        [
+          {
+            "__dr": "ProfileGeminiWeakReferenceLink_user$normalization.graphql"
+          },
+          {
+            "__dr": "ProfileGeminiWeakReferenceLink.react"
+          },
+          {
+            "__dr": "EventCometTicketOffsiteCardContent_ticketCardRenderer$normalization.graphql"
+          },
+          {
+            "__dr": "EventCometTicketOffsiteCardContent.react"
+          },
+          {
+            "__dr": "EventCometGoWithFriendsCardRenderer_renderer$normalization.graphql"
+          },
+          {
+            "__dr": "EventCometGoWithFriendsCardRenderer.react"
+          },
+          {
+            "__dr": "EventCometContextRowContentUniversalAttendance_canViewMembersRenderer$normalization.graphql"
+          },
+          {
+            "__dr": "EventCometContextRowContentUniversalAttendance.react"
+          },
+          {
+            "__dr": "EventCometContextRowContentAttendancePublic_rsvpStyleRenderer$normalization.graphql"
+          },
+          {
+            "__dr": "EventCometContextRowContentAttendancePublic.react"
+          }
+        ]
+      ]
+    ],
+    [
+      "RelayPrefetchedStreamCache",
+      "next",
+      [],
+      [
+        "adp_PublicEventCometAboutRootQueryRelayPreloader_642896a92aa0b3355676560",
+        {
+          "__bbox": {
+            "complete": false,
+            "result": {
+              "data": {
+                "event": {
+                  "is_online": true,
+                  "live_shopping_playlist": null,
+                  "is_pay_to_access_content": false,
+                  "fundraiser_charity": null,
+                  "is_viewer_admin": false,
+                  "unified_tournament": null,
+                  "is_ama_enabled": false,
+                  "is_live_audio_room_event": false,
+                  "online_event_setup": {
+                    "maximum_capacity": null,
+                    "third_party_url": null,
+                    "type": "OTHER"
+                  },
+                  "paid_online_event_context": null,
+                  "can_view_attendance_context_row": {
+                    "event": {
+                      "context_row_attendance_renderer": {
+                        "__typename": "PublicRsvpStyleRenderer",
+                        "event": {
+                          "id": "858256975309867",
+                          "can_view_members": true,
+                          "event_connected_users_public_responded": {
+                            "count": 14646
+                          },
+                          "event_connected_users_public_facepile": {
+                            "count": 0,
+                            "nodes": []
+                          }
+                        },
+                        "__module_operation_EventCometContextRowContentUniversalAttendance_canViewMembersRenderer": {
+                          "__dr": "EventCometContextRowContentAttendancePublic_rsvpStyleRenderer$normalization.graphql"
+                        },
+                        "__module_component_EventCometContextRowContentUniversalAttendance_canViewMembersRenderer": {
+                          "__dr": "EventCometContextRowContentAttendancePublic.react"
+                        }
+                      },
+                      "id": "858256975309867"
+                    },
+                    "__module_operation_EventCometContextRowMemberAttendance_event": {
+                      "__dr": "EventCometContextRowContentUniversalAttendance_canViewMembersRenderer$normalization.graphql"
+                    },
+                    "__module_component_EventCometContextRowMemberAttendance_event": {
+                      "__dr": "EventCometContextRowContentUniversalAttendance.react"
+                    }
+                  },
+                  "event_privacy_info": {
+                    "title": {
+                      "delight_ranges": [],
+                      "image_ranges": [],
+                      "inline_style_ranges": [],
+                      "aggregated_ranges": [],
+                      "ranges": [
+                        {
+                          "entity": {
+                            "__typename": "User",
+                            "__isEntity": "User",
+                            "__isActor": "User",
+                            "id": "100064872214768",
+                            "url": "https:\/\/www.facebook.com\/UWBotanicGardens",
+                            "profile_url": "https:\/\/www.facebook.com\/UWBotanicGardens",
+                            "short_name": "UW Botanic Gardens",
+                            "work_info": null,
+                            "__module_operation_CometTextWithEntitiesRelay_textWithEntities": {
+                              "__dr": "ProfileGeminiWeakReferenceLink_user$normalization.graphql"
+                            },
+                            "__module_component_CometTextWithEntitiesRelay_textWithEntities": {
+                              "__dr": "ProfileGeminiWeakReferenceLink.react"
+                            },
+                            "work_foreign_entity_info": null,
+                            "mobileUrl": "https:\/\/m.facebook.com\/UWBotanicGardens",
+                            "__isNode": "User"
+                          },
+                          "entity_is_weak_reference": false,
+                          "length": 18,
+                          "offset": 19
+                        }
+                      ],
+                      "color_ranges": [],
+                      "text": "Public \u00b7 Hosted by UW Botanic Gardens"
+                    },
+                    "icon_name": "globe-americas"
+                  },
+                  "event_kind": "PUBLIC_TYPE",
+                  "is_remote_learning_class": false,
+                  "event_hosts_that_can_view_guestlist": [
+                    {
+                      "__typename": "User",
+                      "__isProfile": "User",
+                      "id": "100064872214768",
+                      "name": "UW Botanic Gardens",
+                      "is_verified": false,
+                      "url": "https:\/\/www.facebook.com\/UWBotanicGardens"
+                    }
+                  ],
+                  "linked_group_row": null,
+                  "is_class_event": false,
+                  "is_remote_learning_course": false,
+                  "is_past": false,
+                  "parent_if_exists_or_self": {
+                    "online_event_setup": {
+                      "domain_normalized_third_party_url": null,
+                      "third_party_url": null,
+                      "type": "OTHER"
+                    },
+                    "id": "858256975309867",
+                    "is_remote_learning_course": false
+                  },
+                  "id": "858256975309867",
+                  "event_place": {
+                    "__typename": "FreeformPlace",
+                    "contextual_name": null,
+                    "location": null,
+                    "name": "Online event",
+                    "__isNode": "FreeformPlace",
+                    "id": "",
+                    "__isPlace": "FreeformPlace",
+                    "place_type": null,
+                    "is_user_specified_location": false
+                  },
+                  "event_buy_ticket_url": "https:\/\/botanicgardens.uw.edu\/about\/events\/?trumbaEmbed=view\u00253Devent\u002526eventid\u00253D163677656",
+                  "ticketing_context_row": {
+                    "title": "Tickets",
+                    "subtitle": "botanicgardens.uw.edu\/about\/events"
+                  },
+                  "health_and_safety_details": [],
+                  "health_and_safety_details_other_requirements": [],
+                  "health_and_safety_details_user_location": "",
+                  "event_host_context_row_info": {
+                    "icon_name": "friend-neutral",
+                    "title": {
+                      "delight_ranges": [],
+                      "image_ranges": [],
+                      "inline_style_ranges": [],
+                      "aggregated_ranges": [],
+                      "ranges": [
+                        {
+                          "entity": {
+                            "__typename": "User",
+                            "__isEntity": "User",
+                            "__isActor": "User",
+                            "id": "100064872214768",
+                            "url": "https:\/\/www.facebook.com\/UWBotanicGardens",
+                            "profile_url": "https:\/\/www.facebook.com\/UWBotanicGardens",
+                            "short_name": "UW Botanic Gardens",
+                            "work_info": null,
+                            "__module_operation_CometTextWithEntitiesRelay_textWithEntities": {
+                              "__dr": "ProfileGeminiWeakReferenceLink_user$normalization.graphql"
+                            },
+                            "__module_component_CometTextWithEntitiesRelay_textWithEntities": {
+                              "__dr": "ProfileGeminiWeakReferenceLink.react"
+                            },
+                            "work_foreign_entity_info": null,
+                            "mobileUrl": "https:\/\/m.facebook.com\/UWBotanicGardens",
+                            "__isNode": "User"
+                          },
+                          "entity_is_weak_reference": false,
+                          "length": 18,
+                          "offset": 9
+                        }
+                      ],
+                      "color_ranges": [],
+                      "text": "Event by UW Botanic Gardens"
+                    }
+                  },
+                  "send_calendar_invite": false,
+                  "should_show_calendar_invite_preview": false,
+                  "display_duration": "1 hr 30 min",
+                  "paid_virtual_event_info_box_content": null,
+                  "event_permalink_header_info_banner_content": null,
+                  "event_price_and_duration_context_row_info": {
+                    "title": {
+                      "text": "Duration: 1 hr 30 min"
+                    }
+                  },
+                  "can_share_room_link": false,
+                  "created_for_group": null,
+                  "content_geogating": null,
+                  "is_viewer_host": false,
+                  "event_creator": {
+                    "__typename": "User",
+                    "name": "UW Botanic Gardens",
+                    "id": "100064872214768"
+                  },
+                  "is_work_entity": false,
+                  "speakers_context_row_renderer": null,
+                  "parent_event": null,
+                  "event_description": {
+                    "text": "Cost: $25, Pre-registration required\nFinancial aid slots available\n\nGrowing your own organic food is a delicious way to garden in the Pacific Northwest, but where do you start? This class will cover what you need to know to grow a fabulous edible garden for years to come, whether you\u2019re creating an \u201curban farmstead\u201d, gardening in a small city lot, or in patio containers! You\u2019ll learn simple design techniques to maximize production, soil building, planting, attracting pollinators, crop rotation, and other strategies that you can use now to prepare for your upcoming growing season. Vegetables, berries, and fruit trees do need special care to thrive, but your time and energy will pay off in abundance, great taste, and nutrition!",
+                    "delight_ranges": [],
+                    "image_ranges": [],
+                    "inline_style_ranges": [],
+                    "aggregated_ranges": [],
+                    "ranges": [],
+                    "color_ranges": []
+                  },
+                  "creation_story": {
+                    "click_tracking_linkshim_cb": "AT0-jNvE6FKOKF-EajzlQTE-9QIMSy_-CW2CcA5pKyEjOZIsenzp8bkWAC6uFxZ_ltKLUdfGwgpQalO6342Ub25Coz283q4ODkNwwHhSQl5YBBhEeD5zBki2M_ChOXEcs_PqbbWx2UpJb4i-FTLfPrwz-3A_JkCpzT-LtUIyfxR3D07ve7HJ",
+                    "encrypted_click_tracking": "AZW2faNYuKTq3_Ygc9Rr6kSqJxONjm1Vs7y6COUYRDEVK7b6vSUDU966CGIqQpOJ2Nkf36T7F_m0HV1qYxBW9oTbhpmWSqSMecwJhx1dIy_2JLi_64SMyWDUIuWikj47jSx88CiY4VsVcPTbEUHSPpJZ-8b8MHNB2FHPaxOeYjSBoA",
+                    "encrypted_tracking": "AZW6Ltr7D3m9rLOROKfXic_qrseMNv5RDMrcoBJT-RLtRGeI03E_zI8EIOOv6NDmmWhvnAXJdXYUArd02V4rnkea-nsW9P-iPNiv1h5ebxF2rabBus_5VtH_GZUW6gNR1FY3JP-uv0UnyxVuawSlmT8IfKZnzyzal1xi69rmpXFBdxKVXIiv3k--m4TO46FFiRSJBxYFqVVJTYcbtjvVun-b0nWOsgmFOyZGOS9Erv1BRtpm_2CyM_L4RXafwptd4-YA_6Z5817jKK1Qrfmgcm6WxfXL2zdyEe8-_Y3SrXd2jSkas9c6JBhmmnRYW7ge0FcJXzxG1W5fmLKvIGnIpgM4xu9b1jFH0CcgOlKg4PnXs9cQhgK3BD0tir-C3OilSpMpUzWBAO7O1scG_OwRtevDYE2bAQBwFRcPtK-z8INiXSYz6e66lURCuvFDYgY7Hw27miig3quimRybJT-J3AjtzapFkCsRvSbgjnyxJgMQXbtgzZG-nQfZfNILkMTgQqdhwITZzj7cNYQc2pNgTZ_W2j9mekx3kuEC22PfL4P7ecgNCC5Vjly7Npr605H0Osfa_AIX4yXrWrGdw8M_kIIFOJU8uTBYg1sjIHY-s7lZ2-B-kNAfTfhVnSoscB-gm04vDv6CSRYXNaV0czJ2WmsRdscJeAhmnj_-nGxkkjLUuX_8Ky7fkhy2Sj-poLUo_E-Y0cAE45ybmMHh_gD_bVDozON6AQgYbPkSgQDCzmFTczLJgo4YhH-JOpWPq3l3n0Z4EhGVDHmk0DNGtCk_e32E8nFwKXSV7SEgBSbfVsPBtw",
+                    "id": "UzpfSTEwMDA2NDg3MjIxNDc2ODpWSzo4NTgyNTY5NzUzMDk4Njc="
+                  },
+                  "discovery_categories": [
+                    {
+                      "label": "Gardening",
+                      "uri": "https:\/\/www.facebook.com\/events\/discovery\/?suggestion_token=\u00257B\u002522event_categories\u002522\u00253A\u00255B1748089758838213\u00255D\u00257D"
+                    }
+                  ],
+                  "catkit_keywords": [],
+                  "event_flags": [
+                    {
+                      "label": "Online",
+                      "uri": "https:\/\/www.facebook.com\/events\/discovery\/?suggestion_token=\u00257B\u002522event_flags\u002522\u00253A\u00255B\u002522online\u002522\u00255D\u00257D"
+                    }
+                  ],
+                  "if_viewer_can_see_add_descritption_photos": null,
+                  "description_photos": [],
+                  "location": {
+                    "reverse_geocode": {
+                      "city_page": {
+                        "id": "110843418940484",
+                        "name": "Seattle, Washington"
+                      }
+                    }
+                  },
+                  "if_can_viewer_see_live_shopping_tab": null,
+                  "associated_videos": null,
+                  "ticket_card_content_renderer": {
+                    "__typename": "OffsiteTicketCardRenderer",
+                    "event": {
+                      "id": "858256975309867",
+                      "event_buy_ticket_url": "https:\/\/botanicgardens.uw.edu\/about\/events\/?trumbaEmbed=view\u00253Devent\u002526eventid\u00253D163677656",
+                      "event_ticket_provider": null
+                    },
+                    "__module_operation_EventCometTicketsCard_event": {
+                      "__dr": "EventCometTicketOffsiteCardContent_ticketCardRenderer$normalization.graphql"
+                    },
+                    "__module_component_EventCometTicketsCard_event": {
+                      "__dr": "EventCometTicketOffsiteCardContent.react"
+                    }
+                  },
+                  "event_to_event_tours": {
+                    "count_up_to": 0
+                  },
+                  "can_view_friends_card": {
+                    "event": {
+                      "id": "858256975309867",
+                      "can_view_members": true,
+                      "is_past": false,
+                      "has_child_events": false,
+                      "is_sharing_going_users_with_child_events": false,
+                      "is_viewer_admin": false,
+                      "is_learning_course_child_event": false,
+                      "paid_online_event_context": null,
+                      "event_connected_users_going": {
+                        "count": 641
+                      },
+                      "event_connected_users_interested": {
+                        "count": 14005
+                      },
+                      "social_context": {
+                        "delight_ranges": [],
+                        "image_ranges": [],
+                        "inline_style_ranges": [],
+                        "aggregated_ranges": [],
+                        "ranges": [],
+                        "color_ranges": [],
+                        "text": ""
+                      },
+                      "event_connected_users_attendance_facepile_public": {
+                        "count": 0,
+                        "edges": []
+                      },
+                      "event_connected_users_go_with_friends_attending": {
+                        "count": 0
+                      },
+                      "can_viewer_invite": false,
+                      "invitee_candidates_v3": {
+                        "nodes": []
+                      },
+                      "event_connected_friends": {
+                        "count": 0
+                      },
+                      "chat": null
+                    },
+                    "__module_operation_EventCometViewerGoWithFriendsCard_event": {
+                      "__dr": "EventCometGoWithFriendsCardRenderer_renderer$normalization.graphql"
+                    },
+                    "__module_component_EventCometViewerGoWithFriendsCard_event": {
+                      "__dr": "EventCometGoWithFriendsCardRenderer.react"
+                    }
+                  },
+                  "event_guidance_framework_v2_enabled": false,
+                  "event_host_onboarding": null,
+                  "eventUrl": "https:\/\/www.facebook.com\/events\/858256975309867\/",
+                  "parent_group": null,
+                  "chat": null,
+                  "is_event_pinned_to_featured": false,
+                  "can_boost_event_card_renderer": null,
+                  "is_remote_learning_event_recording_enabled_for_consumption": false,
+                  "if_viewer_can_see_speakers_card_on_permalink": null
+                },
+                "viewer": {
+                  "actor": {
+                    "__typename": "LoggedOutUser",
+                    "id": "0"
+                  },
+                  "account_user": null
+                },
+                "nux": null,
+                "coronavirus": {
+                  "hub_meta_data": {
+                    "general_uri": "https:\/\/www.canada.ca\/coronavirus",
+                    "header_cta_domain_string": "canada.ca"
+                  }
+                }
+              },
+              "extensions": {
+                "is_final": false
+              }
+            },
+            "sequence_number": 0
+          }
+        }
+      ]
+    ],
+    [
+      "Bootloader",
+      "markComponentsAsImmediate",
+      [],
+      [
+        [
+          "CometProfileVideoSection.react",
+          "CometHovercardQueryRenderer.react"
+        ]
+      ]
+    ],
+    [
+      "RequireDeferredReference",
+      "unblock",
+      [],
+      [
+        [
+          "ProfileGeminiWeakReferenceLink_user$normalization.graphql",
+          "ProfileGeminiWeakReferenceLink.react",
+          "EventCometTicketOffsiteCardContent_ticketCardRenderer$normalization.graphql",
+          "EventCometTicketOffsiteCardContent.react",
+          "EventCometGoWithFriendsCardRenderer_renderer$normalization.graphql",
+          "EventCometGoWithFriendsCardRenderer.react",
+          "EventCometContextRowContentUniversalAttendance_canViewMembersRenderer$normalization.graphql",
+          "EventCometContextRowContentUniversalAttendance.react",
+          "EventCometContextRowContentAttendancePublic_rsvpStyleRenderer$normalization.graphql",
+          "EventCometContextRowContentAttendancePublic.react",
+          "CometTooltipDeferredImpl.react"
+        ],
+        "sd"
+      ]
+    ],
+    [
+      "RequireDeferredReference",
+      "unblock",
+      [],
+      [
+        [
+          "ProfileGeminiWeakReferenceLink_user$normalization.graphql",
+          "ProfileGeminiWeakReferenceLink.react",
+          "EventCometTicketOffsiteCardContent_ticketCardRenderer$normalization.graphql",
+          "EventCometTicketOffsiteCardContent.react",
+          "EventCometGoWithFriendsCardRenderer_renderer$normalization.graphql",
+          "EventCometGoWithFriendsCardRenderer.react",
+          "EventCometContextRowContentUniversalAttendance_canViewMembersRenderer$normalization.graphql",
+          "EventCometContextRowContentUniversalAttendance.react",
+          "EventCometContextRowContentAttendancePublic_rsvpStyleRenderer$normalization.graphql",
+          "EventCometContextRowContentAttendancePublic.react",
+          "CometTooltipDeferredImpl.react"
+        ],
+        "css"
+      ]
+    ]
+  ]
+}

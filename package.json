@@ -2,8 +2,9 @@
   "name": "facebook-events-scraper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,8 @@
     "chrono-node": "^2.6.2"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.3"
   }
 }
