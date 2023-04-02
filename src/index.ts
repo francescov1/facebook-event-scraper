@@ -1,3 +1,4 @@
+import fs from 'fs'
 import cheerio from 'cheerio';
 import * as chrono from 'chrono-node';
 import axios from 'axios';
@@ -253,11 +254,11 @@ interface EventPhoto {
   id: string,
 }
 interface EventDates {
-  startDate: Date,
+  startTimestamp: number,
+  endTimestamp: number | null,
   dayTimeSentence: string,
   startDateFormatted: string,
-  // TODO: end date doesnt exis, may want to see if we can find it else where. Also should return a proper date object for end date
-  displayDuration: string
+  displayDuration: string // TODO: convert to number? or see if we can get a duration from somewhere
 }
 
 interface EventHost {
@@ -341,19 +342,19 @@ function getBasicEventData(html: string): Pick<EventData, "name" | "dates" | "ph
           url: jsonData['cover_media_renderer']['cover_photo']['photo']['url'],
           id: jsonData['cover_media_renderer']['cover_photo']['photo']['id'],
         },
-        // TODO: see how this handles multi-date events
         dates: {
           ...data.dates,
           dayTimeSentence: jsonData['day_time_sentence'],
-          startDate: new Date(jsonData['start_timestamp'] * 1000),
+          startTimestamp: jsonData['start_timestamp'],
           startDateFormatted: jsonData['start_time_formatted']
         },
-        isOnline: jsonData['is_online'], // TODO: double check this is correct
+        isOnline: jsonData['is_online'],
         url: jsonData['url']
       }
       dayTimeSentenceFound = true
     }
-    // TODO: are there cases where we dont get this?
+    
+    // We get this when the event has an end date
     if (jsonData['display_duration']) {
       console.log("Found display_duration object: ", jsonData)
       data = {
@@ -375,7 +376,12 @@ function getBasicEventData(html: string): Pick<EventData, "name" | "dates" | "ph
     startPosition = endIndex
   }
 
-  throw new Error("No event day time sentence found")
+  // If we dont find any duration, it means the event has no end date. But we double check this later as well
+  if (dayTimeSentenceFound) {
+    return data as any; // TODO: Fix typing
+  }
+
+  throw new Error("No day time sentence found")
 }
 
 function getEventUserStats(html: string) {
@@ -411,7 +417,7 @@ function getEventLocation(html: string): EventLocation {
           longitude: jsonData['location']['longitude'],
         },
         id: jsonData['id'], // TODO: this may not always be here,
-        type: jsonData['place_type'],
+        type: jsonData['place_type'], // TODO: What are the otpions for this? Tighter types
         address: jsonData['address']['street'], // TODO: See if this is always like this
         city: {
           name: jsonData['city']['contextual_name'],
@@ -442,6 +448,10 @@ function getEventHosts(html: string): EventHost[] {
     if (jsonData[0]['profile_picture']) {
       console.log("Found profile_picture object: ", jsonData)
       return jsonData.map((host: Record<string, any>) => {
+        if (host['__typename'] !== 'User' && host['__typename'] !== 'Page') {
+          throw new Error("Unknown host type: " + host['__typename'])
+        }
+        
         return {
           id: host['id'],
           name: host['name'],
@@ -460,7 +470,30 @@ function getEventHosts(html: string): EventHost[] {
   throw new Error("No host found with profile picture")
 }
 
-// TODO: make this into its own library if there isnt anything out there
+function getEndTimestamp(html: string, expectedStartTimestamp: number) {
+  let startPosition = 0;
+
+  // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
+  while(true) {
+    const {endIndex, jsonData} = findJsonInString(html, 'data', startPosition)
+
+    // We've reached the end of the string and havent found the json we want
+    if (endIndex === -1) {
+      break
+    }
+
+    if (jsonData['end_timestamp'] && jsonData['start_timestamp'] === expectedStartTimestamp) {
+      console.log("Found end_timestamp object: ", jsonData)
+      return jsonData['end_timestamp']
+    }
+    
+    startPosition = endIndex
+  }
+
+  throw new Error("No end_timestamp found")
+}
+
+// TODO: make this into its own library
 function findJsonInString(dataString: string, key: string, startPosition: number = 0) {
   const prefix = `"${key}":`
   let idx = dataString.indexOf(prefix, startPosition)
@@ -507,12 +540,23 @@ function findJsonInString(dataString: string, key: string, startPosition: number
 
 (async () => {
   // const urlFromUser = "https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/"
-  // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date
-  const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates
+  const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
+  // const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates, easter-dearfoot...
   const dataString = await fetchEventHtml(urlFromUser)
+
+  // const filename = "examples/easter-dearfoot-end-date-multidays.html"
+  // fs.writeFileSync(filename, dataString)
+
+  // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
   const {name, photo, isOnline, url, dates, ticketUrl} = getBasicEventData(dataString)
 
+  let endTimestamp = null;
+  if (dates.displayDuration) {
+    // NOTE: This also provides the timezone of the event if we ever want to use it
+    endTimestamp = getEndTimestamp(dataString, dates.startTimestamp)
+  }
+  
   const location = isOnline ? null : getEventLocation(dataString)
 
   const description = getEventDescription(dataString)
@@ -526,7 +570,10 @@ function findJsonInString(dataString: string, key: string, startPosition: number
     photo,
     isOnline,
     url,
-    dates,
+    dates: {
+      ...dates,
+      endTimestamp
+    },
     hosts,
     ticketUrl,
     usersGoing,
