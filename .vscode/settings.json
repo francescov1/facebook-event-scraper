@@ -1,1 +1,6 @@
-{}
+{
+  "eslint.validate": ["typescript", "javascript"],
+  "eslint.options": {
+    "configFile": "./node_modules/eslint-config-bouncedinc/index.js"
+  }
+}
