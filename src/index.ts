@@ -1,4 +1,4 @@
-// import fs from 'fs';
+import fs from 'fs';
 import axios from 'axios';
 
 // Provide URL or FBID
@@ -23,7 +23,7 @@ export const verifyAndFormatFbUrl = (url: string, fbid: string | null) => {
     [, fbid] = fbidMatch;
   }
 
-  url = `https://www.facebook.com/events/${fbid}?_fb_noscript=1`;
+  url = `https://www.facebook.com/events/${fbid}?_fb_noscript=1`; // TODO: Not sure if fb_noscript is needed anymore
 
   return url;
 };
@@ -37,10 +37,15 @@ interface EventData {
   photo: EventPhoto | null;
   url: string;
   isOnline: boolean;
+  /** Only set if isOnline = true */
+  onlineDetails: {
+    /** Only set if type = 'THIRD_PARTY' */
+    url: string | null;
+    type: 'MESSENGER_ROOM' | 'THIRD_PARTY' | 'FB_LIVE' | 'OTHER';
+  } | null;
   ticketUrl: string;
   usersGoing: number;
   usersInterested: number;
-  // TODO find event with price info, add field
 }
 
 interface EventPhoto {
@@ -306,6 +311,39 @@ function getEventHosts(html: string): EventHost[] {
   return [];
 }
 
+function getOnlineDetails(html: string) {
+  // "online_event_setup":{"domain_normalized_third_party_url":"example.com","third_party_url":"http:\/\/example.com\/","type":"THIRD_PARTY"}
+
+  let startPosition = 0;
+
+  // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
+  while (true) {
+    const { endIndex, jsonData } = findJsonInString(
+      html,
+      'online_event_setup',
+      startPosition
+    );
+
+    // We've reached the end of the string and havent found the json we want
+    if (endIndex === -1) {
+      break;
+    }
+
+    // We check for profile_picture field since there are other event_hosts_that_can_view_guestlist keys which have more limited host data (doesnt include profile_picture).
+    if ('third_party_url' in jsonData && 'type' in jsonData) {
+      console.log('Found third_party_url & type object: ', jsonData);
+      return {
+        url: jsonData.third_party_url,
+        type: jsonData.type
+      };
+    }
+
+    startPosition = endIndex;
+  }
+
+  throw new Error('No online event details found');
+}
+
 function getEndTimestamp(html: string, expectedStartTimestamp: number) {
   let startPosition = 0;
 
@@ -336,6 +374,7 @@ function getEndTimestamp(html: string, expectedStartTimestamp: number) {
   throw new Error('No end_timestamp found');
 }
 
+// TODO: also handle keys with direct values (essentially use " as the start and end character)
 // TODO: make this into its own library
 function findJsonInString(dataString: string, key: string, startPosition = 0) {
   const prefix = `"${key}":`;
@@ -380,8 +419,7 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
 
 // TODO: Rewrite error messages once everything else is done
 (async () => {
-  const urlFromUser =
-    'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
+  // const urlFromUser = 'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
   // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
   // const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates, easter-dearfoot...
 
@@ -394,20 +432,25 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
   // const urlFromUser = "https://www.facebook.com/events/526262926343074/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
   // const urlFromUser = 'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
 
+  // online event, third party url
+  const urlFromUser =
+    'https://www.facebook.com/events/1839868276383775/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
+
+  // msnger rooms online event
+  // const urlFromUser = "https://www.facebook.com/events/564972362099646/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+
   const formattedUrl = verifyAndFormatFbUrl(urlFromUser, null);
   const dataString = await fetchEventHtml(formattedUrl);
-
-  // const filename = "examples/easter-dearfoot-end-date-multidays.html"
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
   const { name, photo, isOnline, url, dates, ticketUrl } =
     getBasicEventData(dataString);
 
-  // fs.writeFileSync(
-  //   `examples/${name.split(' ').join('-').toLowerCase()}.html`,
-  //   dataString
-  // );
+  fs.writeFileSync(
+    `examples/${name.split(' ').join('-').toLowerCase()}.html`,
+    dataString
+  );
 
   let endTimestamp = null;
   if (dates.displayDuration) {
@@ -415,7 +458,13 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
     endTimestamp = getEndTimestamp(dataString, dates.startTimestamp);
   }
 
-  const location = isOnline ? null : getEventLocation(dataString);
+  let location = null;
+  let onlineDetails = null;
+  if (isOnline) {
+    onlineDetails = getOnlineDetails(dataString);
+  } else {
+    location = getEventLocation(dataString);
+  }
 
   const description = getEventDescription(dataString);
 
@@ -432,6 +481,7 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
       ...dates,
       endTimestamp
     },
+    onlineDetails,
     hosts,
     ticketUrl,
     usersGoing,
