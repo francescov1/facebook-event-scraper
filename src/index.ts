@@ -1,4 +1,4 @@
-import fs from 'fs';
+// import fs from 'fs';
 import axios from 'axios';
 
 /*
@@ -13,14 +13,14 @@ scrape("https://www.facebook.com/events/666594420519340/?event_time_id=666594590
 */
 
 // Provide URL or FBID
-export const verifyAndFormatFbUrl = (url: string, fbid: string) => {
+export const verifyAndFormatFbUrl = (url: string, fbid: string | null) => {
   // covers events with the following format:
   // https://www.facebook.com/events/666594420519340/
   // https://www.facebook.com/events/shark-tank-pub/80s-90s-00s-night/2416437368638666/
+  // https://www.facebook.com/events/1137956700212933/1137956706879599/ (recurring events)
 
   // and grabs event_time_id query parameter if present (recurring events)
 
-  let eventTimeIdMatch;
   if (!fbid) {
     const fbidMatch = url.match(
       /facebook\.com\/events\/(?:.+\/.+\/)?([0-9]{8,})/
@@ -32,15 +32,9 @@ export const verifyAndFormatFbUrl = (url: string, fbid: string) => {
     }
 
     [, fbid] = fbidMatch;
-
-    eventTimeIdMatch = url.match(/event_time_id=([0-9]*)/);
   }
 
   url = `https://www.facebook.com/events/${fbid}?_fb_noscript=1`;
-
-  if (eventTimeIdMatch) {
-    url += `&event_time_id=${eventTimeIdMatch[1]}`;
-  }
 
   return url;
 };
@@ -101,6 +95,7 @@ interface EventLocation {
 }
 
 async function fetchEventHtml(url: string) {
+  console.log(`Fetching event ${url}...`);
   // TODO: Need these headers to get all the event data, some combo of the sec fetch headers
   const response = await axios.get(url, {
     headers: {
@@ -394,11 +389,10 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
   return { startIndex, endIndex: idx, jsonData };
 }
 
-// TODO: clean URL
-
 // TODO: Rewrite error messages once everything else is done
 (async () => {
-  // const urlFromUser = "https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/"
+  const urlFromUser =
+    'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
   // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
   // const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates, easter-dearfoot...
 
@@ -409,9 +403,10 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
   // const urlFromUser = "https://www.facebook.com/events/3373409222914593/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
   // const urlFromUser = "https://www.facebook.com/events/252144510602906/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_online_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
   // const urlFromUser = "https://www.facebook.com/events/526262926343074/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-  const urlFromUser =
-    'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
-  const dataString = await fetchEventHtml(urlFromUser);
+  // const urlFromUser = 'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
+
+  const formattedUrl = verifyAndFormatFbUrl(urlFromUser, null);
+  const dataString = await fetchEventHtml(formattedUrl);
 
   // const filename = "examples/easter-dearfoot-end-date-multidays.html"
 
@@ -420,10 +415,10 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
   const { name, photo, isOnline, url, dates, ticketUrl } =
     getBasicEventData(dataString);
 
-  fs.writeFileSync(
-    `examples/${name.split(' ').join('-').toLowerCase()}.html`,
-    dataString
-  );
+  // fs.writeFileSync(
+  //   `examples/${name.split(' ').join('-').toLowerCase()}.html`,
+  //   dataString
+  // );
 
   let endTimestamp = null;
   if (dates.displayDuration) {
