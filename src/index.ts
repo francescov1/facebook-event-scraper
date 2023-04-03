@@ -1,190 +1,5 @@
 import fs from 'fs';
-import cheerio from 'cheerio';
-import * as chrono from 'chrono-node';
 import axios from 'axios';
-
-const TIME_FORMAT = '[0-9]{1,2}:[0-9]{2} (?:AM|PM)';
-const TZ_FORMAT = '[A-Z]{1,5}$';
-
-/**
- * Turn human readable event date string into start and end Date objects
- * @param {String} text Human-readable date string to parse
- * @returns {Object} {startDate: Date?, endDate: Date?}
- */
-function parseEventDate(text: string) {
-  const recurringWithoutTimeID =
-    /^[0-9]+ (dates|Dates|Every|Weekly|Monthly|Yearly)/.test(text);
-
-  // TODO: get the event_time_id of the first available instance and scrape that
-  if (recurringWithoutTimeID) {
-    throw new Error(
-      'The link supplied is for a recurring event.  Please provide the event URL for a specific event time.'
-    );
-  }
-
-  // NOTE: '–' is NOT a hyphen
-  // Example Date: Tomorrow at 3:00 PM – 5:00 PM PST
-  const singleDateStartEnd = new RegExp(
-    `(.*?) at (${TIME_FORMAT}) – (${TIME_FORMAT}) (${TZ_FORMAT})`
-  ).exec(text);
-
-  // Example Date: Dec 19 at 3:00 PM – Dec 21 at 10:00 AM EST
-  const multiDayEvent = new RegExp(
-    `(.*?) at (${TIME_FORMAT}) – (.*?) at (${TIME_FORMAT}) (${TZ_FORMAT})`
-  ).exec(text);
-
-  // Passing these into chrono.parseDate ensures future dates are preferred to
-  // past dates.  Otherwise it defaults to the nearest day, even if that day
-  // is in the past.
-  const now = new Date();
-  const dateOptions = { forwardDate: true };
-  if (singleDateStartEnd) {
-    // First element of the match is the whole match, subsequent
-    // elements are match groups (what we want)
-    const [date, startTime, endTime, tz] = singleDateStartEnd.slice(1);
-    const startDate = chrono.parseDate(
-      `${date} at ${startTime} ${tz}`,
-      now,
-      dateOptions
-    );
-    const endDate = chrono.parseDate(
-      `${date} at ${endTime} ${tz}`,
-      now,
-      dateOptions
-    );
-
-    return { startDate, endDate };
-  }
-  if (multiDayEvent) {
-    const [startDateString, startTime, endDateString, endTime, tz] =
-      multiDayEvent.slice(1);
-    const startDate = chrono.parseDate(
-      `${startDateString} at ${startTime} ${tz}`,
-      now,
-      dateOptions
-    );
-    const endDate = chrono.parseDate(
-      `${endDateString} at ${endTime} ${tz}`,
-      now,
-      dateOptions
-    );
-    return { startDate, endDate };
-  }
-  return { startDate: null, endDate: null };
-}
-
-interface ParsedHtml {
-  title: string;
-  photo: string | null;
-  location: string | null;
-  address: string | null;
-  startDate: Date | null;
-  endDate: Date | null;
-}
-
-function parseEventHtml(html: string) {
-  const $ = cheerio.load(html);
-  const results: ParsedHtml = {
-    title: $('title').text(),
-    startDate: null,
-    endDate: null,
-    photo: null,
-    location: null,
-    address: null
-  };
-
-  const timeInfo = $('#event_time_info');
-
-  const image = $('.scaledImageFitWidth');
-  if (image) {
-    results.photo = image.attr('src') ?? null;
-  }
-
-  const eventInfo = $('ul.uiList li');
-  let locationInfo = null;
-  if (eventInfo.length >= 2) {
-    // eslint-disable-next-line prefer-destructuring
-    locationInfo = eventInfo[1];
-  }
-
-  if (locationInfo) {
-    results.location = $('._5xhk', locationInfo).text();
-    results.address = $('._5xhp', locationInfo).text();
-  }
-
-  if (timeInfo) {
-    const mainTimeInfo = $('div[content]', timeInfo).text();
-    const { startDate, endDate } = parseEventDate(mainTimeInfo);
-    results.startDate = startDate;
-    results.endDate = endDate;
-  }
-  return results;
-}
-
-function parseEventJson(dataStr: string) {
-  const event = JSON.parse(dataStr);
-  if (event['@type'] !== 'Event') {
-    console.warn(`FB event URL type not "Event"`, event);
-    throw new Error('This URL does not correspond to a Facebook event.');
-  }
-
-  if (event.description) {
-    event.description = event.description.replace(
-      /@\[[0-9]*:[0-9]*:(.*?)\]/g,
-      '$1'
-    );
-  }
-
-  if (event.location?.['@type']) {
-    // have not found any address type examples that are not "Place". Should handle different types
-    if (event.location['@type'] !== 'Place') {
-      console.warn(`FB event location type not "Place"`, event.location);
-    }
-
-    if (event.location.address) {
-      // have not found any address type examples that are not "PostalAddress". Should handle different types
-      if (event.location.address['@type'] !== 'PostalAddress') {
-        console.warn(
-          `FB event location address type not "PostalAddress"`,
-          event.location
-        );
-      }
-
-      event.address = event.location.address;
-      event.location = event.location.name;
-    } else {
-      event.location = event.location.name;
-    }
-  }
-
-  event.title = event.name;
-  delete event.name;
-  if (event.image) {
-    event.photo = event.image;
-    delete event.image;
-  }
-
-  return event;
-}
-
-export const scrapeFbEvent = async (eventURL: string) => {
-  const response = await axios.get(eventURL, {
-    headers: {
-      'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    }
-  });
-
-  const { data } = response;
-  const eventDataMatch = data.match(
-    /<script type="application\/ld\+json">(.*?)<\/script>/
-  );
-
-  const event = eventDataMatch
-    ? parseEventJson(eventDataMatch[1])
-    : parseEventHtml(data);
-  return event;
-};
 
 /*
 
@@ -242,7 +57,7 @@ interface EventData {
   ticketUrl: string;
   usersGoing: number;
   usersInterested: number;
-  // TODO price
+  // TODO find event with price info, add field
 }
 
 interface EventPhoto {
@@ -254,14 +69,14 @@ interface EventDates {
   endTimestamp: number | null;
   dateSentence: string;
   startDateFormatted: string;
-  displayDuration: string; // TODO: convert to number? or see if we can get a duration from somewhere
+  displayDuration: string;
 }
 
 interface EventHost {
   id: string;
   name: string;
   url: string;
-  type: 'User' | 'Page'; // TODO: any other options?
+  type: 'User' | 'Page';
   photo: {
     url: string;
   };
@@ -286,7 +101,6 @@ interface EventLocation {
 }
 
 async function fetchEventHtml(url: string) {
-  // TODO: Test old URLs in this file, and other events, once we've adapted the code for the new html format
   // TODO: Need these headers to get all the event data, some combo of the sec fetch headers
   const response = await axios.get(url, {
     headers: {
@@ -386,7 +200,7 @@ function getBasicEventData(
     }
 
     if (durationFound && dateSentenceFound && ticketUrlFound) {
-      return data as any; // TODO: Fix typing
+      return data as any; // TODO: Fix typing here
     }
 
     startPosition = endIndex;
@@ -416,7 +230,6 @@ function getEventUserStats(html: string) {
   };
 }
 
-// TODO: explore different kinds of location (eg just address)
 // Only called for non-online events
 function getEventLocation(html: string): EventLocation {
   let startPosition = 0;
@@ -434,10 +247,7 @@ function getEventLocation(html: string): EventLocation {
       break;
     }
 
-    console.log('JSON DATA FROM event_place: ', jsonData);
-
     if ('location' in jsonData) {
-      console.log('Found location object: ', jsonData);
       return {
         name: jsonData.name,
         description: jsonData.best_description?.text ?? null,
@@ -450,13 +260,13 @@ function getEventLocation(html: string): EventLocation {
           : null,
         countryCode:
           jsonData.location?.reverse_geocode?.country_alpha_two ?? null,
-        id: jsonData.id, // TODO: this may not always be here,
+        id: jsonData.id,
         type: jsonData.place_type,
         address: jsonData.address?.street ?? null, // address doesnt exist for custom location events, and is set to an empty string for cities
         city: jsonData.city
           ? {
               name: jsonData.city.contextual_name,
-              id: jsonData.city.id // TODO: See if we always have this
+              id: jsonData.city.id
             }
           : null
       };
@@ -578,13 +388,15 @@ function findJsonInString(dataString: string, key: string, startPosition = 0) {
 
   const jsonDataString = dataString.slice(startIndex, idx + 1);
 
-  // TODO: handle errors
+  // TODO: See how useful error message is from this. If not good enough, add handling & rethrowing
   const jsonData = JSON.parse(jsonDataString);
 
   return { startIndex, endIndex: idx, jsonData };
 }
 
-// TODO: clean URL, remove old code
+// TODO: clean URL
+
+// TODO: Rewrite error messages once everything else is done
 (async () => {
   // const urlFromUser = "https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/"
   // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
