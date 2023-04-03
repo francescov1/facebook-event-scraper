@@ -236,7 +236,7 @@ interface EventData {
   location: EventLocation | null;
   hosts: EventHost[];
   dates: EventDates;
-  photo: EventPhoto;
+  photo: EventPhoto | null;
   url: string;
   isOnline: boolean;
   ticketUrl: string;
@@ -252,7 +252,7 @@ interface EventPhoto {
 interface EventDates {
   startTimestamp: number;
   endTimestamp: number | null;
-  dayTimeSentence: string;
+  dateSentence: string;
   startDateFormatted: string;
   displayDuration: string; // TODO: convert to number? or see if we can get a duration from somewhere
 }
@@ -274,14 +274,15 @@ interface EventLocation {
   coordinates: {
     latitude: number;
     longitude: number;
-  };
+  } | null;
+  countryCode: string | null;
   id: string;
-  type: string;
+  type: 'TEXT' | 'PLACE' | 'CITY'; // TODO: any other options?
   address: string;
   city: {
     name: string;
     id: string;
-  };
+  } | null;
 }
 
 async function fetchEventHtml(url: string) {
@@ -323,7 +324,8 @@ function getBasicEventData(
   let startPosition = 0;
   let data: Record<string, any> = { dates: {} };
   let durationFound = false,
-    dayTimeSentenceFound = false;
+    dateSentenceFound = false,
+    ticketUrlFound = false;
 
   // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
   while (true) {
@@ -338,26 +340,27 @@ function getBasicEventData(
       break;
     }
 
-    // TODO: See if there are cases where we dont get this field
     if (jsonData.day_time_sentence) {
       console.log('Found day_time_sentence object: ', jsonData);
       data = {
         ...data,
         name: jsonData.name,
-        photo: {
-          url: jsonData.cover_media_renderer.cover_photo.photo.url,
-          id: jsonData.cover_media_renderer.cover_photo.photo.id
-        },
+        photo: jsonData.cover_media_renderer
+          ? {
+              url: jsonData.cover_media_renderer.cover_photo.photo.url,
+              id: jsonData.cover_media_renderer.cover_photo.photo.id
+            }
+          : null,
         dates: {
           ...data.dates,
-          dayTimeSentence: jsonData.day_time_sentence,
+          dateSentence: jsonData.day_time_sentence,
           startTimestamp: jsonData.start_timestamp,
           startDateFormatted: jsonData.start_time_formatted
         },
         isOnline: jsonData.is_online,
         url: jsonData.url
       };
-      dayTimeSentenceFound = true;
+      dateSentenceFound = true;
     }
 
     // We get this when the event has an end date
@@ -365,7 +368,6 @@ function getBasicEventData(
       console.log('Found display_duration object: ', jsonData);
       data = {
         ...data,
-        ticketUrl: jsonData.event_buy_ticket_url,
         dates: {
           ...data.dates,
           displayDuration: jsonData.display_duration
@@ -374,7 +376,16 @@ function getBasicEventData(
       durationFound = true;
     }
 
-    if (durationFound && dayTimeSentenceFound) {
+    if (jsonData.event_buy_ticket_url) {
+      console.log('Found event_buy_ticket_url object: ', jsonData);
+      data = {
+        ...data,
+        ticketUrl: jsonData.event_buy_ticket_url
+      };
+      ticketUrlFound = true;
+    }
+
+    if (durationFound && dateSentenceFound && ticketUrlFound) {
       return data as any; // TODO: Fix typing
     }
 
@@ -382,7 +393,7 @@ function getBasicEventData(
   }
 
   // If we dont find any duration, it means the event has no end date. But we double check this later as well
-  if (dayTimeSentenceFound) {
+  if (dateSentenceFound) {
     return data as any; // TODO: Fix typing
   }
 
@@ -406,6 +417,7 @@ function getEventUserStats(html: string) {
 }
 
 // TODO: explore different kinds of location (eg just address)
+// Only called for non-online events
 function getEventLocation(html: string): EventLocation {
   let startPosition = 0;
 
@@ -424,23 +436,29 @@ function getEventLocation(html: string): EventLocation {
 
     console.log('JSON DATA FROM event_place: ', jsonData);
 
-    if (jsonData.location) {
+    if ('location' in jsonData) {
       console.log('Found location object: ', jsonData);
       return {
         name: jsonData.name,
         description: jsonData.best_description?.text ?? null,
-        url: jsonData.url,
-        coordinates: {
-          latitude: jsonData.location.latitude,
-          longitude: jsonData.location.longitude
-        },
+        url: jsonData.url ?? null,
+        coordinates: jsonData.location
+          ? {
+              latitude: jsonData.location.latitude,
+              longitude: jsonData.location.longitude
+            }
+          : null,
+        countryCode:
+          jsonData.location?.reverse_geocode?.country_alpha_two ?? null,
         id: jsonData.id, // TODO: this may not always be here,
-        type: jsonData.place_type, // TODO: What are the otpions for this? Tighter types
-        address: jsonData.address.street, // TODO: See if this is always like this
-        city: {
-          name: jsonData.city.contextual_name,
-          id: jsonData.city.id // TODO: See if we always have this
-        }
+        type: jsonData.place_type,
+        address: jsonData.address?.street ?? null, // address doesnt exist for custom location events, and is set to an empty string for cities
+        city: jsonData.city
+          ? {
+              name: jsonData.city.contextual_name,
+              id: jsonData.city.id // TODO: See if we always have this
+            }
+          : null
       };
     }
 
@@ -466,12 +484,12 @@ function getEventHosts(html: string): EventHost[] {
       break;
     }
 
-    // TODO: See if there are cases where we dont get this field
-    if (jsonData[0].profile_picture) {
+    // We check for profile_picture field since there are other event_hosts_that_can_view_guestlist keys which have more limited host data (doesnt include profile_picture).
+    if (jsonData?.[0]?.profile_picture) {
       console.log('Found profile_picture object: ', jsonData);
       return jsonData.map((host: Record<string, any>) => {
         if (host.__typename !== 'User' && host.__typename !== 'Page') {
-          throw new Error(`Unknown host type: ${  host.__typename}`);
+          throw new Error(`Unknown host type: ${host.__typename}`);
         }
 
         return {
@@ -489,7 +507,9 @@ function getEventHosts(html: string): EventHost[] {
     startPosition = endIndex;
   }
 
-  throw new Error('No host found with profile picture');
+  // This happens if the event is hosted by an external provider, eg https://www.facebook.com/events/252144510602906.
+  // TODO: See if we can get any other data about the host (eg URL). Look at event_host_context_row_info field
+  return [];
 }
 
 function getEndTimestamp(html: string, expectedStartTimestamp: number) {
@@ -523,11 +543,7 @@ function getEndTimestamp(html: string, expectedStartTimestamp: number) {
 }
 
 // TODO: make this into its own library
-function findJsonInString(
-  dataString: string,
-  key: string,
-  startPosition = 0
-) {
+function findJsonInString(dataString: string, key: string, startPosition = 0) {
   const prefix = `"${key}":`;
   let idx = dataString.indexOf(prefix, startPosition);
   if (idx === -1) {
@@ -539,7 +555,7 @@ function findJsonInString(
 
   const startCharacter = dataString[startIndex];
   if (startCharacter !== '{' && startCharacter !== '[') {
-    throw new Error(`Invalid start character: ${  startCharacter}`);
+    throw new Error(`Invalid start character: ${startCharacter}`);
   }
 
   const endCharacter = startCharacter === '{' ? '}' : ']';
@@ -568,13 +584,21 @@ function findJsonInString(
   return { startIndex, endIndex: idx, jsonData };
 }
 
-// TODO next: test lots of various events and see where this doesnt work
-
+// TODO: clean URL, remove old code
 (async () => {
   // const urlFromUser = "https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/"
   // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
   // const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates, easter-dearfoot...
-  const urlFromUser = 'https://www.facebook.com/events/719931529922611';
+
+  // const urlFromUser = "https://www.facebook.com/events/1376686273147180/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+
+  // const urlFromUser = 'https://www.facebook.com/events/719931529922611';
+  // const urlFromUser = "https://www.facebook.com/events/602005831971873/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/3373409222914593/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/252144510602906/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_online_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/526262926343074/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  const urlFromUser =
+    'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
   const dataString = await fetchEventHtml(urlFromUser);
 
   // const filename = "examples/easter-dearfoot-end-date-multidays.html"
@@ -583,6 +607,7 @@ function findJsonInString(
 
   const { name, photo, isOnline, url, dates, ticketUrl } =
     getBasicEventData(dataString);
+
   fs.writeFileSync(
     `examples/${name.split(' ').join('-').toLowerCase()}.html`,
     dataString
