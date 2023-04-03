@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs';
 import cheerio from 'cheerio';
 import * as chrono from 'chrono-node';
 import axios from 'axios';
@@ -75,11 +75,11 @@ function parseEventDate(text: string) {
 
 interface ParsedHtml {
   title: string;
-  photo: string | null
-  location: string | null
-  address: string | null
-  startDate: Date | null
-  endDate: Date | null
+  photo: string | null;
+  location: string | null;
+  address: string | null;
+  startDate: Date | null;
+  endDate: Date | null;
 }
 
 function parseEventHtml(html: string) {
@@ -125,9 +125,7 @@ function parseEventJson(dataStr: string) {
   const event = JSON.parse(dataStr);
   if (event['@type'] !== 'Event') {
     console.warn(`FB event URL type not "Event"`, event);
-    throw new Error(
-      'This URL does not correspond to a Facebook event.'
-    );
+    throw new Error('This URL does not correspond to a Facebook event.');
   }
 
   if (event.description) {
@@ -232,148 +230,155 @@ export const verifyAndFormatFbUrl = (url: string, fbid: string) => {
   return url;
 };
 
-
-
 interface EventData {
-  name: string,
-  description: string,
-  location: EventLocation | null,
-  hosts: EventHost[],
-  dates: EventDates,
-  photo: EventPhoto,
-  url: string,
-  isOnline: boolean,
-  ticketUrl: string,
-  usersGoing: number,
-  usersInterested: number,
+  name: string;
+  description: string;
+  location: EventLocation | null;
+  hosts: EventHost[];
+  dates: EventDates;
+  photo: EventPhoto;
+  url: string;
+  isOnline: boolean;
+  ticketUrl: string;
+  usersGoing: number;
+  usersInterested: number;
   // TODO price
 }
 
 interface EventPhoto {
-  url: string,
-  id: string,
+  url: string;
+  id: string;
 }
 interface EventDates {
-  startTimestamp: number,
-  endTimestamp: number | null,
-  dayTimeSentence: string,
-  startDateFormatted: string,
-  displayDuration: string // TODO: convert to number? or see if we can get a duration from somewhere
+  startTimestamp: number;
+  endTimestamp: number | null;
+  dayTimeSentence: string;
+  startDateFormatted: string;
+  displayDuration: string; // TODO: convert to number? or see if we can get a duration from somewhere
 }
 
 interface EventHost {
-  id: string,
-  name: string,
-  url: string,
-  type: 'User' | 'Page', // TODO: any other options?
+  id: string;
+  name: string;
+  url: string;
+  type: 'User' | 'Page'; // TODO: any other options?
   photo: {
-    url: string
-  }
+    url: string;
+  };
 }
 
 interface EventLocation {
-  name: string,
-  description: string,
-  url: string,
+  name: string;
+  description: string;
+  url: string;
   coordinates: {
-    latitude: number,
-    longitude: number,
-  },
-  id: string,
-  type: string,
-  address: string,
+    latitude: number;
+    longitude: number;
+  };
+  id: string;
+  type: string;
+  address: string;
   city: {
-    name: string,
-    id: string
-  },
+    name: string;
+    id: string;
+  };
 }
-
 
 async function fetchEventHtml(url: string) {
   // TODO: Test old URLs in this file, and other events, once we've adapted the code for the new html format
   // TODO: Need these headers to get all the event data, some combo of the sec fetch headers
   const response = await axios.get(url, {
     headers: {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'en-US,en;q=0.6',
-        'cache-control': 'max-age=0',
-        // 'cookie': 'dpr=2; datr=nWcnZNPF50KqRHeukULjKijO; wd=764x882',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'same-origin',
-        'sec-fetch-user': '?1',
-        'sec-gpc': '1',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+      accept:
+        'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+      'accept-encoding': 'gzip, deflate, br',
+      'accept-language': 'en-US,en;q=0.6',
+      'cache-control': 'max-age=0',
+      // 'cookie': 'dpr=2; datr=nWcnZNPF50KqRHeukULjKijO; wd=764x882',
+      'sec-fetch-dest': 'document',
+      'sec-fetch-mode': 'navigate',
+      'sec-fetch-site': 'same-origin',
+      'sec-fetch-user': '?1',
+      'sec-gpc': '1',
+      'upgrade-insecure-requests': '1',
+      'user-agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
     }
   });
 
-  return response.data
+  return response.data;
 }
-
 
 function getEventDescription(html: string): string {
-  const {jsonData} = findJsonInString(html, 'event_description')
-  return jsonData["text"]
+  const { jsonData } = findJsonInString(html, 'event_description');
+  return jsonData.text;
 }
 
-function getBasicEventData(html: string): Pick<EventData, "name" | "dates" | "photo" | "isOnline" | "url" | "ticketUrl"> {
+function getBasicEventData(
+  html: string
+): Pick<
+  EventData,
+  'name' | 'dates' | 'photo' | 'isOnline' | 'url' | 'ticketUrl'
+> {
   let startPosition = 0;
   let data: Record<string, any> = { dates: {} };
-  let durationFound = false, dayTimeSentenceFound = false;
+  let durationFound = false,
+    dayTimeSentenceFound = false;
 
   // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
-  while(true) {
-    const {endIndex, jsonData} = findJsonInString(html, 'event', startPosition)
+  while (true) {
+    const { endIndex, jsonData } = findJsonInString(
+      html,
+      'event',
+      startPosition
+    );
 
     // We've reached the end of the string and havent found the json we want
     if (endIndex === -1) {
-      break
+      break;
     }
 
     // TODO: See if there are cases where we dont get this field
-    if (jsonData['day_time_sentence']) {
-      console.log("Found day_time_sentence object: ", jsonData)
+    if (jsonData.day_time_sentence) {
+      console.log('Found day_time_sentence object: ', jsonData);
       data = {
         ...data,
-        name: jsonData['name'],
+        name: jsonData.name,
         photo: {
-          url: jsonData['cover_media_renderer']['cover_photo']['photo']['url'],
-          id: jsonData['cover_media_renderer']['cover_photo']['photo']['id'],
+          url: jsonData.cover_media_renderer.cover_photo.photo.url,
+          id: jsonData.cover_media_renderer.cover_photo.photo.id
         },
         dates: {
           ...data.dates,
-          dayTimeSentence: jsonData['day_time_sentence'],
-          startTimestamp: jsonData['start_timestamp'],
-          startDateFormatted: jsonData['start_time_formatted']
+          dayTimeSentence: jsonData.day_time_sentence,
+          startTimestamp: jsonData.start_timestamp,
+          startDateFormatted: jsonData.start_time_formatted
         },
-        isOnline: jsonData['is_online'],
-        url: jsonData['url']
-      }
-      dayTimeSentenceFound = true
-    }
-    
-    // We get this when the event has an end date
-    if (jsonData['display_duration']) {
-      console.log("Found display_duration object: ", jsonData)
-      data = {
-        ...data,
-        ticketUrl: jsonData['event_buy_ticket_url'],
-        dates: {
-          ...data.dates,
-          displayDuration: jsonData['display_duration'],
-        }
-      }
-      durationFound = true
+        isOnline: jsonData.is_online,
+        url: jsonData.url
+      };
+      dayTimeSentenceFound = true;
     }
 
+    // We get this when the event has an end date
+    if (jsonData.display_duration) {
+      console.log('Found display_duration object: ', jsonData);
+      data = {
+        ...data,
+        ticketUrl: jsonData.event_buy_ticket_url,
+        dates: {
+          ...data.dates,
+          displayDuration: jsonData.display_duration
+        }
+      };
+      durationFound = true;
+    }
 
     if (durationFound && dayTimeSentenceFound) {
       return data as any; // TODO: Fix typing
     }
-    
-    startPosition = endIndex
+
+    startPosition = endIndex;
   }
 
   // If we dont find any duration, it means the event has no end date. But we double check this later as well
@@ -381,14 +386,23 @@ function getBasicEventData(html: string): Pick<EventData, "name" | "dates" | "ph
     return data as any; // TODO: Fix typing
   }
 
-  throw new Error("No day time sentence found")
+  throw new Error('No day time sentence found');
 }
 
 function getEventUserStats(html: string) {
-  const { jsonData: usersGoingJsonData } = findJsonInString(html, 'event_connected_users_going')
-  const { jsonData: usersInterestedJsonData } = findJsonInString(html, 'event_connected_users_interested')
+  const { jsonData: usersGoingJsonData } = findJsonInString(
+    html,
+    'event_connected_users_going'
+  );
+  const { jsonData: usersInterestedJsonData } = findJsonInString(
+    html,
+    'event_connected_users_interested'
+  );
 
-  return { usersGoing: usersGoingJsonData['count'], usersInterested: usersInterestedJsonData['count'] }
+  return {
+    usersGoing: usersGoingJsonData.count,
+    usersInterested: usersInterestedJsonData.count
+  };
 }
 
 // TODO: explore different kinds of location (eg just address)
@@ -396,125 +410,144 @@ function getEventLocation(html: string): EventLocation {
   let startPosition = 0;
 
   // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
-  while(true) {
-    const {endIndex, jsonData} = findJsonInString(html, 'event_place', startPosition)
+  while (true) {
+    const { endIndex, jsonData } = findJsonInString(
+      html,
+      'event_place',
+      startPosition
+    );
 
     // We've reached the end of the string and havent found the json we want
     if (endIndex === -1) {
-      break
+      break;
     }
 
-    console.log("JSON DATA FROM event_place: ", jsonData)
+    console.log('JSON DATA FROM event_place: ', jsonData);
 
-    if (jsonData['location']) {
-      console.log("Found location object: ", jsonData)
+    if (jsonData.location) {
+      console.log('Found location object: ', jsonData);
       return {
-        name: jsonData['name'],
-        description: jsonData['best_description']['text'], // TODO: See if this is always like this
-        url: jsonData['url'],
+        name: jsonData.name,
+        description: jsonData.best_description?.text ?? null,
+        url: jsonData.url,
         coordinates: {
-          latitude: jsonData['location']['latitude'],
-          longitude: jsonData['location']['longitude'],
+          latitude: jsonData.location.latitude,
+          longitude: jsonData.location.longitude
         },
-        id: jsonData['id'], // TODO: this may not always be here,
-        type: jsonData['place_type'], // TODO: What are the otpions for this? Tighter types
-        address: jsonData['address']['street'], // TODO: See if this is always like this
+        id: jsonData.id, // TODO: this may not always be here,
+        type: jsonData.place_type, // TODO: What are the otpions for this? Tighter types
+        address: jsonData.address.street, // TODO: See if this is always like this
         city: {
-          name: jsonData['city']['contextual_name'],
-          id: jsonData['city']['id'], // TODO: See if we always have this
+          name: jsonData.city.contextual_name,
+          id: jsonData.city.id // TODO: See if we always have this
         }
-      }
+      };
     }
-    
-    startPosition = endIndex
+
+    startPosition = endIndex;
   }
 
-  throw new Error("No event location found")
+  throw new Error('No event location found');
 }
 
 function getEventHosts(html: string): EventHost[] {
   let startPosition = 0;
 
   // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
-  while(true) {
-    const {endIndex, jsonData} = findJsonInString(html, 'event_hosts_that_can_view_guestlist', startPosition)
+  while (true) {
+    const { endIndex, jsonData } = findJsonInString(
+      html,
+      'event_hosts_that_can_view_guestlist',
+      startPosition
+    );
 
     // We've reached the end of the string and havent found the json we want
     if (endIndex === -1) {
-      break
+      break;
     }
 
     // TODO: See if there are cases where we dont get this field
-    if (jsonData[0]['profile_picture']) {
-      console.log("Found profile_picture object: ", jsonData)
+    if (jsonData[0].profile_picture) {
+      console.log('Found profile_picture object: ', jsonData);
       return jsonData.map((host: Record<string, any>) => {
-        if (host['__typename'] !== 'User' && host['__typename'] !== 'Page') {
-          throw new Error("Unknown host type: " + host['__typename'])
+        if (host.__typename !== 'User' && host.__typename !== 'Page') {
+          throw new Error(`Unknown host type: ${  host.__typename}`);
         }
-        
+
         return {
-          id: host['id'],
-          name: host['name'],
-          url: host['url'],
-          type: host['__typename'],
+          id: host.id,
+          name: host.name,
+          url: host.url,
+          type: host.__typename,
           photo: {
-            url: host['profile_picture']['uri'],
+            url: host.profile_picture.uri
           }
-        }
+        };
       });
     }
-    
-    startPosition = endIndex
+
+    startPosition = endIndex;
   }
 
-  throw new Error("No host found with profile picture")
+  throw new Error('No host found with profile picture');
 }
 
 function getEndTimestamp(html: string, expectedStartTimestamp: number) {
   let startPosition = 0;
 
   // Could move this loop to findJsonInString and use a callback to check if the json is the one we want, or if we want to iterate to the next one
-  while(true) {
-    const {endIndex, jsonData} = findJsonInString(html, 'data', startPosition)
+  while (true) {
+    const { endIndex, jsonData } = findJsonInString(
+      html,
+      'data',
+      startPosition
+    );
 
     // We've reached the end of the string and havent found the json we want
     if (endIndex === -1) {
-      break
+      break;
     }
 
-    if (jsonData['end_timestamp'] && jsonData['start_timestamp'] === expectedStartTimestamp) {
-      console.log("Found end_timestamp object: ", jsonData)
-      return jsonData['end_timestamp']
+    if (
+      jsonData.end_timestamp &&
+      jsonData.start_timestamp === expectedStartTimestamp
+    ) {
+      console.log('Found end_timestamp object: ', jsonData);
+      return jsonData.end_timestamp;
     }
-    
-    startPosition = endIndex
+
+    startPosition = endIndex;
   }
 
-  throw new Error("No end_timestamp found")
+  throw new Error('No end_timestamp found');
 }
 
 // TODO: make this into its own library
-function findJsonInString(dataString: string, key: string, startPosition: number = 0) {
-  const prefix = `"${key}":`
-  let idx = dataString.indexOf(prefix, startPosition)
+function findJsonInString(
+  dataString: string,
+  key: string,
+  startPosition = 0
+) {
+  const prefix = `"${key}":`;
+  let idx = dataString.indexOf(prefix, startPosition);
   if (idx === -1) {
-    return { startIndex: -1, endIndex: -1, jsonData: null}
+    return { startIndex: -1, endIndex: -1, jsonData: null };
   }
 
-  idx += prefix.length
-  const startIndex = idx
+  idx += prefix.length;
+  const startIndex = idx;
 
   const startCharacter = dataString[startIndex];
-  if (startCharacter !== "{" && startCharacter !== "[") {
-    throw new Error("Invalid start character: " + startCharacter)
+  if (startCharacter !== '{' && startCharacter !== '[') {
+    throw new Error(`Invalid start character: ${  startCharacter}`);
   }
 
-  const endCharacter = startCharacter === "{" ? "}" : "]"
+  const endCharacter = startCharacter === '{' ? '}' : ']';
 
   let nestedLevel = 0;
-  while(true) {
+  while (true) {
     idx++; // idx is set to the first "{" or "[", so we want to increment before checking below
-    
+
     // TODO: Ensure startCharacter and endCharacter are not part of a value
 
     if (dataString[idx] === endCharacter) {
@@ -522,47 +555,51 @@ function findJsonInString(dataString: string, key: string, startPosition: number
         break;
       }
       nestedLevel--;
-    }
-    else if (dataString[idx] === startCharacter) {
+    } else if (dataString[idx] === startCharacter) {
       nestedLevel++;
     }
-
   }
 
-  const jsonDataString = dataString.slice(startIndex, idx+1)
+  const jsonDataString = dataString.slice(startIndex, idx + 1);
 
   // TODO: handle errors
-  const jsonData = JSON.parse(jsonDataString)
+  const jsonData = JSON.parse(jsonDataString);
 
-  return { startIndex, endIndex: idx, jsonData }
+  return { startIndex, endIndex: idx, jsonData };
 }
 
+// TODO next: test lots of various events and see where this doesnt work
 
 (async () => {
   // const urlFromUser = "https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/"
-  const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
+  // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
   // const urlFromUser = "https://www.facebook.com/events/1137956700212933/1137956706879599" // Event with end date and multi dates, easter-dearfoot...
-  const dataString = await fetchEventHtml(urlFromUser)
+  const urlFromUser = 'https://www.facebook.com/events/719931529922611';
+  const dataString = await fetchEventHtml(urlFromUser);
 
   // const filename = "examples/easter-dearfoot-end-date-multidays.html"
-  // fs.writeFileSync(filename, dataString)
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
-  const {name, photo, isOnline, url, dates, ticketUrl} = getBasicEventData(dataString)
+  const { name, photo, isOnline, url, dates, ticketUrl } =
+    getBasicEventData(dataString);
+  fs.writeFileSync(
+    `examples/${name.split(' ').join('-').toLowerCase()}.html`,
+    dataString
+  );
 
   let endTimestamp = null;
   if (dates.displayDuration) {
     // NOTE: This also provides the timezone of the event if we ever want to use it
-    endTimestamp = getEndTimestamp(dataString, dates.startTimestamp)
+    endTimestamp = getEndTimestamp(dataString, dates.startTimestamp);
   }
-  
-  const location = isOnline ? null : getEventLocation(dataString)
 
-  const description = getEventDescription(dataString)
+  const location = isOnline ? null : getEventLocation(dataString);
 
-  const hosts = getEventHosts(dataString)
-  const { usersGoing, usersInterested } = getEventUserStats(dataString)
+  const description = getEventDescription(dataString);
+
+  const hosts = getEventHosts(dataString);
+  const { usersGoing, usersInterested } = getEventUserStats(dataString);
   const eventData: EventData = {
     name,
     description,
@@ -578,6 +615,6 @@ function findJsonInString(dataString: string, key: string, startPosition: number
     ticketUrl,
     usersGoing,
     usersInterested
-  }
-  console.log(eventData)
-})()
+  };
+  console.log(eventData);
+})();
