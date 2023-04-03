@@ -1,17 +1,6 @@
 // import fs from 'fs';
 import axios from 'axios';
 
-/*
-
-scrape("https://www.facebook.com/events/666594420519340/?event_time_id=666594590519323&_fb_noscript=1")
-  .then(result => {
-    console.log(result);
-  })
-  .catch(e => {
-    console.error(e);
-  });
-*/
-
 // Provide URL or FBID
 export const verifyAndFormatFbUrl = (url: string, fbid: string | null) => {
   // covers events with the following format:
