@@ -31,9 +31,17 @@ export const verifyAndFormatFbUrl = (url: string, fbid: string | null) => {
 interface EventData {
   name: string;
   description: string;
+  /** Event location, set to null if the event is online */
   location: EventLocation | null;
   hosts: EventHost[];
-  dates: EventDates;
+  /** Start time in unix */
+  startTimestamp: number;
+  /** End time in unix, if set */
+  endTimestamp: number | null;
+  /** Event date in a human-readable format (contains both start and end time) */
+  formattedDate: string;
+  /** Event timezone */
+  timezone: string;
   photo: EventPhoto | null;
   url: string;
   isOnline: boolean;
@@ -43,7 +51,7 @@ interface EventData {
     url: string | null;
     type: 'MESSENGER_ROOM' | 'THIRD_PARTY' | 'FB_LIVE' | 'OTHER';
   } | null;
-  ticketUrl: string;
+  ticketUrl: string | null;
   usersGoing: number;
   usersInterested: number;
 }
@@ -51,13 +59,6 @@ interface EventData {
 interface EventPhoto {
   url: string;
   id: string;
-}
-interface EventDates {
-  startTimestamp: number;
-  endTimestamp: number | null;
-  dateSentence: string;
-  startDateFormatted: string;
-  displayDuration: string;
 }
 
 interface EventHost {
@@ -122,10 +123,8 @@ function getBasicEventData(
   html: string
 ): Pick<
   EventData,
-  'name' | 'dates' | 'photo' | 'isOnline' | 'url' | 'ticketUrl'
+  'name' | 'photo' | 'formattedDate' | 'startTimestamp' | 'isOnline' | 'url'
 > {
-  let data: Record<string, any> = { dates: {} };
-
   const { jsonData } = findJsonInString(
     html,
     'event',
@@ -133,11 +132,10 @@ function getBasicEventData(
   );
 
   if (!jsonData) {
-    throw new Error('No day time sentence found');
+    throw new Error('No date sentence found');
   }
 
-  data = {
-    ...data,
+  return {
     name: jsonData.name,
     photo: jsonData.cover_media_renderer
       ? {
@@ -145,49 +143,22 @@ function getBasicEventData(
           id: jsonData.cover_media_renderer.cover_photo.photo.id
         }
       : null,
-    dates: {
-      ...data.dates,
-      dateSentence: jsonData.day_time_sentence,
-      startTimestamp: jsonData.start_timestamp,
-      startDateFormatted: jsonData.start_time_formatted
-    },
+    formattedDate: jsonData.day_time_sentence,
+    startTimestamp: jsonData.start_timestamp,
     isOnline: jsonData.is_online,
     url: jsonData.url
   };
+}
 
-  // TODO: use separate funcs for these
-
-  // TODO: only need to check this if end date is present, can move it to the end date func
-  const { jsonData: displayDurationJson } = findJsonInString(
-    html,
-    'event',
-    (candidate) => candidate.display_duration
-  );
-
-  if (displayDurationJson) {
-    data = {
-      ...data,
-      dates: {
-        ...data.dates,
-        displayDuration: displayDurationJson.display_duration
-      }
-    };
-  }
-
-  const { jsonData: ticketUrlJson } = findJsonInString(
+function getTicketUrl(html: string): string {
+  const { jsonData } = findJsonInString(
     html,
     'event',
     (candidate) => candidate.event_buy_ticket_url
   );
 
-  if (ticketUrlJson) {
-    data = {
-      ...data,
-      ticketUrl: jsonData.event_buy_ticket_url
-    };
-  }
-
-  return data as any;
+  // If the event doesnt have a ticket URL, jsonData will be null
+  return jsonData?.event_buy_ticket_url ?? null;
 }
 
 function getEventUserStats(html: string) {
@@ -292,23 +263,24 @@ function getOnlineDetails(html: string) {
   return jsonData;
 }
 
-function getEndTimestamp(html: string, expectedStartTimestamp: number): number {
+function getEndTimestampAndTimezone(
+  html: string,
+  expectedStartTimestamp: number
+) {
   const { jsonData } = findJsonInString(
     html,
     'data',
     (candidate) =>
-      candidate.end_timestamp &&
+      'end_timestamp' in candidate &&
+      'tz_display_name' in candidate &&
       candidate.start_timestamp === expectedStartTimestamp
   );
 
-  // TODO: extract time zone too using jsonData.tz_display_name
-
-  // TODO: Think about if we want to move error throwing to the method itself
-  if (jsonData === null) {
-    throw new Error('No end_timestamp found');
-  }
-
-  return jsonData.end_timestamp;
+  // If event doesnt have an end date, end_timestamp will be set to 0
+  return {
+    endTimestamp: jsonData.end_timestamp || null,
+    timezone: jsonData.tz_display_name
+  };
 }
 
 // TODO: make this into its own library. When doing this, also add a new method for getting keys with direct values (essentially use " as the start and end character)
@@ -398,7 +370,7 @@ function findJsonInString(
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
-  const { name, photo, isOnline, url, dates, ticketUrl } =
+  const { name, photo, isOnline, url, startTimestamp, formattedDate } =
     getBasicEventData(dataString);
 
   fs.writeFileSync(
@@ -406,11 +378,10 @@ function findJsonInString(
     dataString
   );
 
-  let endTimestamp = null;
-  if (dates.displayDuration) {
-    // NOTE: This also provides the timezone of the event if we ever want to use it
-    endTimestamp = getEndTimestamp(dataString, dates.startTimestamp);
-  }
+  const { endTimestamp, timezone } = getEndTimestampAndTimezone(
+    dataString,
+    startTimestamp
+  );
 
   let location = null;
   let onlineDetails = null;
@@ -421,6 +392,7 @@ function findJsonInString(
   }
 
   const description = getEventDescription(dataString);
+  const ticketUrl = getTicketUrl(dataString);
 
   const hosts = getEventHosts(dataString);
   const { usersGoing, usersInterested } = getEventUserStats(dataString);
@@ -431,10 +403,10 @@ function findJsonInString(
     photo,
     isOnline,
     url,
-    dates: {
-      ...dates,
-      endTimestamp
-    },
+    startTimestamp,
+    endTimestamp,
+    formattedDate,
+    timezone,
     onlineDetails,
     hosts,
     ticketUrl,
