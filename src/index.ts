@@ -1,32 +1,8 @@
 import fs from 'fs';
-import axios from 'axios';
 
-// Provide URL or FBID
-export const verifyAndFormatFbUrl = (url: string, fbid: string | null) => {
-  // covers events with the following format:
-  // https://www.facebook.com/events/666594420519340/
-  // https://www.facebook.com/events/shark-tank-pub/80s-90s-00s-night/2416437368638666/
-  // https://www.facebook.com/events/1137956700212933/1137956706879599/ (recurring events)
-
-  // and grabs event_time_id query parameter if present (recurring events)
-
-  if (!fbid) {
-    const fbidMatch = url.match(
-      /facebook\.com\/events\/(?:.+\/.+\/)?([0-9]{8,})/
-    );
-    if (!fbidMatch) {
-      throw new Error(
-        'Event not found. Ensure to provide a proper Facebook URL and that your event is public and active.'
-      );
-    }
-
-    [, fbid] = fbidMatch;
-  }
-
-  url = `https://www.facebook.com/events/${fbid}?_fb_noscript=1`; // TODO: Not sure if fb_noscript is needed anymore
-
-  return url;
-};
+import { findJsonInString } from './utils/json';
+import { fetchEvent } from './utils/network';
+import { validateAndFormatUrl, fbidToUrl } from './utils/url';
 
 interface EventData {
   name: string;
@@ -46,14 +22,16 @@ interface EventData {
   url: string;
   isOnline: boolean;
   /** Only set if isOnline = true */
-  onlineDetails: {
-    /** Only set if type = 'THIRD_PARTY' */
-    url: string | null;
-    type: 'MESSENGER_ROOM' | 'THIRD_PARTY' | 'FB_LIVE' | 'OTHER';
-  } | null;
+  onlineDetails: OnlineEventDetails | null;
   ticketUrl: string | null;
   usersGoing: number;
   usersInterested: number;
+}
+
+interface OnlineEventDetails {
+  /** Only set if type = 'THIRD_PARTY' */
+  url: string | null;
+  type: 'MESSENGER_ROOM' | 'THIRD_PARTY' | 'FB_LIVE' | 'OTHER';
 }
 
 interface EventPhoto {
@@ -87,31 +65,6 @@ interface EventLocation {
     name: string;
     id: string;
   } | null;
-}
-
-async function fetchEventHtml(url: string) {
-  console.log(`Fetching event ${url}...`);
-  // NOTE: Need these headers to get all the event data, some combo of the sec fetch headers
-  const response = await axios.get(url, {
-    headers: {
-      accept:
-        'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-      'accept-encoding': 'gzip, deflate, br',
-      'accept-language': 'en-US,en;q=0.6',
-      'cache-control': 'max-age=0',
-      // 'cookie': 'dpr=2; datr=nWcnZNPF50KqRHeukULjKijO; wd=764x882',
-      'sec-fetch-dest': 'document',
-      'sec-fetch-mode': 'navigate',
-      'sec-fetch-site': 'same-origin',
-      'sec-fetch-user': '?1',
-      'sec-gpc': '1',
-      'upgrade-insecure-requests': '1',
-      'user-agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
-    }
-  });
-
-  return response.data;
 }
 
 function getEventDescription(html: string): string {
@@ -249,7 +202,7 @@ function getEventHosts(html: string): EventHost[] {
   });
 }
 
-function getOnlineDetails(html: string) {
+function getOnlineDetails(html: string): OnlineEventDetails {
   const { jsonData } = findJsonInString(
     html,
     'online_event_setup',
@@ -260,7 +213,7 @@ function getOnlineDetails(html: string) {
     throw new Error('No online event details found');
   }
 
-  return jsonData;
+  return { url: jsonData.third_party_url, type: jsonData.type };
 }
 
 function getEndTimestampAndTimezone(
@@ -283,90 +236,18 @@ function getEndTimestampAndTimezone(
   };
 }
 
-// TODO: make this into its own library. When doing this, also add a new method for getting keys with direct values (essentially use " as the start and end character)
-function findJsonInString(
-  dataString: string,
-  key: string,
-  isDesiredValue?: (value: Record<string, any>) => boolean
-) {
-  const prefix = `"${key}":`;
+export const scrapeEventFromUrl = async (url: string): Promise<EventData> => {
+  const formattedUrl = validateAndFormatUrl(url);
+  return await scrapeEvent(formattedUrl);
+};
 
-  let startPosition = 0;
+export const scrapeEventFromFbid = async (fbid: string): Promise<EventData> => {
+  const formattedUrl = fbidToUrl(fbid);
+  return await scrapeEvent(formattedUrl);
+};
 
-  // This loop is used for iterating over found json objects, and checking if they are the one we want using the isDesiredValue callback
-  while (true) {
-    let idx = dataString.indexOf(prefix, startPosition);
-    if (idx === -1) {
-      return { startIndex: -1, endIndex: -1, jsonData: null };
-    }
-
-    idx += prefix.length;
-    const startIndex = idx;
-
-    const startCharacter = dataString[startIndex];
-    if (startCharacter !== '{' && startCharacter !== '[') {
-      throw new Error(`Invalid start character: ${startCharacter}`);
-    }
-
-    const endCharacter = startCharacter === '{' ? '}' : ']';
-
-    let nestedLevel = 0;
-    // This loop iterates over each character in the json object until we get to the end of the object
-    while (true) {
-      idx++; // idx is set to the first "{" or "[", so we want to increment before checking below
-
-      // TODO: Ensure startCharacter and endCharacter are not part of a value
-
-      if (dataString[idx] === endCharacter) {
-        if (nestedLevel === 0) {
-          break;
-        }
-        nestedLevel--;
-      } else if (dataString[idx] === startCharacter) {
-        nestedLevel++;
-      }
-    }
-
-    const jsonDataString = dataString.slice(startIndex, idx + 1);
-
-    // TODO: See how useful error message is from this. If not good enough, add handling & rethrowing
-    const jsonData = JSON.parse(jsonDataString);
-
-    if (!isDesiredValue || isDesiredValue(jsonData)) {
-      return { startIndex, endIndex: idx, jsonData };
-    }
-
-    startPosition = idx;
-  }
-}
-
-// TODO next: cleanup code, prepare for beta release. Might as well put it out now to find any issues.
-// TODO write tests if see fit, or could wait till it gains some traction
-
-// TODO: Rewrite error messages once everything else is done
-(async () => {
-  // const urlFromUser = 'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
-  // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
-  const urlFromUser =
-    'https://www.facebook.com/events/1137956700212933/1137956706879599'; // Event with end date and multi dates, easter-dearfoot...
-
-  // const urlFromUser = "https://www.facebook.com/events/1376686273147180/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-
-  // const urlFromUser = 'https://www.facebook.com/events/719931529922611';
-  // const urlFromUser = "https://www.facebook.com/events/602005831971873/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-  // const urlFromUser = "https://www.facebook.com/events/3373409222914593/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-  // const urlFromUser = "https://www.facebook.com/events/252144510602906/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_online_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-  // const urlFromUser = "https://www.facebook.com/events/526262926343074/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-  // const urlFromUser = 'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
-
-  // online event, third party url
-  // const urlFromUser = 'https://www.facebook.com/events/1839868276383775/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
-
-  // msnger rooms online event
-  // const urlFromUser = "https://www.facebook.com/events/564972362099646/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
-
-  const formattedUrl = verifyAndFormatFbUrl(urlFromUser, null);
-  const dataString = await fetchEventHtml(formattedUrl);
+const scrapeEvent = async (urlFromUser: string): Promise<EventData> => {
+  const dataString = await fetchEvent(urlFromUser);
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
@@ -396,7 +277,8 @@ function findJsonInString(
 
   const hosts = getEventHosts(dataString);
   const { usersGoing, usersInterested } = getEventUserStats(dataString);
-  const eventData: EventData = {
+
+  return {
     name,
     description,
     location,
@@ -413,5 +295,31 @@ function findJsonInString(
     usersGoing,
     usersInterested
   };
+};
+
+// TODO write tests if see fit, or could wait till it gains some traction
+// TODO: Rewrite error messages once everything else is done
+
+(async () => {
+  // const urlFromUser = 'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
+  // const urlFromUser = "https://www.facebook.com/events/858256975309867" // online event, end date, incredible-edibles...
+  // const urlFromUser = 'https://www.facebook.com/events/1137956700212933/1137956706879599'; // Event with end date and multi dates, easter-dearfoot...
+
+  // const urlFromUser = "https://www.facebook.com/events/1376686273147180/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+
+  // const urlFromUser = 'https://www.facebook.com/events/719931529922611';
+  // const urlFromUser = "https://www.facebook.com/events/602005831971873/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/3373409222914593/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_top_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/252144510602906/?acontext=%7B%22event_action_history%22%3A[%7B%22mechanism%22%3A%22discovery_online_tab%22%2C%22surface%22%3A%22bookmark%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = "https://www.facebook.com/events/526262926343074/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D"
+  // const urlFromUser = 'https://www.facebook.com/events/894355898271559/894355941604888/?active_tab=about';
+
+  // online event, third party url
+  // const urlFromUser = 'https://www.facebook.com/events/1839868276383775/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
+
+  // msnger rooms online event
+  const urlFromUser =
+    'https://www.facebook.com/events/564972362099646/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
+  const eventData = await scrapeEvent(urlFromUser);
   console.log(eventData);
 })();
