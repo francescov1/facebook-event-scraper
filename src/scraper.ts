@@ -1,5 +1,5 @@
 import { fetchEvent } from './utils/network';
-import * as htmlParser from './htmlParser';
+import * as htmlParser from './utils/htmlParser';
 import { EventData } from './types';
 
 export const scrapeEvent = async (urlFromUser: string): Promise<EventData> => {

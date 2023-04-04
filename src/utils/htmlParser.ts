@@ -1,10 +1,10 @@
-import { findJsonInString } from './utils/json';
+import { findJsonInString } from './json';
 import {
   EventData,
   EventLocation,
   EventHost,
   OnlineEventDetails
-} from './types';
+} from '../types';
 
 export const getDescription = (html: string): string => {
   const { jsonData } = findJsonInString(html, 'event_description');

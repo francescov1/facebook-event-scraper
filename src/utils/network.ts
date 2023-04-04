@@ -20,5 +20,7 @@ export const fetchEvent = async (url: string) => {
     }
   });
 
+  // TODO: Error if event isnt found - detect if the html is correct
+
   return response.data;
 };
