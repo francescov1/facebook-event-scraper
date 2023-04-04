@@ -8,6 +8,12 @@ import {
 
 export const getDescription = (html: string): string => {
   const { jsonData } = findJsonInString(html, 'event_description');
+  if (!jsonData) {
+    throw new Error(
+      'No event description found, please verify that your event URL is correct'
+    );
+  }
+
   return jsonData.text;
 };
 
@@ -24,7 +30,9 @@ export const getBasicData = (
   );
 
   if (!jsonData) {
-    throw new Error('No date sentence found');
+    throw new Error(
+      'No event date found, please verify that your event URL is correct'
+    );
   }
 
   return {
@@ -63,6 +71,12 @@ export const getUserStats = (html: string) => {
     'event_connected_users_interested'
   );
 
+  if (!usersGoingJsonData || !usersInterestedJsonData) {
+    throw new Error(
+      'No user attendance stats found, please verify that your event URL is correct'
+    );
+  }
+
   return {
     usersGoing: usersGoingJsonData.count,
     usersInterested: usersInterestedJsonData.count
@@ -77,13 +91,15 @@ export const getLocation = (html: string): EventLocation => {
     (candidate) => 'location' in candidate
   );
 
-  if (!['TEXT', 'PLACE', 'CITY'].includes(jsonData.place_type)) {
-    // TODO: Remove before releasing, this is just to see if theres any other values we dont know about
-    throw new Error(`Unknown place_type ${jsonData}`);
+  if (jsonData === null) {
+    throw new Error(
+      'No location information found, please verify that your event URL is correct'
+    );
   }
 
-  if (jsonData === null) {
-    throw new Error('No event location found');
+  // TODO: Remove before releasing, this is just to see if theres any other values we dont know about
+  if (!['TEXT', 'PLACE', 'CITY'].includes(jsonData.place_type)) {
+    throw new Error(`Unknown place_type ${jsonData}`);
   }
 
   return {
@@ -149,7 +165,9 @@ export const getOnlineDetails = (html: string): OnlineEventDetails => {
   );
 
   if (jsonData === null) {
-    throw new Error('No online event details found');
+    throw new Error(
+      'No online event details found, please verify that your event URL is correct'
+    );
   }
 
   return { url: jsonData.third_party_url, type: jsonData.type };
@@ -167,6 +185,12 @@ export const getEndTimestampAndTimezone = (
       'tz_display_name' in candidate &&
       candidate.start_timestamp === expectedStartTimestamp
   );
+
+  if (jsonData === null) {
+    throw new Error(
+      'No end date & timezone details found, please verify that your event URL is correct'
+    );
+  }
 
   // If event doesnt have an end date, end_timestamp will be set to 0
   return {
