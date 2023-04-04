@@ -5,7 +5,7 @@ import { fetchEvent } from '../utils/network';
 // TODO: Review, these are generated from ChatGPT
 
 // Mock dependencies
-jest.mock('./htmlParser', () => ({
+jest.mock('../htmlParser', () => ({
   getBasicData: jest.fn().mockReturnValue({
     name: 'Test Event',
     photo: 'test.jpg',
@@ -32,7 +32,9 @@ jest.mock('./htmlParser', () => ({
   })
 }));
 
-jest.mock('./fetchEvent', () => jest.fn().mockReturnValue('Test Data'));
+jest.mock('../utils/network', () => ({
+  fetchEvent: jest.fn().mockResolvedValue('Test Data')
+}));
 
 describe('scrapeEvent', () => {
   it('should call fetchEvent with the provided URL', async () => {
@@ -68,7 +70,7 @@ describe('scrapeEvent', () => {
   });
 
   it('should parse the online details from the HTML if the event is online', async () => {
-    htmlParser.getBasicData.mockReturnValueOnce({
+    (htmlParser.getBasicData as jest.Mock).mockReturnValueOnce({
       name: 'Test Online Event',
       photo: 'test.jpg',
       isOnline: true,
