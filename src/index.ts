@@ -12,10 +12,7 @@ export const scrapeEventFromFbid = async (fbid: string): Promise<EventData> => {
   return await scrapeEvent(formattedUrl);
 };
 
-// TODO: Write unit tests for everything, and a couple snapshot / E2E tests using the test events below
-// TRY using ChatGPT for this!!
-
-// TODO: Rewrite error messages once everything else is done
+// TODO: Write a couple snapshot / E2E tests using the test events below
 
 (async () => {
   // const url = 'https://www.facebook.com/events/calgary-stampede/all-elite-wrestling-aew-house-rules-calgary-alberta-debut/941510027277450/';
@@ -36,7 +33,7 @@ export const scrapeEventFromFbid = async (fbid: string): Promise<EventData> => {
 
   // msnger rooms online event
   const url =
-    'https://www.facebook.com/events/dsfvdf/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
+    'https://www.facebook.com/events/564972362099646/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D';
   const eventData = await scrapeEvent(url);
   console.log(eventData);
 })();

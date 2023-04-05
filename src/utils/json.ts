@@ -30,7 +30,7 @@ export const findJsonInString = (
     let isIndexInString = false;
 
     // This loop iterates over each character in the json object until we get to the end of the object
-    while (true) {
+    while (idx < dataString.length - 1) {
       // In the first iteration, idx is pointing to the first "{" or "[", so we start by incrementing it
       idx++;
 
