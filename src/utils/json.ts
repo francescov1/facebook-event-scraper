@@ -1,18 +1,20 @@
 // TODO: make this into its own library. Couple things to add before releasing to public
 // - Add a new method for getting keys with direct values (essentially use " as the start and end character)
 // - Handle json with whitespaces
+// - Use a separate func for arrays (eg findJsonArrayInString)
 
-interface ReturnData {
-  startIndex: number;
-  endIndex: number;
-  jsonData: Record<string, any> | Record<string, any>[] | null;
-}
+// TODO: Use better typing, eg:
+// interface ReturnData {
+//   startIndex: number;
+//   endIndex: number;
+//   jsonData: Record<string, any> | Record<string, any>[] | null;
+// }
 
 export const findJsonInString = (
   dataString: string,
   key: string,
   isDesiredValue?: (value: Record<string, any>) => boolean
-): ReturnData => {
+): any => {
   const prefix = `"${key}":`;
 
   let startPosition = 0;

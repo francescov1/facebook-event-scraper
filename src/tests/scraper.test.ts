@@ -18,14 +18,40 @@ jest.mock('../utils/htmlParser', () => ({
     endTimestamp: 1649120400,
     timezone: 'America/Los_Angeles'
   }),
-  getLocation: jest.fn().mockReturnValue('Test Location'),
+  getLocation: jest.fn().mockReturnValue({
+    id: 123,
+    name: 'some location',
+    description: 'some description',
+    url: 'http://test-location.com',
+    coordinates: {
+      latitude: 123,
+      longitude: 456
+    },
+    countryCode: 'CA',
+    type: 'PLACE',
+    address: 'some address',
+    city: {
+      name: 'some city',
+      id: 456
+    }
+  }),
   getDescription: jest.fn().mockReturnValue('Test Description'),
   getTicketUrl: jest.fn().mockReturnValue('http://test.com/tickets'),
   getOnlineDetails: jest.fn().mockReturnValue({
-    platform: 'Zoom',
-    link: 'http://test.com/zoom'
+    type: 'THIRD_PARTY',
+    url: 'http://test.com/zoom'
   }),
-  getHosts: jest.fn().mockReturnValue(['Test Host']),
+  getHosts: jest.fn().mockReturnValue([
+    {
+      id: '123',
+      name: 'Test Host',
+      photo: {
+        url: 'test.jpg'
+      },
+      url: 'http://test.com',
+      type: 'User'
+    }
+  ]),
   getUserStats: jest.fn().mockReturnValue({
     usersGoing: 10,
     usersInterested: 20
@@ -35,6 +61,10 @@ jest.mock('../utils/htmlParser', () => ({
 jest.mock('../utils/network', () => ({
   fetchEvent: jest.fn().mockResolvedValue('Test Data')
 }));
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('scrapeEvent', () => {
   it('should call fetchEvent with the provided URL', async () => {
@@ -66,7 +96,24 @@ describe('scrapeEvent', () => {
   it('should parse the location from the HTML if the event is not online', async () => {
     const result = await scrapeEvent('http://test.com');
     expect(htmlParser.getLocation).toHaveBeenCalledWith('Test Data');
-    expect(result).toHaveProperty('location', 'Test Location');
+    expect(htmlParser.getOnlineDetails).not.toHaveBeenCalled();
+    expect(result).toHaveProperty('location', {
+      id: 123,
+      name: 'some location',
+      description: 'some description',
+      url: 'http://test-location.com',
+      coordinates: {
+        latitude: 123,
+        longitude: 456
+      },
+      countryCode: 'CA',
+      type: 'PLACE',
+      address: 'some address',
+      city: {
+        name: 'some city',
+        id: 456
+      }
+    });
   });
 
   it('should parse the online details from the HTML if the event is online', async () => {
@@ -80,9 +127,10 @@ describe('scrapeEvent', () => {
     });
     const result = await scrapeEvent('http://test.com');
     expect(htmlParser.getOnlineDetails).toHaveBeenCalledWith('Test Data');
+    expect(htmlParser.getLocation).not.toHaveBeenCalled();
     expect(result).toHaveProperty('onlineDetails', {
-      platform: 'Zoom',
-      link: 'http://test.com/zoom'
+      type: 'THIRD_PARTY',
+      url: 'http://test.com/zoom'
     });
   });
 
@@ -101,7 +149,17 @@ describe('scrapeEvent', () => {
   it('should parse the hosts from the HTML', async () => {
     const result = await scrapeEvent('http://test.com');
     expect(htmlParser.getHosts).toHaveBeenCalledWith('Test Data');
-    expect(result).toHaveProperty('hosts', ['Test Host']);
+    expect(result).toHaveProperty('hosts', [
+      {
+        id: '123',
+        name: 'Test Host',
+        photo: {
+          url: 'test.jpg'
+        },
+        url: 'http://test.com',
+        type: 'User'
+      }
+    ]);
   });
 
   it('should parse the user stats from the HTML', async () => {
