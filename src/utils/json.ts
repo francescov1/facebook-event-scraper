@@ -1,9 +1,18 @@
-// TODO: make this into its own library. When doing this, also add a new method for getting keys with direct values (essentially use " as the start and end character)
+// TODO: make this into its own library. Couple things to add before releasing to public
+// - Add a new method for getting keys with direct values (essentially use " as the start and end character)
+// - Handle json with whitespaces
+
+interface ReturnData {
+  startIndex: number;
+  endIndex: number;
+  jsonData: Record<string, any> | Record<string, any>[] | null;
+}
+
 export const findJsonInString = (
   dataString: string,
   key: string,
   isDesiredValue?: (value: Record<string, any>) => boolean
-) => {
+): ReturnData => {
   const prefix = `"${key}":`;
 
   let startPosition = 0;
