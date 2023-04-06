@@ -1,6 +1,6 @@
 # Facebook Event Scraper
 
-A slim module for scraping Facebook event data nearly instantaneously.
+A slim module for scraping Facebook event data in milliseconds.
 
 ## Installation
 
