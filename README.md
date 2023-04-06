@@ -4,11 +4,11 @@ A slim module for scraping Facebook event data nearly instantaneously.
 
 ## Installation
 
-To install the package, simply run the following command in your project directory:
-
 ```bash
+# NPM
 npm install facebook-event-scraper
 
+# Yarn
 yarn add facebook-event-scraper
 ```
 
