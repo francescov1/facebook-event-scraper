@@ -1,4 +1,5 @@
 export interface EventData {
+  id: string;
   name: string;
   description: string;
   /** Event location, set to null if the event is online */

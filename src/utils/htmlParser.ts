@@ -21,7 +21,13 @@ export const getBasicData = (
   html: string
 ): Pick<
   EventData,
-  'name' | 'photo' | 'formattedDate' | 'startTimestamp' | 'isOnline' | 'url'
+  | 'id'
+  | 'name'
+  | 'photo'
+  | 'formattedDate'
+  | 'startTimestamp'
+  | 'isOnline'
+  | 'url'
 > => {
   const { jsonData } = findJsonInString(
     html,
@@ -36,6 +42,7 @@ export const getBasicData = (
   }
 
   return {
+    id: jsonData.id,
     name: jsonData.name,
     photo: jsonData.cover_media_renderer
       ? {
