@@ -7,7 +7,7 @@
     "start": "ts-node src/index.ts",
     "prepare": "husky install",
     "test": "jest",
-    "prepack": "npm test && rm -rf dist && npm build",
+    "prepack": "npm test && rm -rf dist && npm run build",
     "build": "tsc"
   },
   "repository": {
