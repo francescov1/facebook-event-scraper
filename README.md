@@ -19,15 +19,21 @@ To use the Facebook Event Scraper, you need to provide the URL of the Facebook e
 ```javascript
 import { scrapeFbEvent, scrapeFbEventFromFbid } from 'facebook-event-scraper';
 
+const url = 'https://www.facebook.com/events/1234567890';
+
+// Scrape event using URL
 async function example() {
   try {
-    // Scrape event using URL
-    const eventData = await scrapeFbEvent(
-      'https://www.facebook.com/events/1234567890'
-    );
+    const eventData = await scrapeFbEvent(url);
     console.log(eventData);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
-    // Scrape event using FBID
+// Scrape event using FBID
+async function example2() {
+  try {
     const eventData2 = await scrapeFbEventFromFbid('1234567890');
     console.log(eventData2);
   } catch (err) {
