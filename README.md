@@ -1,6 +1,6 @@
 # Facebook Event Scraper
 
-A slim NPM package for scraping Facebook event event data nearly instantaneously.
+A slim module for scraping Facebook event data nearly instantaneously.
 
 ## Installation
 
@@ -17,17 +17,23 @@ yarn add facebook-event-scraper
 To use the Facebook Event Scraper, you need to provide the URL of the Facebook event page you want to scrape. Here's an example of how you can use the package to scrape the event details:
 
 ```javascript
-const { scrapeEvent } = require('facebook-event-scraper');
+import { scrapeFbEvent, scrapeFbEventFromFbid } from 'facebook-event-scraper';
 
-const eventUrl = 'https://www.facebook.com/events/1234567890';
+async function example() {
+  try {
+    // Scrape event using URL
+    const eventData = await scrapeFbEvent(
+      'https://www.facebook.com/events/1234567890'
+    );
+    console.log(eventData);
 
-scrapeEvent(eventUrl)
-  .then((eventDetails) => {
-    console.log(eventDetails);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+    // Scrape event using FBID
+    const eventData2 = await scrapeFbEventFromFbid('1234567890');
+    console.log(eventData2);
+  } catch (err) {
+    console.error(err);
+  }
+}
 ```
 
 The scrapeEvent function returns a Promise with the scraped event data. See below for an example of the event data, or [see the type definition here](https://github.com/francescov1/facebook-events-scraper/blob/ba82afd5153623a05ea5a14cb9c57f7cf8abb80d/src/types.ts#L1).
