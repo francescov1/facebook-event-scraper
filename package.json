@@ -9,7 +9,7 @@
     "test": "jest",
     "test:unit": "npm test -- --testPathIgnorePatterns src/tests/e2e.test.ts",
     "test:e2e": "npm test -- --testPathPattern src/tests/e2e.test.ts",
-    "prepack": "npm test:unit && rm -rf dist && npm run build",
+    "prepack": "npm run test:unit && rm -rf dist && npm run build",
     "build": "tsc"
   },
   "repository": {
