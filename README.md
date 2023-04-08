@@ -2,6 +2,9 @@
 
 A slim module for scraping Facebook event data in milliseconds.
 
+[![Version](https://img.shields.io/npm/v/facebook-event-scraper.svg)](https://npmjs.org/package/facebook-event-scraper)
+[![License](https://img.shields.io/npm/l/facebook-event-scraper.svg)](https://github.com/francescov1/facebook-event-scraper/blob/master/package.json)
+
 ## Installation
 
 ```bash
