@@ -7,7 +7,9 @@
     "start": "ts-node src/index.ts",
     "prepare": "husky install",
     "test": "jest",
-    "prepack": "npm test && rm -rf dist && npm run build",
+    "test:unit": "npm test -- --testPathIgnorePatterns src/tests/e2e.test.ts",
+    "test:e2e": "npm test -- --testPathPattern src/tests/e2e.test.ts",
+    "prepack": "npm test:unit && rm -rf dist && npm run build",
     "build": "tsc"
   },
   "repository": {
