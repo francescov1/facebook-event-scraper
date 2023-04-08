@@ -2,8 +2,6 @@ import { scrapeEvent } from '../scraper';
 import * as htmlParser from '../utils/htmlParser';
 import { fetchEvent } from '../utils/network';
 
-// TODO: Review, these are generated from ChatGPT
-
 // Mock dependencies
 jest.mock('../utils/htmlParser', () => ({
   getBasicData: jest.fn().mockReturnValue({
