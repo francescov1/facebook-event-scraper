@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`E2E Generates the correct event data for a Messenger Rooms Online event 1`] = `
+{
+  "description": "Description with json chars { woohoo hope this doesnt screw anything up ] [ ",
+  "endTimestamp": null,
+  "formattedDate": "Thursday, May 11, 2023 at 3:00 PM UTC-06",
+  "hosts": [
+    {
+      "id": "pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l",
+      "name": "Joe Smith",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=RUipgZkRndgAX8cVxuB&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfCCSRxH3v03fAORa_nJLM1uD1w_lvgqme8tpCWPSdKNog&oe=645945B8",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l/",
+    },
+  ],
+  "id": "564972362099646",
+  "isOnline": true,
+  "location": null,
+  "name": "msgner rooms live event with " in name",
+  "onlineDetails": {
+    "type": "MESSENGER_ROOM",
+    "url": null,
+  },
+  "photo": null,
+  "startTimestamp": 1683838800,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/564972362099646/",
+  "usersGoing": 1,
+  "usersInterested": 0,
+}
+`;
+
+exports[`E2E Generates the correct event data for a concert with multiple hosts & location info 1`] = `
+{
+  "description": "Ticket includes admission to Stampede Park
+
+Sale Dates and Times:
+
+Public Onsale : Fri, 24 Mar 2023 at 10:00 AM
+
+Media Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Stampede Insider Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Saddledome Insider Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Alberta Music Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Better Business Bureau Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Country Music Alberta Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Artist Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Venue Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Calgary Flames Club Seats : Wed, 22 Mar 2023 at 10:00 AM
+
+Calgary Flames Club Seat : Wed, 22 Mar 2023 at 12:00 PM
+
+CSEC Insiders : Thu, 23 Mar 2023 at 10:00 AM
+
+Aisle Seat Offer Presale : Wed, 22 Mar 2023 at 10:00 AM
+
+Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
+",
+  "endTimestamp": null,
+  "formattedDate": "Friday, July 7, 2023 at 7:30 PM MDT",
+  "hosts": [
+    {
+      "id": "104371842930883",
+      "name": "Calgary Stampede",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t1.6435-1/37839773_2106388022729245_4382714770642436096_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=105&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=TBtspsF6eCIAX-o6LYU&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfA0hDjrCaDB2QJs2vkF96XfhBc9MkEr-50hljKM7JXU7w&oe=64596538",
+      },
+      "type": "Page",
+      "url": "https://www.facebook.com/calgarystampede/",
+    },
+    {
+      "id": "426321674227135",
+      "name": "Scotiabank Saddledome",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=109&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=iR2JnzmAVkYAX_znCMW&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfAxEZXQkiI1Rpq0B7zKnhni796ymAkAPsHKFy_NRnif8g&oe=6437248B",
+      },
+      "type": "Page",
+      "url": "https://www.facebook.com/scotiabanksaddledome/",
+    },
+    {
+      "id": "100063699336240",
+      "name": "Stampede Ent. Inc.",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=101&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Se6UhkFtYakAX_g0kZ8&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfDT1xMEl7RrntsPcJGbVRi33cF4l6MQMd5SJJw2XVZMQw&oe=64364842",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/StampedeEntInc",
+    },
+    {
+      "id": "100044535845092",
+      "name": "Pitbull",
+      "photo": {
+        "url": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-1/318412673_725328142295041_3629940500281564098_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=c6021c&_nc_ohc=NvG04pESFhwAX9PAcDB&_nc_ht=scontent.fhnl3-2.fna&oh=00_AfCWu-6801kOTZ2qaPoFVQt3vhVunBFT0PDn20n9Twqx8Q&oe=6436C063",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/pitbull",
+    },
+  ],
+  "id": "602005831971873",
+  "isOnline": false,
+  "location": {
+    "address": "555 Saddledome Rise S.E.",
+    "city": {
+      "id": "111983945494775",
+      "name": "Calgary",
+    },
+    "coordinates": {
+      "latitude": 51.037418735623,
+      "longitude": -114.05197173357,
+    },
+    "countryCode": "CA",
+    "description": "The Scotiabank Saddledome is Calgary's premier sports and entertainment venue.",
+    "id": "426321674227135",
+    "name": "Scotiabank Saddledome",
+    "type": "PLACE",
+    "url": "https://www.facebook.com/scotiabanksaddledome/",
+  },
+  "name": "Pitbull",
+  "onlineDetails": null,
+  "photo": {
+    "id": "10160954790708641",
+    "url": "https://www.facebook.com/Ticketmaster/photos/gm.602005851971871/10160954790708641/",
+  },
+  "startTimestamp": 1688779800,
+  "ticketUrl": "https://ticketmaster.evyy.net/c/253158/264167/4272?u=https%3A%2F%2Fwww.ticketmaster.ca%2Fpitbull-calgary-alberta-07-07-2023%2Fevent%2F11005E718BB52147",
+  "timezone": "MDT",
+  "url": "https://www.facebook.com/events/602005831971873/",
+  "usersGoing": 105,
+  "usersInterested": 756,
+}
+`;
+
+exports[`E2E Generates the correct event data for a event with an end date & multiple dates 1`] = `
+{
+  "description": "Christ is RISEN! Let's celebrate!
+
+We might know the Easter story, but does it mean anything for us today? 
+
+Come experience and celebrate what Easter offers, April 8/9 at FAC! 
+
+Expect a 75-minute service filled with worship music, creative elements, and a message of hope from the Bible.
+
+**Please note special service times: Saturday at 6:30 pm, Sunday at 9:15 & 11:15 am**
+
+More info: https://www.faccalgary.com/easter",
+  "endTimestamp": 1681004700,
+  "formattedDate": "Saturday, April 8, 2023 at 6:30 PM – 7:45 PM UTC-06",
+  "hosts": [
+    {
+      "id": "100064691376556",
+      "name": "FAC Calgary",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/308800346_490298226469886_3396126836502450064_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=108&ccb=1-7&_nc_sid=c6021c&_nc_ohc=hZLAzSPbZ0wAX9n94ao&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfDY8nr2j9x3r7CWa8cGRAvrjUK3hsnzVnPKh00T-25oOw&oe=64375766",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/faccalgary",
+    },
+  ],
+  "id": "1137956706879599",
+  "isOnline": false,
+  "location": {
+    "address": "12345 40 Street SE",
+    "city": {
+      "id": "111983945494775",
+      "name": "Calgary",
+    },
+    "coordinates": {
+      "latitude": 50.937853434334,
+      "longitude": -113.97362557296,
+    },
+    "countryCode": "CA",
+    "description": "Building lives that honour God...all for Jesus! 
+Official Facebook Page for First Alliance Church, Calgary, AB
+Three campus locations: 
+FAC Deerfoot: 12345 40 Street SE
+FAC Southwest: 16520 24 Street SW
+FAC Online: https://live.faccalgary.com",
+    "id": "118309434891614",
+    "name": "FAC Calgary",
+    "type": "PLACE",
+    "url": "https://facebook.com/faccalgary",
+  },
+  "name": "Easter - Deerfoot & Online Campuses",
+  "onlineDetails": null,
+  "photo": {
+    "id": "595982989234742",
+    "url": "https://www.facebook.com/photo/?fbid=595982989234742&set=gm.1137956736879596",
+  },
+  "startTimestamp": 1681000200,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/1137956700212933/?event_time_id=1137956706879599",
+  "usersGoing": 10,
+  "usersInterested": 27,
+}
+`;
+
+exports[`E2E Generates the correct event data for an event hosted by Eventbrite 1`] = `
+{
+  "description": "Come bird  Beaverdam Flats from Refinery Park.  There will be open water and wetland areas to explore.
+
+Come bird Refinery Park to Beaverdam Flats with Nature Calgary.   The pathway is along the river and can be slippery and icy at times. Please wear appropriate footwear.  This trip may not be suitable for all mobilities.  We welcome beginner and expert birders on our trips.
+PLEASE NOTE WE WILL MEET AT PARKING LOT FOR REFINERY FLATS.
+https://www.google.com/maps/place/Refinery+Park/@51.0051425,-114.019193,17z/data=!3m1!4b1!4m5!3m4!1s0x53717a7f5ddd6dd5:0x1b8647891750b9e2!8m2!3d51.0051425!4d-114.0170043
+Binoculars are available to borrow for those who need them.",
+  "endTimestamp": 1680543000,
+  "formattedDate": "Monday, April 3, 2023 at 9:00 AM – 11:30 AM UTC-06",
+  "hosts": [],
+  "id": "252144510602906",
+  "isOnline": false,
+  "location": {
+    "address": null,
+    "city": null,
+    "coordinates": {
+      "latitude": 51.01257,
+      "longitude": -114.00271,
+    },
+    "countryCode": "CA",
+    "description": null,
+    "id": "768722671166814",
+    "name": "4687 Barlow Trail Southeast,Calgary,T2B 3T6,CA",
+    "type": "TEXT",
+    "url": null,
+  },
+  "name": "Nature Calgary Birding - Refinery Park to Beaverdam Flats",
+  "onlineDetails": null,
+  "photo": {
+    "id": "10167524860335261",
+    "url": "https://www.facebook.com/EventbriteforOrganizers/photos/gm.252144523936238/10167524860335261/",
+  },
+  "startTimestamp": 1680534000,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/252144510602906/",
+  "usersGoing": 0,
+  "usersInterested": 0,
+}
+`;
+
+exports[`E2E Generates the correct event data for an event with a text address location 1`] = `
+{
+  "description": "This free one day event is the start up to Calgary's vibrant festival season, and encourages citizens to shake off their winter blues and reintroduce themselves to the thriving creative community in our city. 
+
+Each spring, thousands of attendees come out to enjoy the unique and pedestrian friendly 4th Street venue, offering an array of musical talent, artisan vendors, quality entertainment and some perfect people watching. 
+
+At the Lilac Festival, there is an activity made for all ages. This could mean a jump in the bouncer for the kids, discovering a great new band, choosing a perfect summer patio or searching for a trendy fashion; there is no shortage of things happening.",
+  "endTimestamp": 1685923200,
+  "formattedDate": "Sunday, June 4, 2023 at 10:00 AM – 6:00 PM UTC-06",
+  "hosts": [
+    {
+      "id": "100050510798749",
+      "name": "Lilac Festival",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/326770041_2907062182771971_8627335813820817783_n.png?stp=cp0_dst-png_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=c6021c&_nc_ohc=zPunKGfoAHYAX_Oitt4&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfCJXNS3U5Q-ykf-xEYU5reSqpcR_qCsB5VqTsjeztOtFw&oe=64361BBC",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/LilacFestival",
+    },
+  ],
+  "id": "719931529922611",
+  "isOnline": false,
+  "location": {
+    "address": null,
+    "city": null,
+    "coordinates": {
+      "latitude": 51.035320819142,
+      "longitude": -114.0715755823,
+    },
+    "countryCode": "CA",
+    "description": null,
+    "id": "749222630104757",
+    "name": "Lilac Festival",
+    "type": "TEXT",
+    "url": null,
+  },
+  "name": "4th Street Lilac Festival",
+  "onlineDetails": null,
+  "photo": {
+    "id": "749222690104751",
+    "url": "https://www.facebook.com/photo/?fbid=749222690104751&set=gm.719931573255940",
+  },
+  "startTimestamp": 1685894400,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/719931529922611/",
+  "usersGoing": 179,
+  "usersInterested": 2685,
+}
+`;
+
+exports[`E2E Generates the correct event data for an event with a text location 1`] = `
+{
+  "description": "hbhjbjh",
+  "endTimestamp": null,
+  "formattedDate": "Tuesday, April 4, 2023 at 11:00 PM UTC-06",
+  "hosts": [
+    {
+      "id": "pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l",
+      "name": "Joe Smith",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=RUipgZkRndgAX8cVxuB&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfCCSRxH3v03fAORa_nJLM1uD1w_lvgqme8tpCWPSdKNog&oe=645945B8",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l/",
+    },
+  ],
+  "id": "526262926343074",
+  "isOnline": false,
+  "location": {
+    "address": null,
+    "city": null,
+    "coordinates": null,
+    "countryCode": null,
+    "description": null,
+    "id": "1260045608271508",
+    "name": "kbhbj",
+    "type": "TEXT",
+    "url": null,
+  },
+  "name": "Event to test",
+  "onlineDetails": null,
+  "photo": null,
+  "startTimestamp": 1680670800,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/526262926343074/",
+  "usersGoing": 1,
+  "usersInterested": 0,
+}
+`;
+
+exports[`E2E Generates the correct event data for an event with a ticket URL & city location 1`] = `
+{
+  "description": "The Dark Eighties in Calgary: 1977-2020s Edition
+
+Tickets at https://thedarkeightiesspecialedition.eventbrite.ca
+
+///we play///
+EBM I GOTH I INDUSTRIAL I ITALO DISCO I NEW BEAT
+NEW ROMANTICS I SYNTH POP I DARK WAVE I MINIMAL WAVE I POST PUNK I CULT 80S HITS I DEATHROCK + MORE!
+
+Friday, May 5th 
+The Junction
+10pm-2am 
+
+DJs TBA
+
+This time, we're not ONLY playing 80s but also dark tunes from after the 80s! 
+
+FB: @thedarkeighties
+Instagram: @12xuevents
+Join our group!
+https://www.facebook.com/groups/darkeighties
+",
+  "endTimestamp": 1683363600,
+  "formattedDate": "Friday, May 5, 2023 at 11:00 PM – 3:00 AM UTC-06",
+  "hosts": [
+    {
+      "id": "100063904024919",
+      "name": "The Dark Eighties",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=108&ccb=1-7&_nc_sid=c6021c&_nc_ohc=tIDnP9caodYAX9IhsIE&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfDG_5tXy64YvGhC_EuojKvZHSbqTAtjSwyOah_gN8vgZw&oe=64372EE7",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/thedarkeighties",
+    },
+    {
+      "id": "108472030566533",
+      "name": "12XU",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/306137485_200591368978239_9209675654430194583_n.png?stp=cp0_dst-png_p40x40&_nc_cat=110&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=qSFlfpiJpdMAX_x_rTU&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfCRwoV3Pzd-LPMUsiurUAWW7Ca3ypZecyC-oXfHGXclNg&oe=6436F9CB",
+      },
+      "type": "Page",
+      "url": "https://www.facebook.com/12XUevents/",
+    },
+  ],
+  "id": "1376686273147180",
+  "isOnline": false,
+  "location": {
+    "address": "",
+    "city": null,
+    "coordinates": {
+      "latitude": 51.05,
+      "longitude": -114.06666666667,
+    },
+    "countryCode": "CA",
+    "description": "Calgary is a city in the Canadian province of Alberta. It is situated at the confluence of the Bow River and the Elbow River in the south of the province, in an area of foothills and prairie, about 80km east of the front ranges of the Canadian Rockies. The city anchors the south end of what Statistics Canada defines as the "Calgary–Edmonton Corridor".The city had a population of 1,239,220 in 2016, making it Alberta's largest city and Canada's third-largest municipality. Also in 2016, Calgary had a metropolitan population of 1,392,609, making it the fourth-largest census metropolitan area (CMA) in Canada.The economy of Calgary includes activity in the energy, financial services, film and television, transportation and logistics, technology, manufacturing, aerospace, health and wellness, retail, and tourism sectors. The Calgary CMA is home to the second-highest number of corporate head offices in Canada among the country's 800 largest corporations.In 1988, Calgary became the first Canadian city to host the Winter Olympic Games.HistoryEtymologyCalgary was named after Calgary on the Isle of Mull, Scotland. In turn, the name originates from a compound of kald and gart, similar Old Norse words, meaning "cold" and "garden", likely used when named by the Vikings who inhabited the Inner Hebrides. Alternatively, the name might be Gaelic Cala ghearraidh, meaning "beach of the meadow (pasture)"; or Gaelic for either "clear running water" or "bay farm".",
+    "id": "106166569420010",
+    "name": "Calgary, Alberta, Canada",
+    "type": "CITY",
+    "url": "https://www.facebook.com/pages/Calgary-Alberta-Canada/106166569420010",
+  },
+  "name": "The Dark Eighties: 1977-2023 Edition",
+  "onlineDetails": null,
+  "photo": {
+    "id": "621131586693637",
+    "url": "https://www.facebook.com/photo/?fbid=621131586693637&set=gm.1376686326480508",
+  },
+  "startTimestamp": 1683349200,
+  "ticketUrl": "https://thedarkeightiesspecialedition.eventbrite.ca/",
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/1376686273147180/",
+  "usersGoing": 27,
+  "usersInterested": 229,
+}
+`;
+
+exports[`E2E Generates the correct event data for an event with multiple hosts, a place location & tickets 1`] = `
+{
+  "description": "All Elite Wrestling (AEW) makes its Calgary, Alberta debut July 15th, 2023 for #AEWHouseRules from the Calgary Stampede!
+
+🎟 Tickets are ON SALE NOW!",
+  "endTimestamp": null,
+  "formattedDate": "Saturday, July 15, 2023 at 9:30 PM EDT",
+  "hosts": [
+    {
+      "id": "276076433043811",
+      "name": "All Elite Wrestling",
+      "photo": {
+        "url": "https://scontent.fgum1-1.fna.fbcdn.net/v/t39.30808-1/335675194_2899374420207257_9101454388622372305_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=oG1yEUvp2H4AX_JQsnY&_nc_ht=scontent.fgum1-1.fna&oh=00_AfCLfWORdkQ2RNUyjGPxJm27e_2YgADuNJlwpuKdqwJAKg&oe=643721BB",
+      },
+      "type": "Page",
+      "url": "https://www.facebook.com/AEW/",
+    },
+    {
+      "id": "100063699336240",
+      "name": "Stampede Ent. Inc.",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=101&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Se6UhkFtYakAX_g0kZ8&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfDT1xMEl7RrntsPcJGbVRi33cF4l6MQMd5SJJw2XVZMQw&oe=64364842",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/StampedeEntInc",
+    },
+  ],
+  "id": "941510027277450",
+  "isOnline": false,
+  "location": {
+    "address": "1410 Stampede Trail SE",
+    "city": {
+      "id": "111983945494775",
+      "name": "Calgary",
+    },
+    "coordinates": {
+      "latitude": 51.035629728479,
+      "longitude": -114.05452196423,
+    },
+    "countryCode": "CA",
+    "description": "The Calgary Stampede is a not-for-profit community organization that preserves and promotes our western heritage, cultures and community spirit. Join us July 7-16, 2023.",
+    "id": "104371842930883",
+    "name": "Calgary Stampede",
+    "type": "PLACE",
+    "url": "https://www.facebook.com/calgarystampede/",
+  },
+  "name": "All Elite Wrestling (AEW) House Rules Calgary, Alberta Debut!",
+  "onlineDetails": null,
+  "photo": {
+    "id": "1243141893003922",
+    "url": "https://www.facebook.com/AEW/photos/gm.947600896668363/1243141893003922/",
+  },
+  "startTimestamp": 1689471000,
+  "ticketUrl": "https://aewevents.com/AEWCalgaryDebut",
+  "timezone": "EDT",
+  "url": "https://www.facebook.com/events/941510027277450/",
+  "usersGoing": 105,
+  "usersInterested": 353,
+}
+`;
+
+exports[`E2E Generates the correct event data for an online event with a third-party URL 1`] = `
+{
+  "description": "",
+  "endTimestamp": null,
+  "formattedDate": "Friday, June 16, 2023 at 4:00 PM UTC-06",
+  "hosts": [
+    {
+      "id": "pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l",
+      "name": "Joe Smith",
+      "photo": {
+        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=RUipgZkRndgAX8cVxuB&_nc_ht=scontent.fyyc3-1.fna&oh=00_AfCCSRxH3v03fAORa_nJLM1uD1w_lvgqme8tpCWPSdKNog&oe=645945B8",
+      },
+      "type": "User",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bgzurZ4Hs4DNUmgqCnrfPQwiXm8g89dUuLFngyoFx6bGY2oWUYySbErnmT58GwB5l/",
+    },
+  ],
+  "id": "760928342374546",
+  "isOnline": true,
+  "location": null,
+  "name": "Third party URL event",
+  "onlineDetails": {
+    "type": "THIRD_PARTY",
+    "url": "https://www.example.com/hey",
+  },
+  "photo": null,
+  "startTimestamp": 1686952800,
+  "ticketUrl": null,
+  "timezone": "UTC-06",
+  "url": "https://www.facebook.com/events/760928342374546/",
+  "usersGoing": 1,
+  "usersInterested": 0,
+}
+`;
