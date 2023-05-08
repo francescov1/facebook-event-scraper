@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios, { AxiosProxyConfig } from 'axios';
 
-export const fetchEvent = async (url: string) => {
+export const fetchEvent = async (url: string, proxy?: AxiosProxyConfig) => {
   try {
     const response = await axios.get(url, {
       headers: {
@@ -18,7 +18,8 @@ export const fetchEvent = async (url: string) => {
         'upgrade-insecure-requests': '1',
         'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
-      }
+      },
+      proxy
     });
 
     return response.data;

@@ -1,9 +1,12 @@
 import { fetchEvent } from './utils/network';
 import * as htmlParser from './utils/htmlParser';
-import { EventData } from './types';
+import { EventData, ScrapeOptions } from './types';
 
-export const scrapeEvent = async (urlFromUser: string): Promise<EventData> => {
-  const dataString = await fetchEvent(urlFromUser);
+export const scrapeEvent = async (
+  urlFromUser: string,
+  options: ScrapeOptions
+): Promise<EventData> => {
+  const dataString = await fetchEvent(urlFromUser, options.proxy);
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
