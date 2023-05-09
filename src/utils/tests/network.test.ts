@@ -40,6 +40,22 @@ describe('fetchEvent', () => {
     expect(result).toEqual(responseData);
   });
 
+  it('calls axios with proxy data', async () => {
+    const responseData = 'Some HTML event data';
+    mockedAxios.get.mockResolvedValueOnce({ data: responseData });
+
+    const aProxy = { host: 'localhost', port: 8080 };
+    const result = await fetchEvent(eventUrl, aProxy);
+
+    expect(mockedAxios.get).toHaveBeenCalledTimes(1);
+    expect(mockedAxios.get).toHaveBeenCalledWith(eventUrl, {
+      headers: expect.any(Object),
+      proxy: aProxy
+    });
+
+    expect(result).toEqual(responseData);
+  });
+
   it('throws an error for an invalid URL', async () => {
     const errorMessage =
       'Error fetching event, make sure your URL is correct and the event is accessible to the public.';

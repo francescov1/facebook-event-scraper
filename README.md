@@ -96,6 +96,37 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
 }
 ```
 
+### Using a proxy
+
+This library uses a GET request to fetch the Facebook event data. To use a proxy for this request, pass an object containing the proxy details as the second argument. The proxy data type is identical to the [Axios proxy options](https://axios-http.com/docs/req_config).
+
+```javascript
+import { scrapeFbEvent } from 'facebook-event-scraper';
+
+const url = 'https://www.facebook.com/events/1234567890';
+
+// Scrape event using URL & proxy
+async function example() {
+  try {
+    const eventData = await scrapeFbEvent(url, {
+      proxy: {
+        host: '192.168.0.0',
+        port: 1234,
+        // Optional fields
+        auth: {
+          username: 'user',
+          password: 'pass'
+        },
+        protocol: 'http'
+      }
+    });
+    console.log(eventData);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
 ## Limitations
 
 Since this package does not use authentication, it only works for public Facebook event pages.

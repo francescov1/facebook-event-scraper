@@ -1,3 +1,5 @@
+import { AxiosProxyConfig } from 'axios';
+
 export interface EventData {
   id: string;
   name: string;
@@ -60,4 +62,8 @@ export interface EventLocation {
     name: string;
     id: string;
   } | null;
+}
+
+export interface ScrapeOptions {
+  proxy?: AxiosProxyConfig;
 }
