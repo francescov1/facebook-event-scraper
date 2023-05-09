@@ -29,7 +29,7 @@ describe('scrapeFbEvent', () => {
     expect(eventData).toEqual(someEventData);
     // Ensure URL was formatted & the formatted URL was used to scrape the event
     expect(validateAndFormatUrl).toHaveBeenCalledWith(anEventUrl);
-    expect(scrapeEvent).toHaveBeenCalledWith(aFormattedEventUrl);
+    expect(scrapeEvent).toHaveBeenCalledWith(aFormattedEventUrl, {});
   });
 });
 
@@ -47,6 +47,6 @@ describe('scrapeFbEventFromFbid', () => {
 
     expect(eventData).toEqual(someEventData);
     expect(fbidToUrl).toHaveBeenCalledWith(anFbid);
-    expect(scrapeEvent).toHaveBeenCalledWith(aFormattedEventUrl);
+    expect(scrapeEvent).toHaveBeenCalledWith(aFormattedEventUrl, {});
   });
 });
