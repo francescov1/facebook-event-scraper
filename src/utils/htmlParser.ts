@@ -78,6 +78,7 @@ export const getUserStats = (html: string) => {
     'event_connected_users_interested'
   );
 
+  // usersGoingJsonData and usersInterestedJsonData can be undefined if the host decides to hide the guest list
   return {
     usersGoing: usersGoingJsonData?.count,
     usersInterested: usersInterestedJsonData?.count
