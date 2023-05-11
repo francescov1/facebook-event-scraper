@@ -156,28 +156,22 @@ describe('getUserStats', () => {
     expect(result).toEqual({ usersGoing: 5, usersInterested: 20 });
   });
 
-  it('should throw an error if users going data is not found', () => {
+  it('should return undefined if users going data is not found', () => {
     mockJsonReturnData(null);
     mockJsonReturnData({ count: 20 });
 
-    expect(() => htmlParser.getUserStats('some html')).toThrow(
-      new Error(
-        'No user attendance stats found, please verify that your event URL is correct'
-      )
-    );
+    const result = htmlParser.getUserStats('some html');
     expect(findJsonInStringSpy).toHaveBeenCalledTimes(2);
+    expect(result).toEqual({ usersGoing: undefined, usersInterested: 20 });
   });
 
-  it('should throw an error if users interested data is not found', () => {
+  it('should return undefined if users interested data is not found', () => {
     mockJsonReturnData({ count: 5 });
     mockJsonReturnData(null);
 
-    expect(() => htmlParser.getUserStats('some html')).toThrow(
-      new Error(
-        'No user attendance stats found, please verify that your event URL is correct'
-      )
-    );
+    const result = htmlParser.getUserStats('some html');
     expect(findJsonInStringSpy).toHaveBeenCalledTimes(2);
+    expect(result).toEqual({ usersGoing: 5, usersInterested: undefined });
   });
 });
 

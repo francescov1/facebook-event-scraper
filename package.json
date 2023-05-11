@@ -1,6 +1,6 @@
 {
   "name": "facebook-event-scraper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A slim module for scraping Facebook event data in milliseconds.",
   "main": "dist/index.js",
   "scripts": {

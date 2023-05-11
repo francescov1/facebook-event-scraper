@@ -78,15 +78,10 @@ export const getUserStats = (html: string) => {
     'event_connected_users_interested'
   );
 
-  if (!usersGoingJsonData || !usersInterestedJsonData) {
-    throw new Error(
-      'No user attendance stats found, please verify that your event URL is correct'
-    );
-  }
-
+  // usersGoingJsonData and usersInterestedJsonData can be undefined if the host decides to hide the guest list
   return {
-    usersGoing: usersGoingJsonData.count,
-    usersInterested: usersInterestedJsonData.count
+    usersGoing: usersGoingJsonData?.count,
+    usersInterested: usersInterestedJsonData?.count
   };
 };
 
