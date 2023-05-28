@@ -24,6 +24,7 @@ export const getBasicData = (
   | 'id'
   | 'name'
   | 'photo'
+  | 'video'
   | 'formattedDate'
   | 'startTimestamp'
   | 'isOnline'
@@ -44,10 +45,17 @@ export const getBasicData = (
   return {
     id: jsonData.id,
     name: jsonData.name,
-    photo: jsonData.cover_media_renderer
+    photo: jsonData.cover_media_renderer?.cover_photo
       ? {
           url: jsonData.cover_media_renderer.cover_photo.photo.url,
           id: jsonData.cover_media_renderer.cover_photo.photo.id
+        }
+      : null,
+    video: jsonData.cover_media_renderer?.cover_video
+      ? {
+          url: jsonData.cover_media_renderer.cover_video.url,
+          id: jsonData.cover_media_renderer.cover_video.id,
+          thumbnailUrl: jsonData.cover_media_renderer.cover_video.image?.uri
         }
       : null,
     formattedDate: jsonData.day_time_sentence,

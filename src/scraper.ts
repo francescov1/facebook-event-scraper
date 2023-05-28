@@ -10,8 +10,16 @@ export const scrapeEvent = async (
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 
-  const { id, name, photo, isOnline, url, startTimestamp, formattedDate } =
-    htmlParser.getBasicData(dataString);
+  const {
+    id,
+    name,
+    photo,
+    video,
+    isOnline,
+    url,
+    startTimestamp,
+    formattedDate
+  } = htmlParser.getBasicData(dataString);
 
   const { endTimestamp, timezone } = htmlParser.getEndTimestampAndTimezone(
     dataString,
@@ -38,6 +46,7 @@ export const scrapeEvent = async (
     description,
     location,
     photo,
+    video,
     isOnline,
     url,
     startTimestamp,

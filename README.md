@@ -69,8 +69,13 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
     "type": "PLACE"
   },
   "photo": {
-    "url": "https://www.facebook.com/photo/?fbid=595982989234742&set=gm.1137956736879596",
+    "url": "https://www.facebook.com/photo/?fbid=595982989234742",
     "id": "595982989234742"
+  },
+  "video": {
+    "id": "595982989234742",
+    "thumbnailUrl": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah",
+    "url": "https://www.facebook.com/Lietuva2050/videos/595982989234742/"
   },
   "isOnline": false,
   "url": "https://www.facebook.com/events/115982989234742",
