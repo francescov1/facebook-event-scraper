@@ -17,7 +17,3 @@ export const scrapeFbEventFromFbid = async (
   const formattedUrl = fbidToUrl(fbid);
   return await scrapeEvent(formattedUrl, options);
 };
-
-// scrapeFbEvent('https://www.facebook.com/events/242861135088721/').then((data) => {
-//   console.log(data)
-// })
