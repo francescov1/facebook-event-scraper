@@ -67,6 +67,7 @@ describe('getBasicData', () => {
         url: 'some url',
         id: 'some id'
       },
+      video: null,
       formattedDate: 'some date',
       startTimestamp: 1680476245,
       isOnline: true,
@@ -74,12 +75,21 @@ describe('getBasicData', () => {
     });
   });
 
-  it('should return basic data without a cover photo', () => {
+  it('should return basic data with cover video', () => {
     mockJsonReturnData({
       name: 'some name',
+      cover_media_renderer: {
+        cover_video: {
+          url: 'some url',
+          id: 'some id',
+          image: {
+            uri: 'some image url'
+          }
+        }
+      },
       day_time_sentence: 'some date',
       start_timestamp: 1680476245,
-      is_online: false,
+      is_online: true,
       url: 'some url'
     });
     const result = htmlParser.getBasicData('some html');
@@ -92,9 +102,14 @@ describe('getBasicData', () => {
     expect(result).toEqual({
       name: 'some name',
       photo: null,
+      video: {
+        url: 'some url',
+        id: 'some id',
+        thumbnailUrl: 'some image url'
+      },
       formattedDate: 'some date',
       startTimestamp: 1680476245,
-      isOnline: false,
+      isOnline: true,
       url: 'some url'
     });
   });

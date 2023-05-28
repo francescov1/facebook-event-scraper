@@ -71,4 +71,10 @@ describe('E2E', () => {
     const eventData = await scrapeFbEvent(url);
     expect(eventData).toMatchSnapshot();
   });
+
+  it('Generates the correct event data for an event with a video cover', async () => {
+    const url = 'https://www.facebook.com/events/242861135088721/';
+    const eventData = await scrapeFbEvent(url);
+    expect(eventData).toMatchSnapshot();
+  });
 });

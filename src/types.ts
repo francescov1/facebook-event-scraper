@@ -16,6 +16,7 @@ export interface EventData {
   /** Event timezone */
   timezone: string;
   photo: EventPhoto | null;
+  video: EventVideo | null;
   url: string;
   isOnline: boolean;
   /** Only set if isOnline = true */
@@ -34,6 +35,12 @@ export interface OnlineEventDetails {
 export interface EventPhoto {
   url: string;
   id: string;
+}
+
+export interface EventVideo {
+  url: string;
+  id: string;
+  thumbnailUrl: string;
 }
 
 export interface EventHost {
