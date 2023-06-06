@@ -94,22 +94,23 @@ export const getUserStats = (html: string) => {
 };
 
 // Only called for non-online events
-export const getLocation = (html: string): EventLocation => {
-  const { jsonData } = findJsonInString(
+export const getLocation = (html: string): EventLocation | null => {
+  const { jsonData, startIndex } = findJsonInString(
     html,
     'event_place',
     (candidate) => 'location' in candidate
   );
 
-  if (jsonData === null) {
+  // If there is no start index, it means the event_place field wasn't found in the HTML
+  if (startIndex === -1) {
     throw new Error(
       'No location information found, please verify that your event URL is correct'
     );
   }
 
-  // TODO: Remove before releasing, this is just to see if theres any other values we dont know about
-  if (!['TEXT', 'PLACE', 'CITY'].includes(jsonData.place_type)) {
-    throw new Error(`Unknown place_type ${jsonData}`);
+  // If jsonData is null, it means we did find the event_place field but it was set to null. This happens for events with no locations set
+  if (jsonData === null) {
+    return null;
   }
 
   return {

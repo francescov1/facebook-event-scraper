@@ -3,11 +3,11 @@ import * as htmlParser from '../htmlParser';
 
 const findJsonInStringSpy = jest.spyOn(jsonUtil, 'findJsonInString');
 
-function mockJsonReturnData(jsonData: any) {
+function mockJsonReturnData(jsonData: any, startIndex = 0, endIndex = 10) {
   findJsonInStringSpy.mockReturnValueOnce({
     jsonData,
-    startIndex: 0,
-    endIndex: 10
+    startIndex,
+    endIndex
   });
 }
 
@@ -266,8 +266,14 @@ describe('getLocation', () => {
     });
   });
 
-  it('should throw an error if no location is found', () => {
-    mockJsonReturnData(null);
+  it('should return null for an event with a null location', () => {
+    mockJsonReturnData(null, 0, 10);
+    const result = htmlParser.getLocation('some html');
+    expect(result).toBeNull();
+  });
+
+  it('should throw an error if no location field is found', () => {
+    mockJsonReturnData(null, -1, -1);
     expect(() => htmlParser.getLocation('some html')).toThrow(
       new Error(
         'No location information found, please verify that your event URL is correct'
