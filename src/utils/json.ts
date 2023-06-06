@@ -30,6 +30,16 @@ export const findJsonInString = (
     const startIndex = idx;
 
     const startCharacter = dataString[startIndex];
+
+    // Value is null
+    if (
+      startCharacter === 'n' &&
+      dataString.slice(startIndex, startIndex + 4) === 'null'
+    ) {
+      return { startIndex, endIndex: startIndex + 3, jsonData: null };
+    }
+
+    // Unexpected start character
     if (startCharacter !== '{' && startCharacter !== '[') {
       throw new Error(`Invalid start character: ${startCharacter}`);
     }
