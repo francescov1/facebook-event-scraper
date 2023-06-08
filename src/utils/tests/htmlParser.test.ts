@@ -118,7 +118,7 @@ describe('getBasicData', () => {
     mockJsonReturnData(null);
     expect(() => htmlParser.getBasicData('some html')).toThrow(
       new Error(
-        'No event date found, please verify that your event URL is correct'
+        'No event data found, please verify that your URL is correct and the event is accessible without authentication'
       )
     );
   });
