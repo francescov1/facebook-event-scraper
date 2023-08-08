@@ -45,7 +45,10 @@ describe('getBasicData', () => {
         cover_photo: {
           photo: {
             url: 'some url',
-            id: 'some id'
+            id: 'some id',
+            image: {
+              uri: 'some uri'
+            }
           }
         }
       },

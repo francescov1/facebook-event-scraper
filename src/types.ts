@@ -35,6 +35,9 @@ export interface OnlineEventDetails {
 export interface EventPhoto {
   url: string;
   id: string;
+  image: {
+    uri: string | undefined;
+  };
 }
 
 export interface EventVideo {
