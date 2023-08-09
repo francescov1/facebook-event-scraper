@@ -318,7 +318,7 @@ describe('getHosts', () => {
         name: 'some name',
         url: 'some url',
         photo: {
-          url: 'some uri'
+          imageUri: 'some uri'
         },
         type: 'User'
       },
@@ -327,7 +327,7 @@ describe('getHosts', () => {
         name: 'another name',
         url: 'another url',
         photo: {
-          url: 'another uri'
+          imageUri: 'another uri'
         },
         type: 'Page'
       }

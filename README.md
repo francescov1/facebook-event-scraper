@@ -92,7 +92,7 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
       "url": "https://www.facebook.com/bob-smith",
       "type": "User",
       "photo": {
-        "url": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah"
+        "imageUri": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah"
       }
     }
   ],

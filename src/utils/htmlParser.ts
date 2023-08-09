@@ -163,7 +163,7 @@ export const getHosts = (html: string): EventHost[] => {
       url: host.url,
       type: host.__typename,
       photo: {
-        url: host.profile_picture.uri
+        imageUri: host.profile_picture.uri
       }
     };
   });

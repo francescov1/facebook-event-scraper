@@ -50,7 +50,7 @@ export interface EventHost {
   url: string;
   type: 'User' | 'Page';
   photo: {
-    url: string;
+    imageUri: string;
   };
 }
 
