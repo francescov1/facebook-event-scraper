@@ -49,16 +49,14 @@ export const getBasicData = (
       ? {
           url: jsonData.cover_media_renderer.cover_photo.photo.url,
           id: jsonData.cover_media_renderer.cover_photo.photo.id,
-          image: {
-            uri: jsonData.cover_media_renderer.cover_photo.photo.image?.uri
-          }
+          imageUri: jsonData.cover_media_renderer.cover_photo.photo.image?.uri
         }
       : null,
     video: jsonData.cover_media_renderer?.cover_video
       ? {
           url: jsonData.cover_media_renderer.cover_video.url,
           id: jsonData.cover_media_renderer.cover_video.id,
-          thumbnailUrl: jsonData.cover_media_renderer.cover_video.image?.uri
+          thumbnailUri: jsonData.cover_media_renderer.cover_video.image?.uri
         }
       : null,
     formattedDate: jsonData.day_time_sentence,

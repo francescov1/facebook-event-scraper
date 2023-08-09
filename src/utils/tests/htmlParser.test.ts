@@ -46,9 +46,7 @@ describe('getBasicData', () => {
           photo: {
             url: 'some url',
             id: 'some id',
-            image: {
-              uri: 'some uri'
-            }
+            imageUri: 'some uri'
           }
         }
       },
@@ -108,7 +106,7 @@ describe('getBasicData', () => {
       video: {
         url: 'some url',
         id: 'some id',
-        thumbnailUrl: 'some image url'
+        thumbnailUri: 'some image url'
       },
       formattedDate: 'some date',
       startTimestamp: 1680476245,

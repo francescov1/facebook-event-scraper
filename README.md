@@ -70,11 +70,12 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
   },
   "photo": {
     "url": "https://www.facebook.com/photo/?fbid=595982989234742",
-    "id": "595982989234742"
+    "id": "595982989234742",
+    "imageUri": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah"
   },
   "video": {
     "id": "595982989234742",
-    "thumbnailUrl": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah",
+    "thumbnailUri": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah",
     "url": "https://www.facebook.com/Lietuva2050/videos/595982989234742/"
   },
   "isOnline": false,
