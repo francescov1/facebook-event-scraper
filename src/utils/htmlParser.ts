@@ -151,22 +151,15 @@ export const getHosts = (html: string): EventHost[] => {
     return [];
   }
 
-  return jsonData.map((host: Record<string, any>) => {
-    // TODO: Remove before releasing, only here to see if we missed any options
-    if (host.__typename !== 'User' && host.__typename !== 'Page') {
-      throw new Error(`Unknown host type: ${host.__typename}`);
+  return jsonData.map((host: Record<string, any>) => ({
+    id: host.id,
+    name: host.name,
+    url: host.url,
+    type: host.__typename,
+    photo: {
+      imageUri: host.profile_picture.uri
     }
-
-    return {
-      id: host.id,
-      name: host.name,
-      url: host.url,
-      type: host.__typename,
-      photo: {
-        imageUri: host.profile_picture.uri
-      }
-    };
-  });
+  }));
 };
 
 export const getOnlineDetails = (html: string): OnlineEventDetails => {
