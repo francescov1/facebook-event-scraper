@@ -303,6 +303,15 @@ describe('getHosts', () => {
           uri: 'another uri'
         },
         __typename: 'Page'
+      },
+      {
+        id: 'a third id',
+        name: 'a group name',
+        url: 'a group url',
+        profile_picture: {
+          uri: 'a group photo uri'
+        },
+        __typename: 'Group'
       }
     ]);
     const result = htmlParser.getHosts('some html');
@@ -330,6 +339,15 @@ describe('getHosts', () => {
           imageUri: 'another uri'
         },
         type: 'Page'
+      },
+      {
+        id: 'a third id',
+        name: 'a group name',
+        url: 'a group url',
+        photo: {
+          imageUri: 'a group photo uri'
+        },
+        type: 'Group'
       }
     ]);
   });
