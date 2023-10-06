@@ -49,7 +49,9 @@ export const getBasicData = (
       ? {
           url: jsonData.cover_media_renderer.cover_photo.photo.url,
           id: jsonData.cover_media_renderer.cover_photo.photo.id,
-          imageUri: jsonData.cover_media_renderer.cover_photo.photo.image?.uri
+          imageUri:
+            jsonData.cover_media_renderer.cover_photo.photo.image?.uri ??
+            jsonData.cover_media_renderer.cover_photo.photo.full_image?.uri
         }
       : null,
     video: jsonData.cover_media_renderer?.cover_video
