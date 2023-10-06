@@ -46,7 +46,9 @@ describe('getBasicData', () => {
           photo: {
             url: 'some url',
             id: 'some id',
-            imageUri: 'some uri'
+            image: {
+              uri: 'some uri'
+            }
           }
         }
       },
@@ -66,7 +68,49 @@ describe('getBasicData', () => {
       name: 'some name',
       photo: {
         url: 'some url',
-        id: 'some id'
+        id: 'some id',
+        imageUri: 'some uri'
+      },
+      video: null,
+      formattedDate: 'some date',
+      startTimestamp: 1680476245,
+      isOnline: true,
+      url: 'some url'
+    });
+  });
+
+  it('should return basic data with cover photo set under full_image', () => {
+    mockJsonReturnData({
+      name: 'some name',
+      cover_media_renderer: {
+        cover_photo: {
+          photo: {
+            url: 'some url',
+            id: 'some id',
+            full_image: {
+              uri: 'some uri'
+            }
+          }
+        }
+      },
+      day_time_sentence: 'some date',
+      start_timestamp: 1680476245,
+      is_online: true,
+      url: 'some url'
+    });
+    const result = htmlParser.getBasicData('some html');
+
+    expect(findJsonInStringSpy).toHaveBeenCalledWith(
+      'some html',
+      'event',
+      expect.any(Function)
+    );
+    expect(result).toEqual({
+      name: 'some name',
+      photo: {
+        url: 'some url',
+        id: 'some id',
+        imageUri: 'some uri'
       },
       video: null,
       formattedDate: 'some date',
