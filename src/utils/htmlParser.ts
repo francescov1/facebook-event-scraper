@@ -80,19 +80,14 @@ export const getTicketUrl = (html: string): string => {
 };
 
 export const getUserStats = (html: string) => {
-  const { jsonData: usersGoingJsonData } = findJsonInString(
+  const { jsonData: usersRespondedJsonData } = findJsonInString(
     html,
-    'event_connected_users_going'
-  );
-  const { jsonData: usersInterestedJsonData } = findJsonInString(
-    html,
-    'event_connected_users_interested'
+    'event_connected_users_public_responded'
   );
 
-  // usersGoingJsonData and usersInterestedJsonData can be undefined if the host decides to hide the guest list
+  // usersRespondedJsonData can be undefined if the host decides to hide the guest list
   return {
-    usersGoing: usersGoingJsonData?.count,
-    usersInterested: usersInterestedJsonData?.count
+    usersResponded: usersRespondedJsonData?.count
   };
 };
 

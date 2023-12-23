@@ -198,40 +198,24 @@ describe('getTicketUrl', () => {
 describe('getUserStats', () => {
   it('should return the users going and users interested counts', () => {
     mockJsonReturnData({ count: 5 });
-    mockJsonReturnData({ count: 20 });
     const result = htmlParser.getUserStats('some html');
 
-    expect(findJsonInStringSpy).toHaveBeenCalledTimes(2);
+    expect(findJsonInStringSpy).toHaveBeenCalledTimes(1);
     expect(findJsonInStringSpy).toHaveBeenNthCalledWith(
       1,
       'some html',
-      'event_connected_users_going'
-    );
-    expect(findJsonInStringSpy).toHaveBeenNthCalledWith(
-      2,
-      'some html',
-      'event_connected_users_interested'
+      'event_connected_users_public_responded'
     );
 
-    expect(result).toEqual({ usersGoing: 5, usersInterested: 20 });
+    expect(result).toEqual({ usersResponded: 5 });
   });
 
   it('should return undefined if users going data is not found', () => {
     mockJsonReturnData(null);
-    mockJsonReturnData({ count: 20 });
 
     const result = htmlParser.getUserStats('some html');
-    expect(findJsonInStringSpy).toHaveBeenCalledTimes(2);
-    expect(result).toEqual({ usersGoing: undefined, usersInterested: 20 });
-  });
-
-  it('should return undefined if users interested data is not found', () => {
-    mockJsonReturnData({ count: 5 });
-    mockJsonReturnData(null);
-
-    const result = htmlParser.getUserStats('some html');
-    expect(findJsonInStringSpy).toHaveBeenCalledTimes(2);
-    expect(result).toEqual({ usersGoing: 5, usersInterested: undefined });
+    expect(findJsonInStringSpy).toHaveBeenCalledTimes(1);
+    expect(result).toEqual({ usersResponded: undefined });
   });
 });
 
