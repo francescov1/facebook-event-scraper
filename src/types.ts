@@ -22,8 +22,7 @@ export interface EventData {
   /** Only set if isOnline = true */
   onlineDetails: OnlineEventDetails | null;
   ticketUrl: string | null;
-  usersGoing: number;
-  usersInterested: number;
+  usersResponded: number;
 }
 
 export interface OnlineEventDetails {

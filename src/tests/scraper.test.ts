@@ -51,8 +51,7 @@ jest.mock('../utils/htmlParser', () => ({
     }
   ]),
   getUserStats: jest.fn().mockReturnValue({
-    usersGoing: 10,
-    usersInterested: 20
+    usersResponded: 10
   })
 }));
 
@@ -169,7 +168,6 @@ describe('scrapeEvent', () => {
   it('should parse the user stats from the HTML', async () => {
     const result = await scrapeEvent('http://test.com', {});
     expect(htmlParser.getUserStats).toHaveBeenCalledWith('Test Data');
-    expect(result).toHaveProperty('usersGoing', 10);
-    expect(result).toHaveProperty('usersInterested', 20);
+    expect(result).toHaveProperty('usersResponded', 10);
   });
 });

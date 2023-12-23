@@ -97,8 +97,7 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
     }
   ],
   "ticketUrl": null,
-  "usersGoing": 10,
-  "usersInterested": 24
+  "usersResponded": 10
 }
 ```
 
