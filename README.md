@@ -45,7 +45,7 @@ async function example2() {
 }
 ```
 
-The scrapeEvent function returns a Promise with the scraped event data. See below for an example of the event data, or [see the type definition here](https://github.com/francescov1/facebook-events-scraper/blob/ba82afd5153623a05ea5a14cb9c57f7cf8abb80d/src/types.ts#L1).
+The scrapeEvent function returns a Promise with the scraped event data. See below for an example of the event data, or [see the type definition here](https://github.com/francescov1/facebook-event-scraper/blob/master/src/types.ts#L3).
 
 ```json
 {
