@@ -2,6 +2,8 @@ import { validateAndFormatUrl, fbidToUrl } from './utils/url';
 import { EventData, ScrapeOptions } from './types';
 import { scrapeEvent } from './scraper';
 
+export { EventData, ScrapeOptions };
+
 export const scrapeFbEvent = async (
   url: string,
   options: ScrapeOptions = {}
