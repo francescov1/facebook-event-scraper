@@ -52,8 +52,6 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
   "id": "115982989234742",
   "name": "Example Event",
   "description": "This is an example event description.",
-  "startTime": "2023-04-10T14:00:00-0700",
-  "endTime": "2023-04-10T18:00:00-0700",
   "location": {
     "id": "118309434891614",
     "name": "Example Location Label",
