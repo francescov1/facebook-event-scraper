@@ -40,6 +40,7 @@ describe('getDescription', () => {
 describe('getBasicData', () => {
   it('should return basic data with cover photo', () => {
     mockJsonReturnData({
+      id: '123',
       name: 'some name',
       cover_media_renderer: {
         cover_photo: {
@@ -65,6 +66,7 @@ describe('getBasicData', () => {
       expect.any(Function)
     );
     expect(result).toEqual({
+      id: '123',
       name: 'some name',
       photo: {
         url: 'some url',
@@ -75,12 +77,15 @@ describe('getBasicData', () => {
       formattedDate: 'some date',
       startTimestamp: 1680476245,
       isOnline: true,
-      url: 'some url'
+      url: 'some url',
+      parentEvent: null,
+      siblingEvents: []
     });
   });
 
   it('should return basic data with cover photo set under full_image', () => {
     mockJsonReturnData({
+      id: '123',
       name: 'some name',
       cover_media_renderer: {
         cover_photo: {
@@ -106,6 +111,7 @@ describe('getBasicData', () => {
       expect.any(Function)
     );
     expect(result).toEqual({
+      id: '123',
       name: 'some name',
       photo: {
         url: 'some url',
@@ -116,12 +122,15 @@ describe('getBasicData', () => {
       formattedDate: 'some date',
       startTimestamp: 1680476245,
       isOnline: true,
-      url: 'some url'
+      url: 'some url',
+      parentEvent: null,
+      siblingEvents: []
     });
   });
 
   it('should return basic data with cover video', () => {
     mockJsonReturnData({
+      id: '123',
       name: 'some name',
       cover_media_renderer: {
         cover_video: {
@@ -145,6 +154,7 @@ describe('getBasicData', () => {
       expect.any(Function)
     );
     expect(result).toEqual({
+      id: '123',
       name: 'some name',
       photo: null,
       video: {
@@ -155,7 +165,104 @@ describe('getBasicData', () => {
       formattedDate: 'some date',
       startTimestamp: 1680476245,
       isOnline: true,
-      url: 'some url'
+      url: 'some url',
+      siblingEvents: [],
+      parentEvent: null
+    });
+  });
+
+  it('should return basic data with parent and sibling events', () => {
+    mockJsonReturnData({
+      id: '123',
+      name: 'some name',
+      day_time_sentence: 'some date',
+      start_timestamp: 1680476245,
+      is_online: false,
+      url: 'some url',
+      comet_neighboring_siblings: [
+        {
+          id: 'sibling id 1',
+          start_timestamp: 123,
+          end_timestamp: 456,
+          parent_event: { id: 'parent id' }
+        },
+        {
+          id: 'sibling id 2',
+          start_timestamp: 789,
+          end_timestamp: 123,
+          parent_event: { id: 'parent id' }
+        }
+      ],
+      parent_if_exists_or_self: { id: 'parent id' }
+    });
+    const result = htmlParser.getBasicData('some html');
+
+    expect(findJsonInStringSpy).toHaveBeenCalledWith(
+      'some html',
+      'event',
+      expect.any(Function)
+    );
+    expect(result).toEqual({
+      id: '123',
+      name: 'some name',
+      photo: null,
+      video: null,
+      formattedDate: 'some date',
+      startTimestamp: 1680476245,
+      isOnline: false,
+      url: 'some url',
+      siblingEvents: [
+        {
+          id: 'sibling id 1',
+          startTimestamp: 123,
+          endTimestamp: 456,
+          parentEvent: {
+            id: 'parent id'
+          }
+        },
+        {
+          id: 'sibling id 2',
+          startTimestamp: 789,
+          endTimestamp: 123,
+          parentEvent: {
+            id: 'parent id'
+          }
+        }
+      ],
+      parentEvent: {
+        id: 'parent id'
+      }
+    });
+  });
+
+  it(`should return basic data without parent if it's self`, () => {
+    mockJsonReturnData({
+      id: '123',
+      name: 'some name',
+      day_time_sentence: 'some date',
+      start_timestamp: 1680476245,
+      is_online: false,
+      url: 'some url',
+      parent_if_exists_or_self: { id: '123' }
+    });
+    const result = htmlParser.getBasicData('some html');
+
+    expect(findJsonInStringSpy).toHaveBeenCalledWith(
+      'some html',
+      'event',
+      expect.any(Function)
+    );
+    expect(result).toEqual({
+      id: '123',
+      name: 'some name',
+      photo: null,
+      video: null,
+      formattedDate: 'some date',
+      startTimestamp: 1680476245,
+      isOnline: false,
+      url: 'some url',
+      siblingEvents: [],
+      parentEvent: null
     });
   });
 

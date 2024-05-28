@@ -4,16 +4,16 @@ exports[`E2E Generates the correct event data for a Messenger Rooms Online event
 {
   "description": "Description with json chars { woohoo hope this doesnt screw anything up ] [ ",
   "endTimestamp": null,
-  "formattedDate": "Thursday, May 11, 2023 at 2:00 PM UTC-06",
+  "formattedDate": "Thursday, May 11, 2023 at 3:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl",
+      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=CO5dz350V7MAX8i0KzV&_nc_ht=scontent-sjc3-1.xx&oh=00_AfD_xDy9YaWFINwTUZn2knsJ6Bop--w4jXw-4cYGZoL5_g&oe=65ADA0F8",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
     },
   ],
   "id": "564972362099646",
@@ -24,7 +24,9 @@ exports[`E2E Generates the correct event data for a Messenger Rooms Online event
     "type": "MESSENGER_ROOM",
     "url": null,
   },
+  "parentEvent": null,
   "photo": null,
+  "siblingEvents": [],
   "startTimestamp": 1683838800,
   "ticketUrl": null,
   "timezone": "UTC-06",
@@ -69,13 +71,13 @@ Aisle Seat Offer Presale : Wed, 22 Mar 2023 at 10:00 AM
 Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
 ",
   "endTimestamp": null,
-  "formattedDate": "Friday, July 7, 2023 at 6:30 PM MDT",
+  "formattedDate": "Friday, July 7, 2023 at 7:30 PM MDT",
   "hosts": [
     {
       "id": "100068207392255",
       "name": "Scotiabank Saddledome",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=109&ccb=1-7&_nc_sid=596444&_nc_ohc=lImsl-L78xkAX-GA4Dd&_nc_ht=scontent-sjc3-1.xx&oh=00_AfArzY_bzU5S5QYaAfflUO8Ev4HpUtSzm6V4uzvJ3SqwiA&oe=658B478B",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pIEcPD9VA7AQ7kNvgEjsWkY&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCVsBrtUtVUj1-UTO3nnd7hZjWxlmj6vbFCF7skKXj4oA&oe=665AEBCB",
       },
       "type": "User",
       "url": "https://www.facebook.com/scotiabanksaddledome",
@@ -84,7 +86,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100064516969267",
       "name": "Calgary Stampede",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=108&ccb=1-7&_nc_sid=596444&_nc_ohc=gL6qwT24Mp0AX9ryMz7&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAu_QtEo3ngmuKeXVJ4YUnwsMYNZse9lZYfV__fJL1kbA&oe=658B9C6B",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NrevvjYocNUQ7kNvgGeB65c&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAGYSdHcG4QSJ_L-v7KUiAihDD7TGYcInr4LJfo2siusQ&oe=665B086B",
       },
       "type": "User",
       "url": "https://www.facebook.com/calgarystampede",
@@ -93,7 +95,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=101&ccb=1-7&_nc_sid=596444&_nc_ohc=ko17SulDWsQAX9eZSS3&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCF_yLtuKYEPHucFjzmwLySL5Dk0XqTC2OtYkhdhy7iOg&oe=658A6B42",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tdvF9zNGEC4Q7kNvgEKKdzD&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAaA69rEZuaZ_uDVDMp0OkQWIsHLpTnOdzzblpbMhu6QQ&oe=665AF082",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -102,7 +104,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100044535845092",
       "name": "Pitbull",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/385779974_903914224436431_2458871289190723822_n.jpg?stp=cp6_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=596444&_nc_ohc=E9QynNW8D8UAX_aDMsc&_nc_ht=scontent-sjc3-1.xx&oh=00_AfA2vh9RwQtVKHb4vrqa2A0bZGaDMWS6B-vXTuSndf40yg&oe=658B0731",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/439064200_1017561226405063_8213471074013536032_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eULRxh-j_XYQ7kNvgHjQ1Hq&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDQG4Mk18G-tORAqrYBQctqNd6vqtSeeweSGyqCkuYEKw&oe=665B07C3",
       },
       "type": "User",
       "url": "https://www.facebook.com/pitbull",
@@ -129,11 +131,13 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
   },
   "name": "Pitbull with Special Guest Reve",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "10160954790708641",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?stp=dst-jpg_p180x540&_nc_cat=103&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=pjC8nDFR_HMAX9YDjRZ&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCIV0Z2smqNXiyZIM81MEAmf7BoW-L2DxDcC4xronXloA&oe=658A452D",
-    "url": "https://www.facebook.com/Ticketmaster/photos/gm.602005851971871/10160954790708641/",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=yD0zEIup1nMQ7kNvgEKvA7k&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAZSFUNWAenEAXZGsuepO4t1r2rvmdGV69DhP4vFKayIA&oe=665B02AD",
+    "url": "https://www.facebook.com/photo/?fbid=10160954790708641&set=gm.602005851971871",
   },
+  "siblingEvents": [],
   "startTimestamp": 1688779800,
   "ticketUrl": null,
   "timezone": "MDT",
@@ -157,13 +161,13 @@ Expect a 75-minute service filled with worship music, creative elements, and a m
 
 More info: https://www.faccalgary.com/easter",
   "endTimestamp": 1681065000,
-  "formattedDate": "Sunday, April 9, 2023 at 10:15 AM – 11:30 AM UTC-06",
+  "formattedDate": "Sunday, April 9, 2023 at 11:15 AM – 12:30 PM MDT",
   "hosts": [
     {
       "id": "100064691376556",
       "name": "FAC Calgary",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/308800346_490298226469886_3396126836502450064_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=108&ccb=1-7&_nc_sid=596444&_nc_ohc=VEmODNVvd7cAX8-pDzU&_nc_ht=scontent-sjc3-1.xx&oh=00_AfDimcTm1W91IR_ZF0jdwy1x31yXfdKWhasnnOoGWrbWjw&oe=658B7A66",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/308800346_490298226469886_3396126836502450064_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=XorBRYL7So4Q7kNvgGOzKe_&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBjMc1J9UxsZYzhVjN6BGZ-p0YF4r8ijmKwBZ-lRM4mbg&oe=665AE666",
       },
       "type": "User",
       "url": "https://www.facebook.com/faccalgary",
@@ -182,7 +186,7 @@ More info: https://www.faccalgary.com/easter",
       "longitude": -113.97362557296,
     },
     "countryCode": "CA",
-    "description": "Building lives that honour God...all for Jesus! 
+    "description": "Joining Jesus in the renewal of all things! 
 Official Facebook Page for First Alliance Church",
     "id": "118309434891614",
     "name": "FAC Calgary",
@@ -191,11 +195,40 @@ Official Facebook Page for First Alliance Church",
   },
   "name": "Easter - Deerfoot & Online Campuses",
   "onlineDetails": null,
+  "parentEvent": {
+    "id": "1137956700212933",
+  },
   "photo": {
     "id": "595982989234742",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/335064084_2456887831142064_5931438962804874346_n.jpg?stp=dst-jpg_p480x480&_nc_cat=103&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=5wRbw1gXpIgAX_KlUEo&_nc_ht=scontent-sjc3-1.xx&oh=00_AfChAT9Zfalbd0toGLosEgx8gBSynkxNBiFe2_bojusUgg&oe=658A5B1A",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/335064084_2456887831142064_5931438962804874346_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=6qlmgg03aggQ7kNvgH3wW_V&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBR1pG-4pYCS7lFSpRlc9EelvZxmLo8zl-LCVaPE2aJCw&oe=665B189A",
     "url": "https://www.facebook.com/photo/?fbid=595982989234742&set=gm.1137956736879596",
   },
+  "siblingEvents": [
+    {
+      "endTimestamp": 1681065000,
+      "id": "1137956703546266",
+      "parentEvent": {
+        "id": "1137956700212933",
+      },
+      "startTimestamp": 1681060500,
+    },
+    {
+      "endTimestamp": 1681057800,
+      "id": "1137956710212932",
+      "parentEvent": {
+        "id": "1137956700212933",
+      },
+      "startTimestamp": 1681053300,
+    },
+    {
+      "endTimestamp": 1681004700,
+      "id": "1137956706879599",
+      "parentEvent": {
+        "id": "1137956700212933",
+      },
+      "startTimestamp": 1681000200,
+    },
+  ],
   "startTimestamp": 1681060500,
   "ticketUrl": null,
   "timezone": "UTC-06",
@@ -214,7 +247,7 @@ PLEASE NOTE WE WILL MEET AT PARKING LOT FOR REFINERY FLATS.
 https://www.google.com/maps/place/Refinery+Park/@51.0051425,-114.019193,17z/data=!3m1!4b1!4m5!3m4!1s0x53717a7f5ddd6dd5:0x1b8647891750b9e2!8m2!3d51.0051425!4d-114.0170043
 Binoculars are available to borrow for those who need them.",
   "endTimestamp": 1680543000,
-  "formattedDate": "Monday, April 3, 2023 at 8:00 AM – 10:30 AM UTC-06",
+  "formattedDate": "Monday, April 3, 2023 at 9:00 AM – 11:30 AM MDT",
   "hosts": [],
   "id": "252144510602906",
   "isOnline": false,
@@ -234,11 +267,13 @@ Binoculars are available to borrow for those who need them.",
   },
   "name": "Nature Calgary Birding - Refinery Park to Beaverdam Flats",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "10167524860335261",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p480x480&_nc_cat=107&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=HgHlEkqQmZ4AX9iA12w&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAaYalQZ4ODm2OkMLJhhD5fQxA22fBM2GO914H4TXpUvA&oe=658B5EB1",
-    "url": "https://www.facebook.com/EventbriteforOrganizers/photos/gm.252144523936238/10167524860335261/",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p960x960&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=OZkaU6TrG_YQ7kNvgGvK1eo&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDB62x3kj3foSUV_aPoeQrpD7QDiPIJHSX5cjAVEoPnKQ&oe=665B02F1",
+    "url": "https://www.facebook.com/photo/?fbid=10167524860335261&set=gm.252144523936238",
   },
+  "siblingEvents": [],
   "startTimestamp": 1680534000,
   "ticketUrl": null,
   "timezone": "UTC-06",
@@ -256,13 +291,13 @@ Each spring, thousands of attendees come out to enjoy the unique and pedestrian 
 
 At the Lilac Festival, there is an activity made for all ages. This could mean a jump in the bouncer for the kids, discovering a great new band, choosing a perfect summer patio or searching for a trendy fashion; there is no shortage of things happening.",
   "endTimestamp": 1685923200,
-  "formattedDate": "Sunday, June 4, 2023 at 9:00 AM – 5:00 PM UTC-06",
+  "formattedDate": "Sunday, June 4, 2023 at 10:00 AM – 6:00 PM MDT",
   "hosts": [
     {
       "id": "100050510798749",
       "name": "Lilac Festival",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/343412725_1217737712204297_6274770509266232269_n.jpg?stp=c2.1.38.38a_cp0_dst-jpg_p40x40&_nc_cat=111&ccb=1-7&_nc_sid=596444&_nc_ohc=WqmxoXVN4GcAX-KnJVb&_nc_ht=scontent-sjc3-1.xx&oh=00_AfABNxj7e3LwtOFdYW8WYG-ramzz9in_NLgK-AMXRF6HQg&oe=658B47B4",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/343412725_1217737712204297_6274770509266232269_n.jpg?stp=c50.34.938.938a_cp0_dst-jpg_s74x74&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rATo0QA82sQQ7kNvgGA1Uo0&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCZETfcZTG2yBB8Dg3Qra8bcVPicsxwzd24-DQCX0GQvA&oe=665AEBF4",
       },
       "type": "User",
       "url": "https://www.facebook.com/LilacFestival",
@@ -286,16 +321,18 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
   },
   "name": "4th Street Lilac Festival",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "749222690104751",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/334947163_707773884461245_8821128704004863167_n.jpg?stp=dst-jpg_s960x960&_nc_cat=107&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=WCQptInO58wAX-HCVLu&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAwjEhJvzMiqATtjqTvEDjVOduUtCV2tuXMkTu_8jHYxg&oe=658C383A",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/334947163_707773884461245_8821128704004863167_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=36BzJzecAxEQ7kNvgHhluEK&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAWICj96-PzWUjBIKDMqtQtsTN24_DH4-DCNH6VN8tzCw&oe=665AFB7A",
     "url": "https://www.facebook.com/photo/?fbid=749222690104751&set=gm.719931573255940",
   },
+  "siblingEvents": [],
   "startTimestamp": 1685894400,
   "ticketUrl": null,
   "timezone": "UTC-06",
   "url": "https://www.facebook.com/events/719931529922611/",
-  "usersResponded": 5942,
+  "usersResponded": 5941,
   "video": null,
 }
 `;
@@ -304,16 +341,16 @@ exports[`E2E Generates the correct event data for an event with a text location 
 {
   "description": "hbhjbjh",
   "endTimestamp": null,
-  "formattedDate": "Tuesday, April 4, 2023 at 10:00 PM UTC-06",
+  "formattedDate": "Tuesday, April 4, 2023 at 11:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl",
+      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=CO5dz350V7MAX8i0KzV&_nc_ht=scontent-sjc3-1.xx&oh=00_AfD_xDy9YaWFINwTUZn2knsJ6Bop--w4jXw-4cYGZoL5_g&oe=65ADA0F8",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
     },
   ],
   "id": "526262926343074",
@@ -331,7 +368,9 @@ exports[`E2E Generates the correct event data for an event with a text location 
   },
   "name": "Event to test",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": null,
+  "siblingEvents": [],
   "startTimestamp": 1680670800,
   "ticketUrl": null,
   "timezone": "UTC-06",
@@ -368,13 +407,13 @@ Join our group!
 https://www.facebook.com/groups/darkeighties
 ",
   "endTimestamp": 1683360000,
-  "formattedDate": "Friday, May 5, 2023 at 9:00 PM – 1:00 AM UTC-06",
+  "formattedDate": "Friday, May 5, 2023 at 10:00 PM – 2:00 AM MDT",
   "hosts": [
     {
       "id": "100070821304084",
       "name": "12XU",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=104&ccb=1-7&_nc_sid=596444&_nc_ohc=CT1UYneHfKgAX_30IgG&_nc_ht=scontent-sjc3-1.xx&oh=00_AfDHe8xK98hN-dmYJr1b3tH2IQb9WfosGMaZX72JSr5Sdw&oe=658B7AA6",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=1tEO-CuSYwYQ7kNvgEQass1&_nc_ht=scontent-sjc3-1.xx&oh=00_AYD7FYIFJmwxoPnNbLt8eOzzzv5NOd_2IY3TW8FBTY2aTg&oe=665AE6A6",
       },
       "type": "User",
       "url": "https://www.facebook.com/12XUevents",
@@ -383,7 +422,7 @@ https://www.facebook.com/groups/darkeighties
       "id": "100063904024919",
       "name": "The Dark Eighties",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=108&ccb=1-7&_nc_sid=596444&_nc_ohc=nhGFswOioisAX_NZcdD&_nc_ht=scontent-sjc3-1.xx&oh=00_AfBW7bioy_vdpqK2kVQaydlTIOfUClv9krm6Np4X-1_g2Q&oe=658B51E7",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=K_hH1kvPYfEQ7kNvgEvREva&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDnOS0xvtKj9yToKBJn7-vX2j8mN9vPq2nwzxk3MszChw&oe=665AF627",
       },
       "type": "User",
       "url": null,
@@ -407,11 +446,13 @@ https://www.facebook.com/groups/darkeighties
   },
   "name": "The Dark Eighties: 1977-2023 Edition",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "621131586693637",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337126422_218835007357788_3208832482586448057_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=v6B1Y9VcHrwAX9KGLOP&_nc_ht=scontent-sjc3-1.xx&oh=00_AfC3AiyUU2HUgUAT4R8vWQRDoC5xaRaQz5xvfsp7rl0EPw&oe=658A5730",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337126422_218835007357788_3208832482586448057_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=LohITVbbicwQ7kNvgH0ejYR&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBLY8kAvUn2uIJ3NkeHzTcx30SQysQh2S2wz0P5Rye0lQ&oe=665B14B0",
     "url": "https://www.facebook.com/photo/?fbid=621131586693637&set=gm.1376686326480508",
   },
+  "siblingEvents": [],
   "startTimestamp": 1683345600,
   "ticketUrl": null,
   "timezone": "UTC-06",
@@ -436,13 +477,13 @@ Daugiau informacijos apie „Lietuva 2050” – www.Lietuva2050.lt
 Ateitį kurkime šiandien!   
 ",
   "endTimestamp": 1684333800,
-  "formattedDate": "Wednesday, May 17, 2023 at 6:00 AM – 7:30 AM UTC+03",
+  "formattedDate": "Wednesday, May 17, 2023 at 4:00 PM – 5:30 PM EEST",
   "hosts": [
     {
       "id": "100067786593384",
       "name": "Lietuva 2050",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=111&ccb=1-7&_nc_sid=596444&_nc_ohc=viK5PwuIonEAX8b9yt9&_nc_ht=scontent-sjc3-1.xx&oh=00_AfC_BcS5-5J6_Ys4iAUYPjh-D-1ob9JVIKxpq-6vYMBxKA&oe=658BFE91",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IzWDodpL1joQ7kNvgF61I4i&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAG-e09KDTkOVEOPJWF9hBrG5bL353RvR7-rsfN4mLBRg&oe=665AFA11",
       },
       "type": "User",
       "url": "https://www.facebook.com/Lietuva2050",
@@ -451,7 +492,7 @@ Ateitį kurkime šiandien!
       "id": "100039182298687",
       "name": "VU Šiaulių akademija",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=105&ccb=1-7&_nc_sid=596444&_nc_ohc=tE63EmxsiiUAX__M5nr&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCcYShzWKb5TynrGqzaokyOQ3bDy7Q2Kgj2P4t4ciXloQ&oe=658A5FFC",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=W5408ViJrqcQ7kNvgFRzeGh&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCg_THTJqsRgicS8MPkGlrt7mVniHTAklEe-ToX_liNDg&oe=665B1D7C",
       },
       "type": "User",
       "url": "https://www.facebook.com/siauliu.akademija",
@@ -460,7 +501,7 @@ Ateitį kurkime šiandien!
       "id": "100064306435250",
       "name": "Vilniaus universitetas / Vilnius University",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=104&ccb=1-7&_nc_sid=596444&_nc_ohc=PLFWPQ1ML9kAX9SHeRQ&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAcu1K7gP_BaK1xhIRObPnDJK9MpjB-De8nv3Hv-tz3lg&oe=658A4632",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pilGodO3tdkQ7kNvgEIqnHg&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAEV7h4NaDh0j1NysFDNAWrbE2O7C7zXtwhQDPenlBweA&oe=665B03B2",
       },
       "type": "User",
       "url": "https://www.facebook.com/VilniusUniversity",
@@ -469,7 +510,7 @@ Ateitį kurkime šiandien!
       "id": "100064644461523",
       "name": "Šiaulių apskrities Povilo Višinskio viešoji biblioteka",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/342967593_283796257308792_6891719300998916370_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=596444&_nc_ohc=h1cfv2iV2HIAX_D0cLs&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAY5FogQoyrq1_CDPwXO7bBMUFXvXI_JVil2oq4jAJ-8A&oe=658AB827",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/342967593_283796257308792_6891719300998916370_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=fuiOeMlgebAQ7kNvgEg883g&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAK7SEOYPurQ7OXsU9BnKjI9wcC72LcYOkEcLtWRLuvRw&oe=665B0527",
       },
       "type": "User",
       "url": "https://www.facebook.com/SAVB.info",
@@ -483,7 +524,9 @@ Ateitį kurkime šiandien!
     "type": "FB_LIVE",
     "url": null,
   },
+  "parentEvent": null,
   "photo": null,
+  "siblingEvents": [],
   "startTimestamp": 1684328400,
   "ticketUrl": null,
   "timezone": "UTC+03",
@@ -491,7 +534,7 @@ Ateitį kurkime šiandien!
   "usersResponded": 123,
   "video": {
     "id": "2194658774256880",
-    "thumbnailUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_p960x960&_nc_cat=107&ccb=1-7&_nc_sid=1a7029&_nc_ohc=Gh5QLvOKxvUAX8tWZCY&_nc_ht=scontent-sjc3-1.xx&oh=00_AfBt-G78MMtfKkpGgOgquwsM4LB6oMAlRLxfKfxjlflhrQ&oe=658BA46B",
+    "thumbnailUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_p960x960&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZMVbqkvKNrYQ7kNvgFzWuQY&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDtKMUacQ5VhRWjtVTwQn3Zltoz_U3wMtKbb_cwbwGa-g&oe=665B106B",
     "url": "https://www.facebook.com/Lietuva2050/videos/2194658774256880/",
   },
 }
@@ -503,13 +546,13 @@ exports[`E2E Generates the correct event data for an event with multiple hosts, 
 
 Tickets are ON SALE NOW!",
   "endTimestamp": null,
-  "formattedDate": "Saturday, July 15, 2023 at 1:00 PM EDT",
+  "formattedDate": "Saturday, July 15, 2023 at 4:00 PM EDT",
   "hosts": [
     {
       "id": "100064709654009",
       "name": "All Elite Wrestling",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/335675194_2899374420207257_9101454388622372305_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=596444&_nc_ohc=JdNpbfIc6vsAX_ngrPR&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCDUNfK5KJlvFbGA_x7pVE-koDoI6CojE6fsl6lelnyQw&oe=658B44BB",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/430081703_800418912125090_6763025059361084487_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=EEqqoFqaVsIQ7kNvgHC1Lx-&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCkLq1OG3ddW0bPrrfdAyefYkA45-jbo-tNEthHbQw5Lw&oe=665B1C74",
       },
       "type": "User",
       "url": "https://www.facebook.com/AEW",
@@ -518,7 +561,7 @@ Tickets are ON SALE NOW!",
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=101&ccb=1-7&_nc_sid=596444&_nc_ohc=ko17SulDWsQAX9eZSS3&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCF_yLtuKYEPHucFjzmwLySL5Dk0XqTC2OtYkhdhy7iOg&oe=658A6B42",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tdvF9zNGEC4Q7kNvgEKKdzD&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAaA69rEZuaZ_uDVDMp0OkQWIsHLpTnOdzzblpbMhu6QQ&oe=665AF082",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -545,11 +588,13 @@ Tickets are ON SALE NOW!",
   },
   "name": "All Elite Wrestling (AEW) Collision Calgary, Alberta Debut!",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "1273089803342464",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/348823734_2075221392674298_547668571002268793_n.jpg?stp=dst-jpg_p180x540&_nc_cat=107&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=7LrVOTRyU7wAX-wTdHY&_nc_ht=scontent-sjc3-1.xx&oh=00_AfBlM8IdxMuo6fr7jdCahU9HxLgPtdQeDqHBAK-abBSWLg&oe=658A65F8",
-    "url": "https://www.facebook.com/AEW/photos/gm.977705193657933/1273089803342464/",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/348823734_2075221392674298_547668571002268793_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pFczTRO5RE8Q7kNvgEAxgKT&_nc_ht=scontent-sjc3-1.xx&oh=00_AYB1V9W5VMdhqxnzw85ymYoabxlJdZfI1_QtMQ6pioaTZQ&oe=665AEB38",
+    "url": "https://www.facebook.com/photo/?fbid=1273089803342464&set=gm.977705193657933",
   },
+  "siblingEvents": [],
   "startTimestamp": 1689451200,
   "ticketUrl": null,
   "timezone": "EDT",
@@ -567,13 +612,13 @@ Mokomojo dalyko pedagogika: istorija ir geografija bakalauro programa vykdoma Ka
 
 Registracija: https://forms.office.com/e/DvfJn8q27D",
   "endTimestamp": 1685629800,
-  "formattedDate": "Thursday, June 1, 2023 at 6:00 AM – 7:30 AM UTC+03",
+  "formattedDate": "Thursday, June 1, 2023 at 4:00 PM – 5:30 PM EEST",
   "hosts": [
     {
       "id": "100064711685049",
       "name": "VDU Švietimo akademija",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274685098_5567767706572475_1252348629032694585_n.jpg?stp=cp0_dst-jpg_p40x40&_nc_cat=109&ccb=1-7&_nc_sid=596444&_nc_ohc=CETm_EkMv3wAX9xCF9n&_nc_oc=AQl2k9LWV1It-BK38DmWk9mSPI82l_j8qNESm_TgQMbbGb9d3HdtKoujUZoD8MWeEyI&_nc_ht=scontent-sjc3-1.xx&oh=00_AfA3qBcMtRj5SEDdiTmJLv5rfHaIt8A_U_OWK9E3HyOdAg&oe=658B2C3B",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274685098_5567767706572475_1252348629032694585_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=11rg-xddKV4Q7kNvgGhD9y-&_nc_ht=scontent-sjc3-1.xx&oh=00_AYD5VmpY3xZ1trCYHQqoOnUxYTAhdyFkF0vzTpajo-TkCg&oe=665B08BB",
       },
       "type": "User",
       "url": "https://www.facebook.com/VDU.svietimo.akademija",
@@ -584,11 +629,13 @@ Registracija: https://forms.office.com/e/DvfJn8q27D",
   "location": null,
   "name": "Virtualus renginys „#TAPKMOKYTOJU. Mokomojo dalyko pedagogika: istorija ir geografija“ ",
   "onlineDetails": null,
+  "parentEvent": null,
   "photo": {
     "id": "6986078114741420",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/349523504_596340745925274_3047478399487167752_n.jpg?stp=dst-jpg_s960x960&_nc_cat=110&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=3qzOwycqbqkAX8g0nXJ&_nc_ht=scontent-sjc3-1.xx&oh=00_AfAqHFb9ZLB_VTG4t9FnxIjrPUNnPZdJ_O1wE3cgHnGhzw&oe=658ABA22",
-    "url": "https://www.facebook.com/VDU.svietimo.akademija/photos/gm.782998683471595/6986078114741420/",
+    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/349523504_596340745925274_3047478399487167752_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Ug3itfxfET4Q7kNvgE1UV2f&_nc_ht=scontent-sjc3-1.xx&oh=00_AYA6QcM4udpDAHpbVAyitQOTZx77lBwgOKA8JB5TAc_tNQ&oe=665B0722",
+    "url": "https://www.facebook.com/photo/?fbid=6986078114741420&set=gm.782998683471595",
   },
+  "siblingEvents": [],
   "startTimestamp": 1685624400,
   "ticketUrl": null,
   "timezone": "UTC+03",
@@ -602,16 +649,16 @@ exports[`E2E Generates the correct event data for an online event with a third-p
 {
   "description": "",
   "endTimestamp": null,
-  "formattedDate": "Friday, June 16, 2023 at 3:00 PM UTC-06",
+  "formattedDate": "Friday, June 16, 2023 at 4:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl",
+      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p40x40&_nc_cat=1&ccb=1-7&_nc_sid=2b6aad&_nc_ohc=CO5dz350V7MAX8i0KzV&_nc_ht=scontent-sjc3-1.xx&oh=00_AfD_xDy9YaWFINwTUZn2knsJ6Bop--w4jXw-4cYGZoL5_g&oe=65ADA0F8",
+        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGuAF5VRG3Azhcy3JUidKRgSMLco4iCTkspQnbmKVVo27ARnJJQrMUPTep4uFEMjl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
     },
   ],
   "id": "760928342374546",
@@ -622,7 +669,9 @@ exports[`E2E Generates the correct event data for an online event with a third-p
     "type": "THIRD_PARTY",
     "url": "https://www.example.com/hey",
   },
+  "parentEvent": null,
   "photo": null,
+  "siblingEvents": [],
   "startTimestamp": 1686952800,
   "ticketUrl": null,
   "timezone": "UTC-06",
