@@ -29,6 +29,8 @@ export const getBasicData = (
   | 'startTimestamp'
   | 'isOnline'
   | 'url'
+  | 'siblingEvents'
+  | 'parentEvent'
 > => {
   const { jsonData } = findJsonInString(
     html,
@@ -64,7 +66,23 @@ export const getBasicData = (
     formattedDate: jsonData.day_time_sentence,
     startTimestamp: jsonData.start_timestamp,
     isOnline: jsonData.is_online,
-    url: jsonData.url
+    url: jsonData.url,
+    // Sibling events, for multi-date events
+    siblingEvents:
+      jsonData.comet_neighboring_siblings?.map(
+        (sibling: Record<string, any>) => ({
+          id: sibling.id,
+          startTimestamp: sibling.start_timestamp,
+          endTimestamp: sibling.end_timestamp,
+          parentEvent: { id: sibling.parent_event.id }
+        })
+      ) ?? [],
+    // If parent exists, and its not the same as the current event, set the parentEvent field
+    parentEvent:
+      jsonData.parent_if_exists_or_self &&
+      jsonData.parent_if_exists_or_self.id !== jsonData.id
+        ? { id: jsonData.parent_if_exists_or_self.id }
+        : null
   };
 };
 

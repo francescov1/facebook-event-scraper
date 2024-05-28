@@ -23,6 +23,22 @@ export interface EventData {
   onlineDetails: OnlineEventDetails | null;
   ticketUrl: string | null;
   usersResponded: number;
+  /**
+   * The parentEvent and siblingEvents fields are set to for multi-day events. Each sibling event will be a different date for the parent event.
+   */
+  parentEvent: ParentEvent | null;
+  siblingEvents: SiblingEvent[];
+}
+
+export interface ParentEvent {
+  id: string;
+}
+
+export interface SiblingEvent {
+  id: string;
+  startTimestamp: number;
+  endTimestamp: number | null;
+  parentEvent: ParentEvent;
 }
 
 export interface OnlineEventDetails {

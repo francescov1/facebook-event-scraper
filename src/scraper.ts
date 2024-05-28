@@ -18,7 +18,9 @@ export const scrapeEvent = async (
     isOnline,
     url,
     startTimestamp,
-    formattedDate
+    formattedDate,
+    siblingEvents,
+    parentEvent
   } = htmlParser.getBasicData(dataString);
 
   const { endTimestamp, timezone } = htmlParser.getEndTimestampAndTimezone(
@@ -56,6 +58,8 @@ export const scrapeEvent = async (
     onlineDetails,
     hosts,
     ticketUrl,
+    siblingEvents,
+    parentEvent,
     usersResponded
   };
 };

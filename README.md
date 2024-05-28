@@ -95,9 +95,28 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
     }
   ],
   "ticketUrl": null,
-  "usersResponded": 10
+  "usersResponded": 10,
+  "parentEvent": { "id": "461592909271924" },
+  "siblingEvents": [
+    {
+      "id": "138282953023820",
+      "startTimestamp": 1717003800,
+      "endTimestamp": 1717011000,
+      "parentEvent": { "id": "461592909271924" }
+    },
+    {
+      "id": "162229499644927",
+      "startTimestamp": 1716399000,
+      "endTimestamp": 1716406200,
+      "parentEvent": { "id": "461592909271924" }
+    }
+  ]
 }
 ```
+
+### Multi-date events
+
+If an event has multiple times/dates, it will have the `parentEvent` and `siblingEvents` fields populated. Each sibling event is a date for the parent event.
 
 ### Using a proxy
 
