@@ -19,6 +19,7 @@ export interface EventData {
   video: EventVideo | null;
   url: string;
   isOnline: boolean;
+  categories: EventCategory[];
   /** Only set if isOnline = true */
   onlineDetails: OnlineEventDetails | null;
   ticketUrl: string | null;
@@ -85,6 +86,11 @@ export interface EventLocation {
     name: string;
     id: string;
   } | null;
+}
+
+export interface EventCategory {
+  label: string;
+  url: string;
 }
 
 export interface ScrapeOptions {
