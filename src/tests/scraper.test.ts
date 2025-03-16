@@ -52,7 +52,13 @@ jest.mock('../utils/htmlParser', () => ({
   ]),
   getUserStats: jest.fn().mockReturnValue({
     usersResponded: 10
-  })
+  }),
+  getCategories: jest.fn().mockReturnValue([
+    {
+      label: 'Test category',
+      url: 'http://category.com'
+    }
+  ])
 }));
 
 jest.mock('../utils/network', () => ({

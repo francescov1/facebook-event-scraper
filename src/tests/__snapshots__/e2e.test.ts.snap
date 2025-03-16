@@ -2,18 +2,19 @@
 
 exports[`E2E Generates the correct event data for a Messenger Rooms Online event 1`] = `
 {
+  "categories": [],
   "description": "Description with json chars { woohoo hope this doesnt screw anything up ] [ ",
   "endTimestamp": null,
   "formattedDate": "Thursday, May 11, 2023 at 3:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
+      "id": "pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=WsLhwQ3crJ4Q7kNvgHhRU81&_nc_oc=Adi4daqDXshJNCP_w812y2b-RCvbo_1KXt-hv6EL-uqaVzpwh9LugSxeFmCOPoNn_GW3VCAbOD-j4iToUhfMnLls&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=5n59QJ-2JKpUGw6uxMHjZA&oh=00_AYFJbMLJwVW1BYTLV6BpccuIfp-Iaoo5le71h_W9C7jyVg&oe=67FE8F3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l/",
     },
   ],
   "id": "564972362099646",
@@ -38,6 +39,7 @@ exports[`E2E Generates the correct event data for a Messenger Rooms Online event
 
 exports[`E2E Generates the correct event data for a concert with multiple hosts & location info 1`] = `
 {
+  "categories": [],
   "description": "Ticket includes admission to Stampede Park
 
 Sale Dates and Times:
@@ -77,7 +79,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100068207392255",
       "name": "Scotiabank Saddledome",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pIEcPD9VA7AQ7kNvgEjsWkY&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCVsBrtUtVUj1-UTO3nnd7hZjWxlmj6vbFCF7skKXj4oA&oe=665AEBCB",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=JWkixMDtNBIQ7kNvgGhb2m3&_nc_oc=AdgNhZL_P83IT5dtgpeA1RvTKexdLwhYZ6v7WLpwCEvn8-RS7nkoegamaV_hFy7XZdtIG28SeHuoMg9HeAVtAitc&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=TtCwV0_lMVMmZG2cHJiipA&oh=00_AYHg2ExEkLvdBly4vRKxXeAJ025xAQShViiRUOgNUVTR7g&oe=67DCFB0B",
       },
       "type": "User",
       "url": "https://www.facebook.com/scotiabanksaddledome",
@@ -86,7 +88,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100064516969267",
       "name": "Calgary Stampede",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NrevvjYocNUQ7kNvgGeB65c&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAGYSdHcG4QSJ_L-v7KUiAihDD7TGYcInr4LJfo2siusQ&oe=665B086B",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=ipjVHGaDKAMQ7kNvgE2qT3o&_nc_oc=Adi86HEmNAJgvU9Ku5sMgmfB-GxE3NeojwGiyOY0kOJ2-7QaFYQq2tJNOvJdS3ivluGQpYoLCHzHeRMVg-9woBoi&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=TtCwV0_lMVMmZG2cHJiipA&oh=00_AYEKk5XYvv1_mLk1MBpYxpeBxN6l79I40innjfOfWqFphQ&oe=67DCDF6B",
       },
       "type": "User",
       "url": "https://www.facebook.com/calgarystampede",
@@ -95,7 +97,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tdvF9zNGEC4Q7kNvgEKKdzD&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAaA69rEZuaZ_uDVDMp0OkQWIsHLpTnOdzzblpbMhu6QQ&oe=665AF082",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=EoQq3RA16g0Q7kNvgHZpLId&_nc_oc=Adh_j1ZU22J1ysDP0W_gBvuIQQUOihtvbF8NF9nhWZf-CwusuA_IP8j0xkExgwghpgvefrMszixUCOjPKcIzYguz&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=TtCwV0_lMVMmZG2cHJiipA&oh=00_AYETvXTV-hk_m7UMDFT3taXUlaUBaZknopfZQhkArPofKw&oe=67DCFFC2",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -104,7 +106,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100044535845092",
       "name": "Pitbull",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/439064200_1017561226405063_8213471074013536032_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=eULRxh-j_XYQ7kNvgHjQ1Hq&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDQG4Mk18G-tORAqrYBQctqNd6vqtSeeweSGyqCkuYEKw&oe=665B07C3",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/439064200_1017561226405063_8213471074013536032_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=EWDYCgmvKTUQ7kNvgF0eugS&_nc_oc=AdhY2c4M3joRpefWXfIOEV8AwLFvmEp0-mm7zfVSIoUD3I81sZ_wTEx61yILP1YPZU9P_9Nf737VzUmDL9v82ZGh&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=TtCwV0_lMVMmZG2cHJiipA&oh=00_AYF31AGIeW3gJ04r4IArqmi99Ifr535eDhOFU1R79aPx3w&oe=67DCDEC3",
       },
       "type": "User",
       "url": "https://www.facebook.com/pitbull",
@@ -134,7 +136,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
   "parentEvent": null,
   "photo": {
     "id": "10160954790708641",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=yD0zEIup1nMQ7kNvgEKvA7k&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAZSFUNWAenEAXZGsuepO4t1r2rvmdGV69DhP4vFKayIA&oe=665B02AD",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=d0jM0rlwe-YQ7kNvgEFbew7&_nc_oc=AdiHtXn2gdM8RYWEE7y0LBNRagEZKzAnU_B6LjcrEU94EaViCut2Dv4NXhouxXQZNpJoJ5JKy9Ft-JJxX_wz2sMC&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=WyztIaZm5o9J_udUf_ab7w&oh=00_AYF6a2W8uEKW-TsSAgos6qS7U6EJ1eOab8zAtIBRZP8rGw&oe=67DD11ED",
     "url": "https://www.facebook.com/photo/?fbid=10160954790708641&set=gm.602005851971871",
   },
   "siblingEvents": [],
@@ -149,6 +151,12 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
 
 exports[`E2E Generates the correct event data for a event with an end date & multiple dates 1`] = `
 {
+  "categories": [
+    {
+      "label": "Religion",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B1763934757268181%5D%7D",
+    },
+  ],
   "description": "Christ is RISEN! Let's celebrate!
 
 We might know the Easter story, but does it mean anything for us today? 
@@ -165,12 +173,12 @@ More info: https://www.faccalgary.com/easter",
   "hosts": [
     {
       "id": "100064691376556",
-      "name": "FAC Calgary",
+      "name": "FAC Deerfoot",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/308800346_490298226469886_3396126836502450064_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=XorBRYL7So4Q7kNvgGOzKe_&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBjMc1J9UxsZYzhVjN6BGZ-p0YF4r8ijmKwBZ-lRM4mbg&oe=665AE666",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/460987627_944177641081940_5270929113802053218_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=W1aQGj-8k_sQ7kNvgEyEPQm&_nc_oc=AdgPdbFWmCy-yf9XMry80CQ9O49iEajDU_gamlLNk03u7p7JjiZSSFhgZpR0_ZR30enLSWW9PeQRYJRpU8xvemov&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=CjizvrpZnsSlH_gZYNFxHA&oh=00_AYEiD-SkGHF70GjVecanCieLh9QC5sUjjwEdCdXyr424BA&oe=67DD0A64",
       },
       "type": "User",
-      "url": "https://www.facebook.com/faccalgary",
+      "url": "https://www.facebook.com/facdeerfoot",
     },
   ],
   "id": "1137956703546266",
@@ -189,9 +197,9 @@ More info: https://www.faccalgary.com/easter",
     "description": "Joining Jesus in the renewal of all things! 
 Official Facebook Page for First Alliance Church",
     "id": "118309434891614",
-    "name": "FAC Calgary",
+    "name": "FAC Deerfoot",
     "type": "PLACE",
-    "url": "https://facebook.com/faccalgary",
+    "url": "https://facebook.com/facdeerfoot",
   },
   "name": "Easter - Deerfoot & Online Campuses",
   "onlineDetails": null,
@@ -200,7 +208,7 @@ Official Facebook Page for First Alliance Church",
   },
   "photo": {
     "id": "595982989234742",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/335064084_2456887831142064_5931438962804874346_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=6qlmgg03aggQ7kNvgH3wW_V&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBR1pG-4pYCS7lFSpRlc9EelvZxmLo8zl-LCVaPE2aJCw&oe=665B189A",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/481055432_1056019033231133_4786716278309143615_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=g96SsT7S3B8Q7kNvgEQTx89&_nc_oc=AdhKLNrPE_0hXhqHwifYlyiOsW2iSgOS0rnKibKplAAAeBLXJqzdR_dC92urz3A9M1IOcD5LjJv1HrXJoaaxFUMr&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=undek1S-Lu9Qzt4DfPbd_g&oh=00_AYHTnMEO1Tf4mSFV9OAPdXHluddQ1fYTyb_mIYs353_RNQ&oe=67DCE654",
     "url": "https://www.facebook.com/photo/?fbid=595982989234742&set=gm.1137956736879596",
   },
   "siblingEvents": [
@@ -240,6 +248,12 @@ Official Facebook Page for First Alliance Church",
 
 exports[`E2E Generates the correct event data for an event hosted by Eventbrite 1`] = `
 {
+  "categories": [
+    {
+      "label": "Wellness",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B1712245629067288%5D%7D",
+    },
+  ],
   "description": "Come bird  Beaverdam Flats from Refinery Park.  There will be open water and wetland areas to explore.
 
 Come bird Refinery Park to Beaverdam Flats with Nature Calgary.   The pathway is along the river and can be slippery and icy at times. Please wear appropriate footwear.  This trip may not be suitable for all mobilities.  We welcome beginner and expert birders on our trips.
@@ -270,7 +284,7 @@ Binoculars are available to borrow for those who need them.",
   "parentEvent": null,
   "photo": {
     "id": "10167524860335261",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p960x960&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=OZkaU6TrG_YQ7kNvgGvK1eo&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDB62x3kj3foSUV_aPoeQrpD7QDiPIJHSX5cjAVEoPnKQ&oe=665B02F1",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=75d36f&_nc_ohc=uRvwv1sVvVMQ7kNvgFKgl-y&_nc_oc=AdhlPxNKwyr0rJmKz9P1PZ8OXZCVqQQCGBcwNkIt3pN0Ovpqd5P35VIO0MTlZGAKxWsxEGRuUdy6RZZ4YBg9bf1b&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=vXHMim_yWpZzWqZPPAjDuw&oh=00_AYHPi0IU-Tiwg0nZYmDVrrgQnlrUKA-Rya5lARzJHxMXQg&oe=67DD1231",
     "url": "https://www.facebook.com/photo/?fbid=10167524860335261&set=gm.252144523936238",
   },
   "siblingEvents": [],
@@ -285,6 +299,12 @@ Binoculars are available to borrow for those who need them.",
 
 exports[`E2E Generates the correct event data for an event with a text address location 1`] = `
 {
+  "categories": [
+    {
+      "label": "Shopping",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B1759906074034918%5D%7D",
+    },
+  ],
   "description": "This free one day event is the start up to Calgary's vibrant festival season, and encourages citizens to shake off their winter blues and reintroduce themselves to the thriving creative community in our city. 
 
 Each spring, thousands of attendees come out to enjoy the unique and pedestrian friendly 4th Street venue, offering an array of musical talent, artisan vendors, quality entertainment and some perfect people watching. 
@@ -297,7 +317,7 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
       "id": "100050510798749",
       "name": "Lilac Festival",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/343412725_1217737712204297_6274770509266232269_n.jpg?stp=c50.34.938.938a_cp0_dst-jpg_s74x74&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rATo0QA82sQQ7kNvgGA1Uo0&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCZETfcZTG2yBB8Dg3Qra8bcVPicsxwzd24-DQCX0GQvA&oe=665AEBF4",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/343412725_1217737712204297_6274770509266232269_n.jpg?stp=c50.34.938.938a_cp0_dst-jpg_s74x74_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=_nS1Y0H-ZVgQ7kNvgHLMwKh&_nc_oc=AdgC_jrjGZ20MjjPdCkts0TMtiRDgrd1YZsmweRb0eEDzpqIx6iHFuSL3FSI57IYx1SSulX7TdJCMEB8aBEHN9Nd&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=l8npj2LvMetF0dXiJ4LbMw&oh=00_AYHublW7hpsWr7laOLmFSoHxzxrV7bkr3Q3JkJsVHkumLw&oe=67DCFB34",
       },
       "type": "User",
       "url": "https://www.facebook.com/LilacFestival",
@@ -324,7 +344,7 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
   "parentEvent": null,
   "photo": {
     "id": "749222690104751",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/334947163_707773884461245_8821128704004863167_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=36BzJzecAxEQ7kNvgHhluEK&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAWICj96-PzWUjBIKDMqtQtsTN24_DH4-DCNH6VN8tzCw&oe=665AFB7A",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/472570967_1152279459799070_954455182245359149_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=CrwQgIgnUBEQ7kNvgEwExdb&_nc_oc=AdgI6T0fFQBCSThgkXmhF3ViVEhYtQP_Iwhlamu7V-aJHyyYV8BwWVQfecMy35001FBqgv58qPPgQy1U5-iMlLMf&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=F0NBvsVnQFvjKma7mrCOWA&oh=00_AYFbrrTJ4kBx6w3Fhaj8IHsdXTXTGuBUb3WeGGREfAY-lQ&oe=67DCF394",
     "url": "https://www.facebook.com/photo/?fbid=749222690104751&set=gm.719931573255940",
   },
   "siblingEvents": [],
@@ -332,25 +352,26 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
   "ticketUrl": null,
   "timezone": "UTC-06",
   "url": "https://www.facebook.com/events/719931529922611/",
-  "usersResponded": 5941,
+  "usersResponded": 5940,
   "video": null,
 }
 `;
 
 exports[`E2E Generates the correct event data for an event with a text location 1`] = `
 {
+  "categories": [],
   "description": "hbhjbjh",
   "endTimestamp": null,
   "formattedDate": "Tuesday, April 4, 2023 at 11:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
+      "id": "pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=WsLhwQ3crJ4Q7kNvgHhRU81&_nc_oc=Adi4daqDXshJNCP_w812y2b-RCvbo_1KXt-hv6EL-uqaVzpwh9LugSxeFmCOPoNn_GW3VCAbOD-j4iToUhfMnLls&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=G_7rWYk5gRhSixGB_kW-eQ&oh=00_AYHj2yfN0aBXpXLweQMu6naW73q3zYlwYo2A6x5y7oVD9w&oe=67FE8F3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l/",
     },
   ],
   "id": "526262926343074",
@@ -382,6 +403,12 @@ exports[`E2E Generates the correct event data for an event with a text location 
 
 exports[`E2E Generates the correct event data for an event with a ticket URL & city location 1`] = `
 {
+  "categories": [
+    {
+      "label": "Party",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B183019258855149%5D%7D",
+    },
+  ],
   "description": "The Dark Eighties in Calgary: 1977-2020s Edition
 
 Tickets at https://thedarkeightiesspecialedition.eventbrite.ca
@@ -413,7 +440,7 @@ https://www.facebook.com/groups/darkeighties
       "id": "100070821304084",
       "name": "12XU",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=1tEO-CuSYwYQ7kNvgEQass1&_nc_ht=scontent-sjc3-1.xx&oh=00_AYD7FYIFJmwxoPnNbLt8eOzzzv5NOd_2IY3TW8FBTY2aTg&oe=665AE6A6",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=oDfXCCPgbxgQ7kNvgGhyPwz&_nc_oc=AditqA-ayIzmX0CMqeqS9GyKsTtZJ_rvnlZrnG84MmPcuOhxp_o7vcOM6CNGmsg5YXGfGhhZeUTSZUpdO5Xl4whM&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=8mpIi1nBUZuZQeTYbOJYVg&oh=00_AYFPCQBI94H_Z8FSWKZnbZXT5djvUPcM3XxbYT_FcNzhZA&oe=67DCF5E6",
       },
       "type": "User",
       "url": "https://www.facebook.com/12XUevents",
@@ -422,7 +449,7 @@ https://www.facebook.com/groups/darkeighties
       "id": "100063904024919",
       "name": "The Dark Eighties",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=K_hH1kvPYfEQ7kNvgEvREva&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDnOS0xvtKj9yToKBJn7-vX2j8mN9vPq2nwzxk3MszChw&oe=665AF627",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=MI-umX9WKEsQ7kNvgHJunEk&_nc_oc=AdhEDdOzHR8_ziyiyfIB6FLwjZEVcmxehUTmmLqc_fqibtvKzr9fPN0GX2XiQ97E-CN2ZfFVNX9cCJund2l0R_z1&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=8mpIi1nBUZuZQeTYbOJYVg&oh=00_AYFd1kUz24IBHM2_p0cOkTTjpF9m_78K5KgxS-sAzR67sw&oe=67DD0567",
       },
       "type": "User",
       "url": null,
@@ -449,7 +476,7 @@ https://www.facebook.com/groups/darkeighties
   "parentEvent": null,
   "photo": {
     "id": "621131586693637",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/337126422_218835007357788_3208832482586448057_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=LohITVbbicwQ7kNvgH0ejYR&_nc_ht=scontent-sjc3-1.xx&oh=00_AYBLY8kAvUn2uIJ3NkeHzTcx30SQysQh2S2wz0P5Rye0lQ&oe=665B14B0",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/483866251_1107783254695132_4478007887358984133_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=0V-yUhA3OhwQ7kNvgHZ7D8v&_nc_oc=Adh5i678Kl3674KLNzco2MqV_7a0JLApm4wOWvmmkN2AOURB8bsOiVY8-k1opMLJKLmh-pzrkZUHrHUe9dJBycaT&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=8jLn_W-1qZ3lTE8WmjAQJA&oh=00_AYFlm-BCScJ6pKr2u6QLLi6lWr6z89ulNoP1zOF5WdZKRA&oe=67DCE228",
     "url": "https://www.facebook.com/photo/?fbid=621131586693637&set=gm.1376686326480508",
   },
   "siblingEvents": [],
@@ -464,6 +491,12 @@ https://www.facebook.com/groups/darkeighties
 
 exports[`E2E Generates the correct event data for an event with a video cover 1`] = `
 {
+  "categories": [
+    {
+      "label": "Causes",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B1284277608291920%5D%7D",
+    },
+  ],
   "description": "💡 Kaip atrodys ateities universitetas? Kokius uždavinius kelsime ateities aukštajam mokslui? Kaip ir kokias asmenybes ugdysime? Kaip pritaikysime švietimo sistemą prie laukiančių technologijų pokyčių? Susitikime padiskutuoti su profesoriumi, Vilniaus universiteto rektoriumi, Valstybės pažangos tarybos nariu dr. Rimvydu Petrausku apie Lietuvos ateities švietimą ir pasidalinti, kokią viziją 2050 metams turime mes.  
 
 Pokalbį moderuos VšĮ „Šiauliai plius“ direktorė Giedrė Brazlauskaitė.
@@ -483,7 +516,7 @@ Ateitį kurkime šiandien!
       "id": "100067786593384",
       "name": "Lietuva 2050",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IzWDodpL1joQ7kNvgF61I4i&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAG-e09KDTkOVEOPJWF9hBrG5bL353RvR7-rsfN4mLBRg&oe=665AFA11",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=q2BE_Jr-WEkQ7kNvgFBBrXZ&_nc_oc=AdhnG4i5St-2dZcmbOxLyX7-KLQO0rkv7pW5-z2-SddnYVxA59JhAoaCZzh0PPZ25TuDiegTqwN5_nXmIN6jooaj&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=mjFLV6QOE1vuu0Kr8WqN9g&oh=00_AYHlWmem5ERQgPe8jzLJbWCSzqsY0YVC_2vAXpV50CqTkw&oe=67DD0951",
       },
       "type": "User",
       "url": "https://www.facebook.com/Lietuva2050",
@@ -492,7 +525,7 @@ Ateitį kurkime šiandien!
       "id": "100039182298687",
       "name": "VU Šiaulių akademija",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=W5408ViJrqcQ7kNvgFRzeGh&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCg_THTJqsRgicS8MPkGlrt7mVniHTAklEe-ToX_liNDg&oe=665B1D7C",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=JoZgByASzyUQ7kNvgEIXzAW&_nc_oc=AdgGh8wtbAoHj2Ip9CrMKs2va0rEQpK_wFtLUDhOCze0Y0XC7Y_A6m8caq4ez7qQ0S2U1IBbED69gBxao49_GOjQ&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=mjFLV6QOE1vuu0Kr8WqN9g&oh=00_AYE_95F8Ba6o_P-IgWem9ef4vs7QrxhcbIaXf8EUzp6Alg&oe=67DCF47C",
       },
       "type": "User",
       "url": "https://www.facebook.com/siauliu.akademija",
@@ -501,7 +534,7 @@ Ateitį kurkime šiandien!
       "id": "100064306435250",
       "name": "Vilniaus universitetas / Vilnius University",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pilGodO3tdkQ7kNvgEIqnHg&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAEV7h4NaDh0j1NysFDNAWrbE2O7C7zXtwhQDPenlBweA&oe=665B03B2",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4OzvKzFFrzwQ7kNvgFnS_N7&_nc_oc=AdgYCjVsfFcyez_O1r6277fdalo3sPzdWjCbWe8_0bi7Drt5w9Y-0FuwFdZnv6ITagd0QHk6f_kbdTbRxuf1apwK&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=mjFLV6QOE1vuu0Kr8WqN9g&oh=00_AYFrIMf1VLa-xWrhWlhiQrVpX78gRdNnmS8bDykBPdD90A&oe=67DD12F2",
       },
       "type": "User",
       "url": "https://www.facebook.com/VilniusUniversity",
@@ -510,7 +543,7 @@ Ateitį kurkime šiandien!
       "id": "100064644461523",
       "name": "Šiaulių apskrities Povilo Višinskio viešoji biblioteka",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/342967593_283796257308792_6891719300998916370_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=fuiOeMlgebAQ7kNvgEg883g&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAK7SEOYPurQ7OXsU9BnKjI9wcC72LcYOkEcLtWRLuvRw&oe=665B0527",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/473965764_1047560367408769_1188670290210731717_n.jpg?stp=c293.0.1414.1414a_cp0_dst-jpg_s74x74_tt6&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=Ovn9ZekpnNYQ7kNvgFUHGhc&_nc_oc=Adg24cEZLu9Z9rIRtwUz-u1uvsxaNswzkmbxl-M0T3TO6ocC3IQDnw1-20aPhF9gC-Ocp4KM9fCysRaNxwRvFSZv&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=mjFLV6QOE1vuu0Kr8WqN9g&oh=00_AYEhYydEtTPQ5cAkxECLFPzUTm5UQmvK2ZEbQjYQXe9MDw&oe=67DCE13A",
       },
       "type": "User",
       "url": "https://www.facebook.com/SAVB.info",
@@ -534,7 +567,7 @@ Ateitį kurkime šiandien!
   "usersResponded": 123,
   "video": {
     "id": "2194658774256880",
-    "thumbnailUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_p960x960&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ZMVbqkvKNrYQ7kNvgFzWuQY&_nc_ht=scontent-sjc3-1.xx&oh=00_AYDtKMUacQ5VhRWjtVTwQn3Zltoz_U3wMtKbb_cwbwGa-g&oe=665B106B",
+    "thumbnailUri": "https://scontent-den2-1.xx.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=282d23&_nc_ohc=wB2TA5DZLvUQ7kNvgFKqq67&_nc_oc=AdikCK1tsqrV1XFyywGTXimYDIR9yMm8MU8njJjcLqLvxm4nntg9FkHom-w0zBAfgH7qmneKYQspUyBddM-QlMG6&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=bUUWzQTyrTymwOXD1HS4hQ&oh=00_AYGsjW4JfQCZCmtvLxx5m1hjeHQM5sP2HLoLyYaN63d8aA&oe=67DCE76B",
     "url": "https://www.facebook.com/Lietuva2050/videos/2194658774256880/",
   },
 }
@@ -542,6 +575,12 @@ Ateitį kurkime šiandien!
 
 exports[`E2E Generates the correct event data for an event with multiple hosts, a place location & tickets 1`] = `
 {
+  "categories": [
+    {
+      "label": "Sports",
+      "uri": "https://www.facebook.com/events/discovery/?suggestion_token=%7B%22event_categories%22%3A%5B607999416057365%5D%7D",
+    },
+  ],
   "description": "The #AEW Summer Canadian Tour concludes with #AEWCollision LIVE in Calgary, AB on Saturday, July 15 as part of Canada’s iconic Calgary Stampede at the Saddledome!
 
 Tickets are ON SALE NOW!",
@@ -552,7 +591,7 @@ Tickets are ON SALE NOW!",
       "id": "100064709654009",
       "name": "All Elite Wrestling",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/430081703_800418912125090_6763025059361084487_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=EEqqoFqaVsIQ7kNvgHC1Lx-&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCkLq1OG3ddW0bPrrfdAyefYkA45-jbo-tNEthHbQw5Lw&oe=665B1C74",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/448627833_865600602273587_4050110030248245393_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=3KWtAijch0MQ7kNvgHSMgxG&_nc_oc=AdgS0x6NkYM5sbXKZ0JX7CSSSnVE9D5yfLWbo0UbKCcT_81LYG3Eeywimkcslx08g2wzcsHkPJsdkyCGR_WoSAUx&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=GlMKlZIkqVwlGxlhop8C1g&oh=00_AYGz6rmBOdy5Gt499pKwUvF-FJzqnqrDx8ZEAIA5O2Mbzw&oe=67DCE7A9",
       },
       "type": "User",
       "url": "https://www.facebook.com/AEW",
@@ -561,7 +600,7 @@ Tickets are ON SALE NOW!",
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_p74x74&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=tdvF9zNGEC4Q7kNvgEKKdzD&_nc_ht=scontent-sjc3-1.xx&oh=00_AYAaA69rEZuaZ_uDVDMp0OkQWIsHLpTnOdzzblpbMhu6QQ&oe=665AF082",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=EoQq3RA16g0Q7kNvgHZpLId&_nc_oc=Adh_j1ZU22J1ysDP0W_gBvuIQQUOihtvbF8NF9nhWZf-CwusuA_IP8j0xkExgwghpgvefrMszixUCOjPKcIzYguz&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=GlMKlZIkqVwlGxlhop8C1g&oh=00_AYHluKItTbVaighowdUE1qCYMumUq5phwCTRKOVp4v4XfA&oe=67DCFFC2",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -580,7 +619,7 @@ Tickets are ON SALE NOW!",
       "longitude": -114.05452196423,
     },
     "countryCode": "CA",
-    "description": "The Calgary Stampede is a not-for-profit community organization that preserves and promotes our weste",
+    "description": "The Calgary Stampede is a not-for-profit community organization that preserves and promotes our western heritage, cultures and community spirit.",
     "id": "104371842930883",
     "name": "Calgary Stampede",
     "type": "PLACE",
@@ -591,7 +630,7 @@ Tickets are ON SALE NOW!",
   "parentEvent": null,
   "photo": {
     "id": "1273089803342464",
-    "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/348823734_2075221392674298_547668571002268793_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=pFczTRO5RE8Q7kNvgEAxgKT&_nc_ht=scontent-sjc3-1.xx&oh=00_AYB1V9W5VMdhqxnzw85ymYoabxlJdZfI1_QtMQ6pioaTZQ&oe=665AEB38",
+    "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t39.30808-6/473081369_1630277110957063_1481524804345515679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=HJQ3uxRc5ZAQ7kNvgHUXJ5P&_nc_oc=AdjILWS4M0d-YSaJVJGXh8ewkvHgag42nFLd8ZLIG30oWkrZiOWYgd4ZElJfDx4DfVAP70f87tP1CUQGY6UuwoM6&_nc_zt=23&_nc_ht=scontent-den2-1.xx&_nc_gid=azylL7ohAdDvm17H-8xKhg&oh=00_AYFi-wqZhqVG3gUuH2L_WlC0CCqx5mCnd2M2-p2FiXgMUg&oe=67DD0036",
     "url": "https://www.facebook.com/photo/?fbid=1273089803342464&set=gm.977705193657933",
   },
   "siblingEvents": [],
@@ -647,18 +686,19 @@ Registracija: https://forms.office.com/e/DvfJn8q27D",
 
 exports[`E2E Generates the correct event data for an online event with a third-party URL 1`] = `
 {
+  "categories": [],
   "description": "",
   "endTimestamp": null,
   "formattedDate": "Friday, June 16, 2023 at 4:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl",
+      "id": "pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=cp0_dst-png_p74x74&_nc_cat=1&ccb=1-7&_nc_sid=5f2048&_nc_ohc=2WKUFuMRZfAQ7kNvgFSrI6D&_nc_ht=scontent-sjc3-1.xx&oh=00_AYCQ6PMR-zAMoG1HhpKqSIXbg8SLGGdEUDm-XGc3X3kpXw&oe=667C9C78",
+        "imageUri": "https://scontent-den2-1.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=WsLhwQ3crJ4Q7kNvgHhRU81&_nc_oc=Adi4daqDXshJNCP_w812y2b-RCvbo_1KXt-hv6EL-uqaVzpwh9LugSxeFmCOPoNn_GW3VCAbOD-j4iToUhfMnLls&_nc_zt=24&_nc_ht=scontent-den2-1.xx&_nc_gid=C4WchNGgpyibMwT_cSCN5Q&oh=00_AYFrYipRgLtMGWh2fTf_lJhUZmDNtBdDSLyCULrxlbiTgA&oe=67FE8F3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02exvtktPMVkRgRZbdfgXPpvCuKvj1ADJrzcyKpYUcSMNWfm9uHmXLcwaisXSNC3vbl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bQFZ9MazsRB13NkebQwuDh4YbAvedfDCapsq6AY75C3mShYsNbZCRvEws9QJTDA7l/",
     },
   ],
   "id": "760928342374546",

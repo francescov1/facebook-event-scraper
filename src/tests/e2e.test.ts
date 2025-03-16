@@ -78,9 +78,10 @@ describe('E2E', () => {
     expect(eventData).toMatchSnapshot();
   });
 
-  it('Generates the correct event data for an event with no location', async () => {
-    const url = 'https://www.facebook.com/events/782998640138266/';
-    const eventData = await scrapeFbEvent(url);
-    expect(eventData).toMatchSnapshot();
-  });
+  // TODO: Find another event without a location, this one got deleted
+  // it('Generates the correct event data for an event with no location', async () => {
+  //   const url = 'https://www.facebook.com/events/782998640138266/';
+  //   const eventData = await scrapeFbEvent(url);
+  //   expect(eventData).toMatchSnapshot();
+  // });
 });
