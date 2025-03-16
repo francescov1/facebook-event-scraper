@@ -39,6 +39,8 @@ export const scrapeEvent = async (
   const description = htmlParser.getDescription(dataString);
   const ticketUrl = htmlParser.getTicketUrl(dataString);
 
+  const categories = htmlParser.getCategories(dataString);
+
   const hosts = htmlParser.getHosts(dataString);
   const { usersResponded } = htmlParser.getUserStats(dataString);
 
@@ -58,6 +60,7 @@ export const scrapeEvent = async (
     onlineDetails,
     hosts,
     ticketUrl,
+    categories,
     siblingEvents,
     parentEvent,
     usersResponded

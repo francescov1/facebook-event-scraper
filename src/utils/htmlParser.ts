@@ -3,7 +3,8 @@ import {
   EventData,
   EventLocation,
   EventHost,
-  OnlineEventDetails
+  OnlineEventDetails,
+  EventCategory
 } from '../types';
 
 export const getDescription = (html: string): string => {
@@ -217,4 +218,9 @@ export const getEndTimestampAndTimezone = (
     endTimestamp: jsonData.end_timestamp || null,
     timezone: jsonData.tz_display_name
   };
+};
+
+export const getCategories = (html: string): EventCategory[] => {
+  const { jsonData } = findJsonInString(html, 'discovery_categories');
+  return jsonData;
 };
