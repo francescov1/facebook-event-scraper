@@ -130,7 +130,7 @@ import {
 async function example() {
   try {
     const url = 'https://www.facebook.com/lacalle8prague/events';
-    const eventData = await scrapeFbEventListFromPage(url);
+    const eventData = await scrapeFbEventListFromPage(url, EventType.Upcoming);
     console.log(eventData);
   } catch (err) {
     console.error(err);
@@ -141,7 +141,7 @@ async function example() {
 async function example2() {
   try {
     const url = 'https://www.facebook.com/groups/409785992417637/events';
-    const eventData2 = await scrapeFbEventListFromGroup(url);
+    const eventData2 = await scrapeFbEventListFromGroup(url, EventType.Past);
     console.log(eventData2);
   } catch (err) {
     console.error(err);
