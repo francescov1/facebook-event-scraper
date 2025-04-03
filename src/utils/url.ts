@@ -50,10 +50,10 @@ export const validateAndFormatEventPageUrl = (
       url += '/events';
     }
   } else if (type === EventType.Past) {
-      url = url.replace(types, 'past_hosted_events');
-    } else if (type === EventType.Upcoming) {
-      url = url.replace(types, 'upcoming_hosted_events');
-    }
+    url = url.replace(types, 'past_hosted_events');
+  } else if (type === EventType.Upcoming) {
+    url = url.replace(types, 'upcoming_hosted_events');
+  }
 
   return `${url}?_fb_noscript=1`;
 };
