@@ -30,8 +30,8 @@ export const scrapeFbEventFromFbid = async (
 
 export const scrapeFbEventListFromPage = async (
   url: string,
-  options: ScrapeOptions = {},
-  type?: EventType
+  type?: EventType,
+  options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
   const formattedUrl = validateAndFormatEventPageUrl(url, type);
   const dataString = await fetchEvent(formattedUrl, options.proxy);
