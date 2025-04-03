@@ -147,6 +147,18 @@ async function example2() {
     console.error(err);
   }
 }
+
+// Scrape events from fb user profile
+async function example3() {
+  try {
+    const url =
+      'https://www.facebook.com/profile.php?id=61553164865125&sk=events';
+    const eventData3 = await scrapeFbEventListFromProfile(url, EventType.Past);
+    console.log(eventData3);
+  } catch (err) {
+    console.error(err);
+  }
+}
 ```
 
 Functions return a Promise with the list of scraped event data.

@@ -2,6 +2,7 @@ import {
   fbidToUrl,
   validateAndFormatEventGroupUrl,
   validateAndFormatEventPageUrl,
+  validateAndFormatEventProfileUrl,
   validateAndFormatUrl
 } from './utils/url';
 import { EventData, ScrapeOptions, ShortEventData } from './types';
@@ -36,7 +37,18 @@ export const scrapeFbEventListFromPage = async (
   const formattedUrl = validateAndFormatEventPageUrl(url, type);
   const dataString = await fetchEvent(formattedUrl, options.proxy);
 
-  return eventListParser.getEventListFromPage(dataString);
+  return eventListParser.getEventListFromPageOrProfile(dataString);
+};
+
+export const scrapeFbEventListFromProfile = async (
+  url: string,
+  type?: EventType,
+  options: ScrapeOptions = {}
+): Promise<ShortEventData[]> => {
+  const formattedUrl = validateAndFormatEventProfileUrl(url, type);
+  const dataString = await fetchEvent(formattedUrl, options.proxy);
+
+  return eventListParser.getEventListFromPageOrProfile(dataString);
 };
 
 export const scrapeFbEventListFromGroup = async (
@@ -57,7 +69,8 @@ export const scrapeFbEventList = async (
 ): Promise<ShortEventData[]> => {
   if (url.includes('/groups/')) {
     return scrapeFbEventListFromGroup(url, type, options);
-  } 
-    return scrapeFbEventListFromPage(url, type, options);
-  
+  } if (url.includes('/profile.php')) {
+    return scrapeFbEventListFromProfile(url, type, options);
+  }
+  return scrapeFbEventListFromPage(url, type, options);
 };

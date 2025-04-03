@@ -9,7 +9,7 @@ import {
   eventListGroupData,
   eventListGroupEmptyData
 } from './data/eventListGroupData';
-import { EventType } from '../../types';
+import { EventType } from '../../enums';
 
 const findJsonInStringSpy = jest.spyOn(jsonUtil, 'findJsonInString');
 
@@ -25,10 +25,10 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe('getEventListFromPage', () => {
+describe('getEventListFromPageOrProfile', () => {
   it('should return basic data', () => {
     mockJsonReturnData(eventListPageData);
-    const result = eventListParser.getEventListFromPage('some html');
+    const result = eventListParser.getEventListFromPageOrProfile('some html');
 
     expect(findJsonInStringSpy).toHaveBeenCalledWith('some html', 'collection');
     expect(result).toEqual([
@@ -61,7 +61,7 @@ describe('getEventListFromPage', () => {
 
   it('should return empty list', () => {
     mockJsonReturnData(eventListPageEmptyData);
-    const result = eventListParser.getEventListFromPage('some html');
+    const result = eventListParser.getEventListFromPageOrProfile('some html');
 
     expect(findJsonInStringSpy).toHaveBeenCalledWith('some html', 'collection');
     expect(result).toEqual([]);

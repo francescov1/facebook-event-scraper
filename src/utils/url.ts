@@ -59,6 +59,41 @@ export const validateAndFormatEventPageUrl = (
 };
 
 // Covers pages with the following format:
+// https://www.facebook.com/profile.php?id=61553164865125&sk=events
+// https://www.facebook.com/profile.php?id=61564982700539
+// https://www.facebook.com/profile.php?id=61564982700539&sk=past_hosted_events
+// https://www.facebook.com/profile.php?id=61564982700539&sk=upcoming_hosted_events
+export const validateAndFormatEventProfileUrl = (
+  url: string,
+  type?: EventType
+) => {
+  const regex =
+    /facebook\.com\/profile\.php\?id=\d+(&sk=(events|past_hosted_events|upcoming_hosted_events))?$/;
+  const result = regex.test(url);
+
+  if (!result) {
+    throw new Error('Invalid Facebook profile event URL');
+  }
+
+  const types = /(past_hosted_events|upcoming_hosted_events|events)$/;
+  if (!types.test(url)) {
+    if (type === EventType.Past) {
+      url += '&sk=past_hosted_events';
+    } else if (type === EventType.Upcoming) {
+      url += '&sk=upcoming_hosted_events';
+    } else {
+      url += '&sk=events';
+    }
+  } else if (type === EventType.Past) {
+    url = url.replace(types, 'past_hosted_events');
+  } else if (type === EventType.Upcoming) {
+    url = url.replace(types, 'upcoming_hosted_events');
+  }
+
+  return url;
+};
+
+// Covers pages with the following format:
 // https://www.facebook.com/groups/409785992417637/events
 // https://www.facebook.com/groups/409785992417637
 export const validateAndFormatEventGroupUrl = (url: string) => {

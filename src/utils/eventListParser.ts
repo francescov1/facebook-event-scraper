@@ -2,7 +2,7 @@ import { findJsonInString } from './json';
 import { ShortEventData } from '../types';
 import { EventType } from '../enums';
 
-export const getEventListFromPage = (
+export const getEventListFromPageOrProfile = (
   html: string
 ): Pick<
   ShortEventData,
