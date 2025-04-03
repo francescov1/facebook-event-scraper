@@ -123,7 +123,9 @@ If an event has multiple times/dates, it will have the `parentEvent` and `siblin
 ```javascript
 import {
   scrapeFbEventListFromPage,
-  scrapeFbEventListFromGroup
+  scrapeFbEventListFromProfile,
+  scrapeFbEventListFromGroup,
+  EventType
 } from 'facebook-event-scraper';
 
 // Scrape events from fb page
