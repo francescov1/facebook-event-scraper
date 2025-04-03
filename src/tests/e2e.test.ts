@@ -1,4 +1,8 @@
-import { scrapeFbEvent } from '../index';
+import {
+  scrapeFbEvent,
+  scrapeFbEventListFromGroup,
+  scrapeFbEventListFromPage
+} from '../index';
 
 // TODO: Try a private event, see if we can get a specific error message
 // https://www.facebook.com/events/1637281650028494/?acontext=%7B%22event_action_history%22%3A[%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22left_rail%22%2C%22surface%22%3A%22bookmark%22%7D%2C%7B%22extra_data%22%3A%22%22%2C%22mechanism%22%3A%22surface%22%2C%22surface%22%3A%22create_dialog%22%7D]%2C%22ref_notif_type%22%3Anull%7D
@@ -84,4 +88,35 @@ describe('E2E', () => {
   //   const eventData = await scrapeFbEvent(url);
   //   expect(eventData).toMatchSnapshot();
   // });
+
+  it('Generates the correct event data for past events from page', async () => {
+    const url = 'https://www.facebook.com/lacalle8prague/past_hosted_events';
+    const eventData = await scrapeFbEventListFromPage(url);
+    expect(eventData).toMatchSnapshot();
+  });
+
+  it('Generates the correct event data for upcoming events from page', async () => {
+    const url =
+      'https://www.facebook.com/lacalle8prague/upcoming_hosted_events';
+    const eventData = await scrapeFbEventListFromPage(url);
+    expect(eventData).toMatchSnapshot();
+  });
+
+  it('Generates the correct event data for upcoming events from page', async () => {
+    const url = 'https://www.facebook.com/lacalle8prague';
+    const eventData = await scrapeFbEventListFromPage(url);
+    expect(eventData).toMatchSnapshot();
+  });
+
+  it('Generates the correct event data for events from group', async () => {
+    const url = 'https://www.facebook.com/groups/409785992417637/events';
+    const eventData = await scrapeFbEventListFromGroup(url);
+    expect(eventData).toMatchSnapshot();
+  });
+
+  it('Generates the correct event data for events from group page', async () => {
+    const url = 'https://www.facebook.com/groups/409785992417637';
+    const eventData = await scrapeFbEventListFromGroup(url);
+    expect(eventData).toMatchSnapshot();
+  });
 });
