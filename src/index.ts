@@ -49,3 +49,15 @@ export const scrapeFbEventListFromGroup = async (
 
   return eventListParser.getEventListFromGroup(dataString, type);
 };
+
+export const scrapeFbEventList = async (
+  url: string,
+  type?: EventType,
+  options: ScrapeOptions = {}
+): Promise<ShortEventData[]> => {
+  if (url.includes('/groups/')) {
+    return scrapeFbEventListFromGroup(url, type, options);
+  } 
+    return scrapeFbEventListFromPage(url, type, options);
+  
+};
