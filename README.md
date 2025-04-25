@@ -5,6 +5,18 @@ A slim module for scraping Facebook event data in milliseconds.
 [![Version](https://img.shields.io/npm/v/facebook-event-scraper.svg)](https://npmjs.org/package/facebook-event-scraper)
 [![License](https://img.shields.io/npm/l/facebook-event-scraper.svg)](https://github.com/francescov1/facebook-event-scraper/blob/master/package.json)
 
+<!-- TOC start -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Scrape event](#scrape-event)
+  - [Multi-date events](#multi-date-events)
+  - [Scrape hosted event lists](#scrape-hosted-event-lists)
+  - [Using a proxy](#using-a-proxy)
+- [Limitations](#limitations)
+
+<!-- TOC end -->
+
 ## Installation
 
 ```bash
@@ -16,6 +28,8 @@ yarn add facebook-event-scraper
 ```
 
 ## Usage
+
+### Scrape event
 
 To scrape Facebook events, provide an event URL or ID. Here's an example of how you can scrape event details:
 
@@ -118,7 +132,7 @@ The scrape methods return a Promise with the scraped event data. See below for a
 
 If an event has multiple times/dates, it will have the `parentEvent` and `siblingEvents` fields populated. Each sibling event is a date for the parent event.
 
-## Scrape hosted event lists
+### Scrape hosted event lists
 
 Scrape hosted events from groups, pages and profiles using the `scrapeFbEventList` method. You can optionally filter by past or upcoming event types. See example below:
 
