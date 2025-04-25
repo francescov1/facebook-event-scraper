@@ -8,13 +8,13 @@ exports[`E2E Generates the correct event data for a Messenger Rooms Online event
   "formattedDate": "Thursday, May 11, 2023 at 3:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl",
+      "id": "pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=1BwdynYvBPkQ7kNvgGLfETp&_nc_oc=AdkwuZIOnFTbk3I7afTKTG1Y24wA-UuhcYr0n9h4ZxCFntUzHEHLbU_E2qgT8ccBkSErM6J-xwBqUPQRwjrFDWLc&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&oh=00_AYG--KDXOOWQnf6M4UOrL3ijmXai-Y-yarGjhvNhR9KQLg&oe=681611FA",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=Py8_nbWK5EEQ7kNvwFcf71b&_nc_oc=Adk2cIjJSQ-end9Qo6_brJYk_CDoUWhTakRUdlcRtyLxOgrkV1TInJKyRwkeQIzbRvcu6XOQ18qAJh6yCiOmIqQD&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&oh=00_AfHLHrUMLJ5mUhfS62dBK1T8-d40rFozpPL6GPxhrYRQfA&oe=68326A3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol/",
     },
   ],
   "id": "564972362099646",
@@ -79,7 +79,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100068207392255",
       "name": "Scotiabank Saddledome",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=CUtBHBcSvkwQ7kNvgF1RzCF&_nc_oc=Adl0ekulQycJe3WNVmDmyru0Sa0najIK73ywHl7AgZBJT96yEC48Gdp3b5uJm4-wHg5w8voww2SucrbtdpG-4tkI&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=5P7CgIOFVouAKXTlv7Xodw&oh=00_AYFxt5x7BsTKxlAD6vqtfGb7nKluNuzDS1qCxfpcsOm2CA&oe=67F47DCB",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/281352750_2028415974017689_9212573442765953743_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=109&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=E-C0UqA1fYYQ7kNvwFxJCv0&_nc_oc=AdkP5Vw-05DJldHqN8WI3raHj1YwOJbYrIzdvG6vqjLOeq_TuTTKF1iO2yrSqycs5ZIGGxHH91_-usqeNTn_rqDM&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=WWNzoS8S3i_B7BFznsxoCw&oh=00_AfF8PsLG70K5F-_UN0J6I7sXfD07jHgjThokfTyyWb6lig&oe=6810D60B",
       },
       "type": "User",
       "url": "https://www.facebook.com/scotiabanksaddledome",
@@ -88,7 +88,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100064516969267",
       "name": "Calgary Stampede",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=lBA4W9u9D90Q7kNvgGcwYHA&_nc_oc=AdkiOqEJDmcUnPD_t5H0YrNwVcKS-SdQzNd09juXIGMmIR0TzHkY5xtrUdsTxlBmDjklitFWU1aLWEilA4W6zUUg&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=5P7CgIOFVouAKXTlv7Xodw&oh=00_AYFaccO3pTpLR7ZtiGwGqYUtJhwbezsRflWZlmY5d4ZWwg&oe=67F4622B",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/352087888_1034380311273324_7910170983351471836_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=_wzTWB_mSVAQ7kNvwEOObNQ&_nc_oc=AdmYo14YVjPq3eVt94RHT2-bLd2qEpgU6C7adOPddwJGvoGtKfpre-ZTMazq5nYeK1785An5wfpuM9Y6SzSPthjX&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=WWNzoS8S3i_B7BFznsxoCw&oh=00_AfFfxV3cGzGgGjfCPkiwaWk8-q1svNp9nqX1jykItKHMaw&oe=6810F2AB",
       },
       "type": "User",
       "url": "https://www.facebook.com/calgarystampede",
@@ -97,7 +97,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=3qSYYj5rw9sQ7kNvgHZfbqk&_nc_oc=AdkRcJP8GGtN6e19WwAgkJZjyVRfCq0V7Wr7BBlc48Z8JCek6kouwIGGb_95lAYvmvdQ0MtB7NY7jZQ0b7_M3qVt&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=5P7CgIOFVouAKXTlv7Xodw&oh=00_AYE6tOvevTmOCpAZXi3Mrgw8gJz8Ktc9XTgU8QAYj5psrA&oe=67F48282",
+        "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=30kHQjkCaykQ7kNvwEIxdVz&_nc_oc=Adk5wqRBvBn6tD4XB0Tmyx-Yp3N5G3ZCFNn4m4NQo4Qv9HzgfpF37bP6JbXSSOipfvfjiggLDPelNDe_G3eUFIHd&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=WWNzoS8S3i_B7BFznsxoCw&oh=00_AfGtksO5tJMRM7uQlVWLBkRCu98dK0k1FPw38EVo9mtKHg&oe=6810DAC2",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -106,7 +106,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
       "id": "100044535845092",
       "name": "Pitbull",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/439064200_1017561226405063_8213471074013536032_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=9uxGoyxnuAQQ7kNvgFlLc-P&_nc_oc=AdkZ2n5OkCQoxBZc1BkJFt6xiJIKx-sf8cJtyciHJI9jRBgYFk2Eo89L86KBjsGZ99lXFwZRamwpBxGuTSN2mgM0&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=5P7CgIOFVouAKXTlv7Xodw&oh=00_AYFw9lNVxkfqLEdOHiopLt8RVDutyZNHUwpqjsaXVe4wOg&oe=67F46183",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/439064200_1017561226405063_8213471074013536032_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=ms_Ex6AYzswQ7kNvwETSWct&_nc_oc=Adnm6qqCkHYoXpgLRNrWqxlMsbcx9_uAP5ox7cg1qR3d2Do7ICmecGeE1pvIZle_YXs2MT-Sdm4uDXf32Kk2aVQ6&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=WWNzoS8S3i_B7BFznsxoCw&oh=00_AfFq8vPkF3QELTbEwcd6VwsBNRzG5h_CDIfww5Jk2Ecl4Q&oe=6810F203",
       },
       "type": "User",
       "url": "https://www.facebook.com/pitbull",
@@ -136,7 +136,7 @@ Aisle Seat Offer Onsale : Fri, 24 Mar 2023 at 10:00 AM
   "parentEvent": null,
   "photo": {
     "id": "10160954790708641",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=hhcKOPPcsXsQ7kNvgE7mcQ2&_nc_oc=AdmOYnx2JxZ7ct4ex77OUBfcvVv68EWIen3YbOI8hM4mSzzntG0S9LTPFHBJY7VnGrmYCnfdnh9TZzYvIxtbC2fo&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=LY0nrwRvsWveqiWQdrnseg&oh=00_AYH-Wi1SZSs817gxts-nJI6UMjSkhyPDJ4hWfnzf_eJhFw&oe=67F45C6D",
+    "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/336792249_949153626262984_8332769163095794984_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=dJcsUuqw2cgQ7kNvwGiqk5a&_nc_oc=AdkNq7h1Syfsj2tjjtgJ_AaxP5b9TknDHn0kF35pcAJgef41Zbznf7cYe8CMzRqHbwCuO9gSAAo5NOj0zObIjWev&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=l3y_fQceArAUcusg4thNXA&oh=00_AfGw3ePVxjLPi9OB6IgIObZGqBub22NQgS98VZ9BEsvSgQ&oe=6810ECED",
     "url": "https://www.facebook.com/photo/?fbid=10160954790708641&set=gm.602005851971871",
   },
   "siblingEvents": [],
@@ -175,7 +175,7 @@ More info: https://www.faccalgary.com/easter",
       "id": "100064691376556",
       "name": "FAC Deerfoot",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/460987627_944177641081940_5270929113802053218_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=6_4Ericq7OgQ7kNvgGqhW4Y&_nc_oc=AdmHaK1dalJDU__V24mCbetJykOvNixK1iPNkh29O1M1INR_auEeuVQSyr66WVJ7RC27jnvjT7W5mc2VYoT-m3Y2&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=7wvJMmgj8D18hgmgKPK9AA&oh=00_AYHGlDMTBgu-rFCdSCMkGbpbWQu0OHKARuuHNjx0GSqWbg&oe=67F48D24",
+        "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/460987627_944177641081940_5270929113802053218_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=1Ztb1O6k6nkQ7kNvwGEESO5&_nc_oc=AdmIFENnCNKEj8JNj6ZFWKT4lw9u-JVSr3o4-4cTGOhu_XOFjsNa4EaTQ6IQgLFD4roAt79Ntk3YiHyXQREcKuUB&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=cu6TAv-yfMKIRbtw4nbClQ&oh=00_AfHLcbMXCumZZVuSTRsrvl4ONfQeM_LmfTdNBPD_kK1ztA&oe=6810E564",
       },
       "type": "User",
       "url": "https://www.facebook.com/facdeerfoot",
@@ -208,7 +208,7 @@ Official Facebook Page for First Alliance Church",
   },
   "photo": {
     "id": "595982989234742",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/481055432_1056019033231133_4786716278309143615_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=Fnd3Pv_xvy0Q7kNvgGg5luk&_nc_oc=AdkWORkOMTHv7RL_P_3dJBB6vW-GWAMEBFN3mqumLGepJauPSPR54iT-8BLKIsFQ9R_P36Wl6M0V0qlUphacvUZ2&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=uTSXNBP6Y654ImzyeR0N1A&oh=00_AYEy5pDrdujXY5kdkoXGMdTTz8GoXLwad7zwR0eZkeU2Dw&oe=67F46914",
+    "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/481055432_1056019033231133_4786716278309143615_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=75d36f&_nc_ohc=DSu1bCX6804Q7kNvwHTeX3Y&_nc_oc=AdmrobjuCmMIWJTASX0t1uErjoje3lPMDBp-NvP8rEEm1vFsDeWr722EqmBinSF9L-DUdnAMMA2fMNRsIUxKflbl&_nc_zt=23&_nc_ht=scontent-dfw5-1.xx&_nc_gid=UwvxRQ1jb8vnWhipnaZedw&oh=00_AfFiwxoLz3WO1HDdf4urWim2kX4Fcm2LBxY1St-dq4DnKg&oe=6810C154",
     "url": "https://www.facebook.com/photo/?fbid=595982989234742&set=gm.1137956736879596",
   },
   "siblingEvents": [
@@ -284,7 +284,7 @@ Binoculars are available to borrow for those who need them.",
   "parentEvent": null,
   "photo": {
     "id": "10167524860335261",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=75d36f&_nc_ohc=N2sp8WNyvXAQ7kNvgHMlq_b&_nc_oc=AdmAr5X1VdZexCPMuultzHDJVq5zGuS005WCjDU5WZgQkhpxOxWZrKo_YMt9_rjduXoPKGUdXdflF2EbZKRP8nA3&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=ExacUxm76mc4Ps3NrdwM9w&oh=00_AYGMljshC742M9mFZ6CZukNd3X1cDJKPtGJ3mE4O2rqyPQ&oe=67F45CB1",
+    "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/337885002_189168827241357_2737797815564835189_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=75d36f&_nc_ohc=NIEFmv-Y0REQ7kNvwHdUmK6&_nc_oc=AdleySx-Tj24EVwryxCadOSW8uFYPHpaNILaqAoSqmOHeUqxUxnda89hF1kM2jWhDZgYewPZGOZVjEfeEW_ZI_NI&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=_9I02Zh9I2Y8f-BAzhhMMQ&oh=00_AfGpgOFIS69KxENhV_CjfxdxwPp-sqihG-7Yd-c3IyqI2g&oe=6810ED31",
     "url": "https://www.facebook.com/photo/?fbid=10167524860335261&set=gm.252144523936238",
   },
   "siblingEvents": [],
@@ -317,7 +317,7 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
       "id": "100050510798749",
       "name": "Lilac Festival",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/343412725_1217737712204297_6274770509266232269_n.jpg?stp=c50.34.938.938a_cp0_dst-jpg_s74x74_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=DRc_Hf0Z5u4Q7kNvgGVIYeX&_nc_oc=Adld_eWoI06jV8rI9A0Et0pYe6kB8h_nxfNr93hdKTmsCqidhxKYtnEcfEd0a6dZr1B34NJaDwsdY4xAQsnzK-rJ&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=Vs5pt1hBn9NFPWk5_cLoMQ&oh=00_AYHaeZluBwlJv1McCAvmQE6FLVfpt1PApVPvIWKm8ancyg&oe=67F47DF4",
+        "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-1/491553306_1221674636192885_5739177654127096451_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=X8_8xvvzDckQ7kNvwEJ6Xcv&_nc_oc=AdnpEPJYzohQa-ttu7q5dgMfav_b-uKME_FsNrrMc5LYciODhPXOSAVLr1OJghxhape2mzpiIn-hkuy92R2k2ixq&_nc_zt=24&_nc_ht=scontent-dfw5-2.xx&_nc_gid=R_7bnPE8L_Rj-9Bsv1zZ1Q&oh=00_AfHVmThJmcT5SZ-Jb4tbVk-YP5xRoAoX92eQHTw1L4pF8A&oe=6810BD5C",
       },
       "type": "User",
       "url": "https://www.facebook.com/LilacFestival",
@@ -344,7 +344,7 @@ At the Lilac Festival, there is an activity made for all ages. This could mean a
   "parentEvent": null,
   "photo": {
     "id": "749222690104751",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/472570967_1152279459799070_954455182245359149_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=CuHA6jyZQOYQ7kNvgG3WefK&_nc_oc=AdkYlKkXZKVlI6XtBW210Ui-mdm9YUTeuiJK9ek4YOjmeLVhl_VLCZL6-WfRew9DVQdALjpnAsYwt_yhevpR_y4e&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=LApHZewGM6znEXKmfwJlUA&oh=00_AYH_X_oBRmBr4wKSApQQWn2TJFb_ppkbiBEICIMOC7FW-w&oe=67F47654",
+    "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-6/472570967_1152279459799070_954455182245359149_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=v0CMU4IShPMQ7kNvwEFOvqO&_nc_oc=AdlzQgT0-YBrTUpolQdJ_PL2vrfvXo0BwZb8te9_INEv2h2i0XsszqJ1-ZdKb8AoajQ2-anJm-8v11zjYqeL-tks&_nc_zt=23&_nc_ht=scontent-dfw5-3.xx&_nc_gid=5maalpEnWzsAJXpk9t2aig&oh=00_AfHiw4I1wKvs1i8F0unxv85_E2KpbtnwgplinlvwHvDQ-A&oe=6810CE94",
     "url": "https://www.facebook.com/photo/?fbid=749222690104751&set=gm.719931573255940",
   },
   "siblingEvents": [],
@@ -365,13 +365,13 @@ exports[`E2E Generates the correct event data for an event with a text location 
   "formattedDate": "Tuesday, April 4, 2023 at 11:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl",
+      "id": "pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=1BwdynYvBPkQ7kNvgGLfETp&_nc_oc=AdkwuZIOnFTbk3I7afTKTG1Y24wA-UuhcYr0n9h4ZxCFntUzHEHLbU_E2qgT8ccBkSErM6J-xwBqUPQRwjrFDWLc&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&oh=00_AYG--KDXOOWQnf6M4UOrL3ijmXai-Y-yarGjhvNhR9KQLg&oe=681611FA",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=Py8_nbWK5EEQ7kNvwFcf71b&_nc_oc=Adk2cIjJSQ-end9Qo6_brJYk_CDoUWhTakRUdlcRtyLxOgrkV1TInJKyRwkeQIzbRvcu6XOQ18qAJh6yCiOmIqQD&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&oh=00_AfHLHrUMLJ5mUhfS62dBK1T8-d40rFozpPL6GPxhrYRQfA&oe=68326A3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol/",
     },
   ],
   "id": "526262926343074",
@@ -440,7 +440,7 @@ https://www.facebook.com/groups/darkeighties
       "id": "100070821304084",
       "name": "12XU",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=3fhOL_F0BJYQ7kNvgGFmOkv&_nc_oc=AdmGr9PFwuYsbRfWJkTeEPUmhLWl3te9fSgc8WxMvXqiyG0bPvQ6kbhes3ekIsTB8IRClGE2WmWRBhWEySccc56j&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=Y5aloaM0SgBgmwRdPYueow&oh=00_AYHreST7mVUvKflwE91Vd89bI7fYMbzhWZTOaRytjaTq2Q&oe=67F478A6",
+        "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-1/410227062_382882167415824_4051646999230968301_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=-XTKJP6Oml0Q7kNvwGcuOqs&_nc_oc=AdkIgY5t-g1dTsdkz0fisvQe4_JLXpsrf58KfeWwnaGcTO5IEgc36O1TEorLxGAnvqTKrLfuZ_vTYGqI17NLo5-B&_nc_zt=24&_nc_ht=scontent-dfw5-2.xx&_nc_gid=X0tCi-EQl6PF5ir91UV3mw&oh=00_AfHsRPdr9yc76DugUoXZ98V1n6Br9wMOL2q-8r0VlY_bgA&oe=6810D0E6",
       },
       "type": "User",
       "url": "https://www.facebook.com/12XUevents",
@@ -449,7 +449,7 @@ https://www.facebook.com/groups/darkeighties
       "id": "100063904024919",
       "name": "The Dark Eighties",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=AU3vP_vEWoYQ7kNvgFfbdrE&_nc_oc=AdnpGa_aIJBpp_5P9HXUcy8YjuUfpSlzDs0Op80FC9PBrASOnAPDtIgIEuU6XwDaIxEvE9z6EeKxNOh0Sm9AkaVl&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=Y5aloaM0SgBgmwRdPYueow&oh=00_AYHNpN4AoEdEIWU7mcmSwVv8OrfqubBJK7mtSCMOacc5ng&oe=67F48827",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/332078465_858485495251843_6558149897498817316_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=P_o4WNBlgv4Q7kNvwHROm6i&_nc_oc=AdnMinzl-nxqfPutCypmNrPr9QgoLL24umdtF6AF8Jk6R7B-2-YEpWS9OMrdhuomJZ2BNcfGO7E9p654kVFOLI4m&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=X0tCi-EQl6PF5ir91UV3mw&oh=00_AfHT59MaKWKLdCZ4Rf1fZFp62KwgsxvbnSepTqq3z9qj1Q&oe=6810E067",
       },
       "type": "User",
       "url": null,
@@ -476,7 +476,7 @@ https://www.facebook.com/groups/darkeighties
   "parentEvent": null,
   "photo": {
     "id": "621131586693637",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/483866251_1107783254695132_4478007887358984133_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=2Zp--_qQUi0Q7kNvgHOdgXt&_nc_oc=AdkhayeOn4jVq8bkbP2mJzcz1i9VF3Er2to2JD2fdFSvp8dd_Mndw-drrxhYhgj5qOLWJZ2L83iyuS_M_uRDtjjd&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=FdhfKBmsxVd7nGcHmlfGng&oh=00_AYGQZlhXRSf7ENlK7clkT5tezhJlNWXtTo8dI44FdxBkGQ&oe=67F464E8",
+    "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/483866251_1107783254695132_4478007887358984133_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=75d36f&_nc_ohc=91d8f06rU88Q7kNvwE05QX2&_nc_oc=AdkqDonL2aXN0fN2Xnkt44HRKRlTOg-8MdL0Ytp02bzuZtvdjDJ_NECOp24B1una-DEwGzYh2JBoZUQZ_Ty5eFZQ&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=CkD8RCRJZP89rEoI9ZSDdg&oh=00_AfFHVXHx_qfth3mIns-d9MCNQGWoum2JlPoL4NGaVICYbw&oe=6810BD28",
     "url": "https://www.facebook.com/photo/?fbid=621131586693637&set=gm.1376686326480508",
   },
   "siblingEvents": [],
@@ -490,50 +490,6 @@ https://www.facebook.com/groups/darkeighties
 `;
 
 exports[`E2E Generates the correct event data for an event with a video cover 1`] = `
-{
-  "categories": [],
-  "description": "hbhjbjh",
-  "endTimestamp": null,
-  "formattedDate": "Tuesday, April 4, 2023 at 11:00 PM MDT",
-  "hosts": [
-    {
-      "id": "pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl",
-      "name": "Joe Smith",
-      "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=1BwdynYvBPkQ7kNvgGLfETp&_nc_oc=AdkwuZIOnFTbk3I7afTKTG1Y24wA-UuhcYr0n9h4ZxCFntUzHEHLbU_E2qgT8ccBkSErM6J-xwBqUPQRwjrFDWLc&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&oh=00_AYG--KDXOOWQnf6M4UOrL3ijmXai-Y-yarGjhvNhR9KQLg&oe=681611FA",
-      },
-      "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl/",
-    },
-  ],
-  "id": "526262926343074",
-  "isOnline": false,
-  "location": {
-    "address": null,
-    "city": null,
-    "coordinates": null,
-    "countryCode": null,
-    "description": null,
-    "id": "1260045608271508",
-    "name": "kbhbj",
-    "type": "TEXT",
-    "url": null,
-  },
-  "name": "Event to test",
-  "onlineDetails": null,
-  "parentEvent": null,
-  "photo": null,
-  "siblingEvents": [],
-  "startTimestamp": 1680670800,
-  "ticketUrl": null,
-  "timezone": "UTC-06",
-  "url": "https://www.facebook.com/events/526262926343074/",
-  "usersResponded": 1,
-  "video": null,
-}
-`;
-
-exports[`E2E Generates the correct event data for an event with a video cover 2`] = `
 {
   "categories": [
     {
@@ -560,7 +516,7 @@ Ateitį kurkime šiandien!
       "id": "100067786593384",
       "name": "Lietuva 2050",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=PwodFXL7tpkQ7kNvgGbdk3H&_nc_oc=Adl868_fFe1vsu6QcDRPtXfXx6VoqyE1httXOgAeLuWuIIqaJSqJdEPMAMioca7vFeYQf2il6bZyF5gFKUrdhoU9&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=kAWxe11J1r73haQSHLVyIQ&oh=00_AYE-BHjXW59dGzyQYp-yfliHu6k9H0IJdfyeyP1Gq1eAtw&oe=67F48C11",
+        "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/353748572_586062753663273_3803358940549831479_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=d5lKAaXHi8cQ7kNvwGQe1Qj&_nc_oc=Adn6Gfcy9zxb3DTkQRu1nYrX2PP4ccNCj2mId7vvxGajkx8Fyl1dBNN21rH5r4UROdWJD784HYiWoQnyHHWEDZdf&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=ty77TmOFcKYTWtBNkvCltA&oh=00_AfH-a3ZvtoBv6IE0ZuRCd5knPt7v3XJ01IKpNqumcoGwTg&oe=6810E451",
       },
       "type": "User",
       "url": "https://www.facebook.com/Lietuva2050",
@@ -569,7 +525,7 @@ Ateitį kurkime šiandien!
       "id": "100039182298687",
       "name": "VU Šiaulių akademija",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=-fbd_Gl1fikQ7kNvgFg7SMJ&_nc_oc=AdmC9KEhzYbR1sPPGHY858pYGhqog_m_zUHTXVTSgaGq1D1d23UWwBHIjiPKc-2ZtfrJB1p8teHWKRqMuGBANFE_&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=kAWxe11J1r73haQSHLVyIQ&oh=00_AYH8Sm7-uuWA6kiLfQNLuq67u5GhrZe6PBn6XpoL4ix42g&oe=67F4773C",
+        "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/274600858_487344632966234_2522454326585058130_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=105&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=JT7Ik6O_avsQ7kNvwFuUMFK&_nc_oc=AdnJ-D4cNyYgYlZcFbN5xyrW-uGPrXWgi8Sc79yYoKz9i8X1D9sTcmc1admok1Yb8BA9TnoCzn-i4he8BkhEUNtg&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=ty77TmOFcKYTWtBNkvCltA&oh=00_AfFvXoVtw_r-foZjhUa2SoDPq7PQ1X-juBQW-HDD-pFOcw&oe=6810CF7C",
       },
       "type": "User",
       "url": "https://www.facebook.com/siauliu.akademija",
@@ -578,7 +534,7 @@ Ateitį kurkime šiandien!
       "id": "100064306435250",
       "name": "Vilniaus universitetas / Vilnius University",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=04xDEPunUMEQ7kNvgErtHIq&_nc_oc=Adn59tBFlUv3veeZv1EhFRvjsaC2azhK93ZA5rClWFF6bw9soWp9f7DErp8qNe4_bWRk6VNwSbWqtuEu5XFeSlhH&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=kAWxe11J1r73haQSHLVyIQ&oh=00_AYF_fKp81OIJTWvAWz_aSsC75xjiUb4K-bqVN-sGVvhNSg&oe=67F45D72",
+        "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-1/274532730_5225887714128805_1147028878997655106_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=eR73TqsOOowQ7kNvwG1EjPf&_nc_oc=AdlPTVzdcFR06yYo7-2cbaqYCBcmU0HNMtDeACZ5zTxEnCETcIqawrW8_ofzt4TOVKZ7ccrBO7K_KzPq-KzFytCP&_nc_zt=24&_nc_ht=scontent-dfw5-2.xx&_nc_gid=ty77TmOFcKYTWtBNkvCltA&oh=00_AfEYIWmblKlGXIuiqiHI7AOGcVKKcHHf7HX7giOiX0lpKw&oe=6810EDF2",
       },
       "type": "User",
       "url": "https://www.facebook.com/VilniusUniversity",
@@ -587,7 +543,7 @@ Ateitį kurkime šiandien!
       "id": "100064644461523",
       "name": "Šiaulių apskrities Povilo Višinskio viešoji biblioteka",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/473965764_1047560367408769_1188670290210731717_n.jpg?stp=c293.0.1414.1414a_cp0_dst-jpg_s74x74_tt6&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=WuGDGugjHCQQ7kNvgGIRJKz&_nc_oc=AdncOdOujimgATfzouuTFxiU4rmwIUs0WWEAXplUOppk2tDHYl-Ax1pX1B94XATkT2WKaKJqwmkPzaf5qGk0SEcC&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=kAWxe11J1r73haQSHLVyIQ&oh=00_AYGM_yuni8ExmCVzRvUANzIDYm25rmDS5n4i077t7U0nug&oe=67F463FA",
+        "imageUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-1/473965764_1047560367408769_1188670290210731717_n.jpg?stp=c293.0.1414.1414a_cp0_dst-jpg_s74x74_tt6&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=1rIHPldQdCoQ7kNvwFG1-cC&_nc_oc=Admh2K7dHd_MFqkpyPUx4uJkeDyR5-vIiwxP6d5B1erup_7KJ3JRh-P_X_80aBPBgkSIUIzacbR34zRONWkWvtnY&_nc_zt=24&_nc_ht=scontent-dfw5-2.xx&_nc_gid=ty77TmOFcKYTWtBNkvCltA&oh=00_AfE44_FVqrsdVAi-kll2EmgTM4cW5yin_64w4me3dE-3eg&oe=6810BC3A",
       },
       "type": "User",
       "url": "https://www.facebook.com/SAVB.info",
@@ -611,7 +567,7 @@ Ateitį kurkime šiandien!
   "usersResponded": 123,
   "video": {
     "id": "2194658774256880",
-    "thumbnailUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=282d23&_nc_ohc=-VXX72wKevMQ7kNvgES91oA&_nc_oc=AdkpDqP7104s1DXZLqFyW09SduLJgkEHzOdbTmu_eZElfn--VtZ4-xMHrruD4CgpODsB3FOR43QR_4D7iRAZgGfq&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=UiMIBweKcQLnTaKKTAvSgQ&oh=00_AYFbE-sPjVQ_OXFD8Keh-mcTGRXSYd-nbqnQmyq3_LPZ7Q&oe=67F46A2B",
+    "thumbnailUri": "https://scontent-dfw5-2.xx.fbcdn.net/v/t15.5256-10/343286097_763205485254382_1688962917143675368_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=282d23&_nc_ohc=FmjpqoqRPBsQ7kNvwFTH3E6&_nc_oc=AdnEQGY20hKE_Now8xIQ3tskYHI86e5_dDA8WEB8eJTVN0uoPXBiUTmhjHonnIxjg-FRqvwniZTndv3_70PARUu-&_nc_zt=23&_nc_ht=scontent-dfw5-2.xx&_nc_gid=udtzjIOWZaNtTNf0MxDzlw&oh=00_AfESBnD35DsPcdn3Wfcr-O6IAYOk8-nCzBPFL87N0xlmfg&oe=6810C26B",
     "url": "https://www.facebook.com/Lietuva2050/videos/2194658774256880/",
   },
 }
@@ -635,7 +591,7 @@ Tickets are ON SALE NOW!",
       "id": "100064709654009",
       "name": "All Elite Wrestling",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/448627833_865600602273587_4050110030248245393_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=8KTjVe07mKUQ7kNvgEXUzG-&_nc_oc=Adk7x075UR7_4rekBgjetdyJjOqVehwE6lNfqmWmD0229WiecWOiQThNFQ0pL8Nb2WsDDvyI6rHqf-gHF25WMwXX&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=MTBYkrdChY1BAEG8xRYfVg&oh=00_AYEJb-P5O7GYZk4r17wG1OTq9kbU6CLivp49Xt9JNN-_TQ&oe=67F46A69",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-1/448627833_865600602273587_4050110030248245393_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=1&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=9G2cauTJu-kQ7kNvwGRJjmE&_nc_oc=AdkjOKFf8VnAjG2ahPg4suLI0-UA5dtSbkzOrOo93-NKTGACXy99mxhJpCGDZKU_VJ0eCi9hjABpcxKMZR1yzvAY&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&_nc_gid=TjtEqw2cuCIf_-2XNtnJuQ&oh=00_AfEUfYVLnPvjpAChxchw4O4O49TTCY85OH0NoDDG0Fyasw&oe=6810C2A9",
       },
       "type": "User",
       "url": "https://www.facebook.com/AEW",
@@ -644,7 +600,7 @@ Tickets are ON SALE NOW!",
       "id": "100063699336240",
       "name": "Stampede Ent. Inc.",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=3qSYYj5rw9sQ7kNvgHZfbqk&_nc_oc=AdkRcJP8GGtN6e19WwAgkJZjyVRfCq0V7Wr7BBlc48Z8JCek6kouwIGGb_95lAYvmvdQ0MtB7NY7jZQ0b7_M3qVt&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&_nc_gid=MTBYkrdChY1BAEG8xRYfVg&oh=00_AYFD7pO974B5mFCC3YkJLAS4IjRWq0nOLjlFSz2k4EZV1g&oe=67F48282",
+        "imageUri": "https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-1/294695496_453263513473623_3023392462933132753_n.jpg?stp=cp0_dst-jpg_s74x74_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=30kHQjkCaykQ7kNvwEIxdVz&_nc_oc=Adk5wqRBvBn6tD4XB0Tmyx-Yp3N5G3ZCFNn4m4NQo4Qv9HzgfpF37bP6JbXSSOipfvfjiggLDPelNDe_G3eUFIHd&_nc_zt=24&_nc_ht=scontent-dfw5-1.xx&_nc_gid=TjtEqw2cuCIf_-2XNtnJuQ&oh=00_AfGki7rvdY_33RExgRV3-W8e2mFADi1v3WxoyG0dKhl3mQ&oe=6810DAC2",
       },
       "type": "User",
       "url": "https://www.facebook.com/StampedeEntInc",
@@ -674,7 +630,7 @@ Tickets are ON SALE NOW!",
   "parentEvent": null,
   "photo": {
     "id": "1273089803342464",
-    "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t39.30808-6/473081369_1630277110957063_1481524804345515679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=LT3de8An608Q7kNvgGwzhoB&_nc_oc=AdnvoqwE6-6azAFH06hLCkJPXesvKfQj8kXamNBTJJFC0cJteHGTjqvRM483RtjmFaIs3dw3YsU1G3CwuIufzNhy&_nc_zt=23&_nc_ht=scontent.fprg1-1.fna&_nc_gid=8o6kO-0t9LYhZw0pLD22Mw&oh=00_AYFr_BDdubab2_zASo-Afy14W0eZ7INerYfT_4CPMsWN1g&oe=67F482F6",
+    "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t39.30808-6/473081369_1630277110957063_1481524804345515679_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=75d36f&_nc_ohc=PIZ549V1N18Q7kNvwELHf8P&_nc_oc=AdmOu-amJxn4traKNxmFjIauQ4dZOq2ldUUPx4Fsg_OpLMLqOSjxt3uYzyGRw3lnaY-3xc1A9hQiZcbnN0CuNDj7&_nc_zt=23&_nc_ht=scontent-dfw5-3.xx&_nc_gid=sctIIJkNmvp4sHDqU7ybVg&oh=00_AfEJu75re4YIqHM39iXgAxu8Q62iA_Y4UgZP67Ni9vdBpw&oe=6810DB36",
     "url": "https://www.facebook.com/photo/?fbid=1273089803342464&set=gm.977705193657933",
   },
   "siblingEvents": [],
@@ -695,13 +651,13 @@ exports[`E2E Generates the correct event data for an online event with a third-p
   "formattedDate": "Friday, June 16, 2023 at 4:00 PM MDT",
   "hosts": [
     {
-      "id": "pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl",
+      "id": "pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol",
       "name": "Joe Smith",
       "photo": {
-        "imageUri": "https://scontent.fprg1-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=1BwdynYvBPkQ7kNvgGLfETp&_nc_oc=AdkwuZIOnFTbk3I7afTKTG1Y24wA-UuhcYr0n9h4ZxCFntUzHEHLbU_E2qgT8ccBkSErM6J-xwBqUPQRwjrFDWLc&_nc_zt=24&_nc_ht=scontent.fprg1-1.fna&oh=00_AYG--KDXOOWQnf6M4UOrL3ijmXai-Y-yarGjhvNhR9KQLg&oe=681611FA",
+        "imageUri": "https://scontent-dfw5-3.xx.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=cp0_dst-png_s74x74&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=Py8_nbWK5EEQ7kNvwFcf71b&_nc_oc=Adk2cIjJSQ-end9Qo6_brJYk_CDoUWhTakRUdlcRtyLxOgrkV1TInJKyRwkeQIzbRvcu6XOQ18qAJh6yCiOmIqQD&_nc_zt=24&_nc_ht=scontent-dfw5-3.xx&oh=00_AfHLHrUMLJ5mUhfS62dBK1T8-d40rFozpPL6GPxhrYRQfA&oe=68326A3A",
       },
       "type": "User",
-      "url": "https://www.facebook.com/people/Joe-Smith/pfbid0bGj6B1rxxo3QFADeCQUvdfXYSdaSt4bVkxQ5VLTSr2YfkxooN65p4ZhmazVPc5iUl/",
+      "url": "https://www.facebook.com/people/Joe-Smith/pfbid02fJLXGyUDBatQc812diNVpgeFNjPjcUfpW29Q9QdnqoVuJ7fKfuJFsJbP1RK5C2Nol/",
     },
   ],
   "id": "760928342374546",
@@ -730,6 +686,22 @@ exports[`E2E Generates the correct event data for events from group page 1`] = `
 
 exports[`E2E Generates the correct event data for past events from page 1`] = `
 [
+  {
+    "date": "Tue, Apr 15",
+    "id": "1196106715549172",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1196106715549172/",
+  },
+  {
+    "date": "Thu, Apr 3",
+    "id": "1148340996977550",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1148340996977550/",
+  },
   {
     "date": "Tue, Apr 1",
     "id": "1372327683701218",
@@ -778,34 +750,74 @@ exports[`E2E Generates the correct event data for past events from page 1`] = `
     "name": "BACHATA & SALSA FIESTA - Free Entry",
     "url": "https://www.facebook.com/events/1298022051410475/",
   },
-  {
-    "date": "Tue, Feb 18",
-    "id": "1179327486959175",
-    "isCanceled": false,
-    "isPast": true,
-    "name": "BACHATA & SALSA FIESTA - Free Entry",
-    "url": "https://www.facebook.com/events/1179327486959175/",
-  },
-  {
-    "date": "Tue, Feb 11",
-    "id": "1026039145985800",
-    "isCanceled": false,
-    "isPast": true,
-    "name": "BACHATA & SALSA FIESTA - Free Entry",
-    "url": "https://www.facebook.com/events/1026039145985800/",
-  },
 ]
 `;
 
 exports[`E2E Generates the correct event data for upcoming events from page 1`] = `
 [
   {
-    "date": "Thu, Apr 3 at 8:00 PM CEST",
+    "date": "Tue, Apr 15",
+    "id": "1196106715549172",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1196106715549172/",
+  },
+  {
+    "date": "Thu, Apr 3",
     "id": "1148340996977550",
     "isCanceled": false,
-    "isPast": false,
+    "isPast": true,
     "name": "Bachata & Salsa: FREE Open Class + Party",
     "url": "https://www.facebook.com/events/1148340996977550/",
+  },
+  {
+    "date": "Tue, Apr 1",
+    "id": "1372327683701218",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1372327683701218/",
+  },
+  {
+    "date": "Tue, Mar 25",
+    "id": "1369200957569262",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1369200957569262/",
+  },
+  {
+    "date": "Tue, Mar 18",
+    "id": "998491512228665",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/998491512228665/",
+  },
+  {
+    "date": "Tue, Mar 11",
+    "id": "1739191463661568",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa: FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/1739191463661568/",
+  },
+  {
+    "date": "Tue, Mar 4",
+    "id": "567208933022674",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "Bachata & Salsa - FREE Open Class + Party",
+    "url": "https://www.facebook.com/events/567208933022674/",
+  },
+  {
+    "date": "Tue, Feb 25",
+    "id": "1298022051410475",
+    "isCanceled": false,
+    "isPast": true,
+    "name": "BACHATA & SALSA FIESTA - Free Entry",
+    "url": "https://www.facebook.com/events/1298022051410475/",
   },
 ]
 `;
