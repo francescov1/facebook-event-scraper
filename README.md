@@ -17,7 +17,7 @@ yarn add facebook-event-scraper
 
 ## Usage
 
-To use the Facebook Event Scraper, you need to provide the URL of the Facebook event page you want to scrape. Here's an example of how you can use the package to scrape the event details:
+To scrape Facebook events, provide an event URL or ID. Here's an example of how you can scrape event details:
 
 ```javascript
 import { scrapeFbEvent, scrapeFbEventFromFbid } from 'facebook-event-scraper';
@@ -120,7 +120,7 @@ If an event has multiple times/dates, it will have the `parentEvent` and `siblin
 
 ## Scrape hosted event lists
 
-You can scrape hosted events from groups, pages and profiles using the `scrapeFbEventList` method.
+Scrape hosted events from groups, pages and profiles using the `scrapeFbEventList` method. You can optionally filter by past or upcoming event types. See example below:
 
 ```javascript
 import {
@@ -131,14 +131,17 @@ import {
 // Scrape events from fb page
 async function example() {
   try {
-    const eventData = await scrapeFbEventList('https://www.facebook.com/lacalle8prague/events', EventType.Upcoming);
-    console.log(eventData);
+    const pageUrl = 'https://www.facebook.com/lacalle8prague/events'
+    const pageEventData = await scrapeFbEventList(pageUrl, EventType.Upcoming);
+    console.log(pageEventData);
 
-    const eventData2 = await scrapeFbEventList('https://www.facebook.com/groups/409785992417637/events', EventType.Past);
-    console.log(eventData2);
+    const groupUrl = 'https://www.facebook.com/groups/409785992417637/events'
+    const groupEventData = await scrapeFbEventList(groupUrl, EventType.Past);
+    console.log(groupEventData);
 
-    const eventData3 = await scrapeFbEventList('https://www.facebook.com/profile.php?id=61553164865125&sk=events', EventType.Past);
-    console.log(eventData3);
+    const profileUrl = 'https://www.facebook.com/profile.php?id=61553164865125&sk=events'
+    const profileEventData = await scrapeFbEventList(profileUrl, EventType.Past);
+    console.log(profileEventData);
   } catch (err) {
     console.error(err);
   }
