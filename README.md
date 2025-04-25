@@ -45,7 +45,7 @@ async function example2() {
 }
 ```
 
-The scrapeEvent function returns a Promise with the scraped event data. See below for an example of the event data, or [see the type definition here](https://github.com/francescov1/facebook-event-scraper/blob/master/src/types.ts#L3).
+The scrape methods return a Promise with the scraped event data. See below for an example of the event data, or [see the type definition here](https://github.com/francescov1/facebook-event-scraper/blob/master/src/types.ts#L3).
 
 ```json
 {
@@ -118,44 +118,26 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
 
 If an event has multiple times/dates, it will have the `parentEvent` and `siblingEvents` fields populated. Each sibling event is a date for the parent event.
 
-## List events from FB Page or Group
+## Scrape hosted event lists
+
+You can scrape hosted events from groups, pages and profiles using the `scrapeFbEventList` method.
 
 ```javascript
 import {
-  scrapeFbEventListFromPage,
-  scrapeFbEventListFromProfile,
-  scrapeFbEventListFromGroup,
+  scrapeFbEventList
   EventType
 } from 'facebook-event-scraper';
 
 // Scrape events from fb page
 async function example() {
   try {
-    const url = 'https://www.facebook.com/lacalle8prague/events';
-    const eventData = await scrapeFbEventListFromPage(url, EventType.Upcoming);
+    const eventData = await scrapeFbEventList('https://www.facebook.com/lacalle8prague/events', EventType.Upcoming);
     console.log(eventData);
-  } catch (err) {
-    console.error(err);
-  }
-}
 
-// Scrape events from fb group
-async function example2() {
-  try {
-    const url = 'https://www.facebook.com/groups/409785992417637/events';
-    const eventData2 = await scrapeFbEventListFromGroup(url, EventType.Past);
+    const eventData2 = await scrapeFbEventList('https://www.facebook.com/groups/409785992417637/events', EventType.Past);
     console.log(eventData2);
-  } catch (err) {
-    console.error(err);
-  }
-}
 
-// Scrape events from fb user profile
-async function example3() {
-  try {
-    const url =
-      'https://www.facebook.com/profile.php?id=61553164865125&sk=events';
-    const eventData3 = await scrapeFbEventListFromProfile(url, EventType.Past);
+    const eventData3 = await scrapeFbEventList('https://www.facebook.com/profile.php?id=61553164865125&sk=events', EventType.Past);
     console.log(eventData3);
   } catch (err) {
     console.error(err);
@@ -163,7 +145,7 @@ async function example3() {
 }
 ```
 
-Functions return a Promise with the list of scraped event data.
+This will return a Promise with a list of scraped event data. For full event data objects, you can pass the `id` field seen below into `scrapeFbEventFromFbid`.
 
 ```json
 [
