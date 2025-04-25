@@ -96,3 +96,12 @@ export interface EventCategory {
 export interface ScrapeOptions {
   proxy?: AxiosProxyConfig;
 }
+
+export interface ShortEventData {
+  id: string;
+  name: string;
+  url: string;
+  date: string;
+  isCanceled: boolean;
+  isPast: boolean;
+}

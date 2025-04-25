@@ -118,6 +118,82 @@ The scrapeEvent function returns a Promise with the scraped event data. See belo
 
 If an event has multiple times/dates, it will have the `parentEvent` and `siblingEvents` fields populated. Each sibling event is a date for the parent event.
 
+## List events from FB Page or Group
+
+```javascript
+import {
+  scrapeFbEventListFromPage,
+  scrapeFbEventListFromProfile,
+  scrapeFbEventListFromGroup,
+  EventType
+} from 'facebook-event-scraper';
+
+// Scrape events from fb page
+async function example() {
+  try {
+    const url = 'https://www.facebook.com/lacalle8prague/events';
+    const eventData = await scrapeFbEventListFromPage(url, EventType.Upcoming);
+    console.log(eventData);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Scrape events from fb group
+async function example2() {
+  try {
+    const url = 'https://www.facebook.com/groups/409785992417637/events';
+    const eventData2 = await scrapeFbEventListFromGroup(url, EventType.Past);
+    console.log(eventData2);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Scrape events from fb user profile
+async function example3() {
+  try {
+    const url =
+      'https://www.facebook.com/profile.php?id=61553164865125&sk=events';
+    const eventData3 = await scrapeFbEventListFromProfile(url, EventType.Past);
+    console.log(eventData3);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+Functions return a Promise with the list of scraped event data.
+
+```json
+[
+  {
+    "id": "916236709985575",
+    "name": "NEW YEAR EVE 2025",
+    "url": "https://www.facebook.com/events/916236709985575/",
+    "date": "Tue, Dec 31, 2024",
+    "isCanceled": false,
+    "isPast": true
+  },
+  {
+    "id": "591932410074832",
+    "name": "REGGAETON NIGHT",
+    "url": "https://www.facebook.com/events/591932410074832/",
+    "date": "Fri, Nov 22, 2024",
+    "isCanceled": false,
+    "isPast": true
+  },
+  {
+    "id": "1103230308135807",
+    "name": "FIESTA LATINA",
+    "url": "https://www.facebook.com/events/1103230308135807/",
+    "date": "Sat, Nov 9, 2024",
+    "isCanceled": false,
+    "isPast": true
+  }
+]
+```
+
 ### Using a proxy
 
 This library uses a GET request to fetch the Facebook event data. To use a proxy for this request, pass an object containing the proxy details as the second argument. The proxy data type is identical to the [Axios proxy options](https://axios-http.com/docs/req_config).
