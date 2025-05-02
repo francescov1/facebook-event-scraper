@@ -96,8 +96,9 @@ export const validateAndFormatEventProfileUrl = (
 // Covers pages with the following format:
 // https://www.facebook.com/groups/409785992417637/events
 // https://www.facebook.com/groups/409785992417637
+// https://www.facebook.com/groups/zoukcr
 export const validateAndFormatEventGroupUrl = (url: string) => {
-  const regex = /facebook\.com\/groups\/\d+(?:\/events$)?/;
+  const regex = /facebook\.com\/groups\/[a-zA-Z0-9]+(?:\/events$)?/;
   const result = regex.test(url);
 
   if (!result) {
