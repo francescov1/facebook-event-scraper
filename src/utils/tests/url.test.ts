@@ -104,6 +104,15 @@ describe('validateAndFormatEventPageUrl without type parameter', () => {
     );
   });
 
+  it('returns the correct URL for a valid FB page URL with dot', () => {
+    const result = validateAndFormatEventPageUrl(
+      'https://www.facebook.com/Martinus.sk'
+    );
+    expect(result).toEqual(
+      'https://www.facebook.com/Martinus.sk/events?_fb_noscript=1'
+    );
+  });
+
   it('throws an error for an invalid FB event page URL', () => {
     expect(() =>
       validateAndFormatEventPageUrl(
