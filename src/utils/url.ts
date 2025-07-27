@@ -33,7 +33,7 @@ export const validateAndFormatEventPageUrl = (
   type?: EventType
 ) => {
   const regex =
-    /facebook\.com\/[a-zA-Z0-9]+(?:\/(past_hosted_events|upcoming_hosted_events|events))?$/;
+    /facebook\.com\/[a-zA-Z0-9\\.]+(?:\/(past_hosted_events|upcoming_hosted_events|events))?$/;
   const result = regex.test(url);
 
   if (!result) {
