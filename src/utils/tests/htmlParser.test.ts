@@ -73,6 +73,7 @@ describe('getBasicData', () => {
         id: 'some id',
         imageUri: 'some uri'
       },
+      photos: [],
       video: null,
       formattedDate: 'some date',
       startTimestamp: 1680476245,
@@ -118,6 +119,7 @@ describe('getBasicData', () => {
         id: 'some id',
         imageUri: 'some uri'
       },
+      photos: [],
       video: null,
       formattedDate: 'some date',
       startTimestamp: 1680476245,
@@ -157,6 +159,7 @@ describe('getBasicData', () => {
       id: '123',
       name: 'some name',
       photo: null,
+      photos: [],
       video: {
         url: 'some url',
         id: 'some id',
@@ -206,6 +209,7 @@ describe('getBasicData', () => {
       id: '123',
       name: 'some name',
       photo: null,
+      photos: [],
       video: null,
       formattedDate: 'some date',
       startTimestamp: 1680476245,
@@ -256,6 +260,7 @@ describe('getBasicData', () => {
       id: '123',
       name: 'some name',
       photo: null,
+      photos: [],
       video: null,
       formattedDate: 'some date',
       startTimestamp: 1680476245,
