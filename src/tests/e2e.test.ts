@@ -119,4 +119,10 @@ describe('E2E', () => {
     const eventData = await scrapeFbEventListFromGroup(url);
     expect(eventData).toMatchSnapshot();
   });
+
+  it('Generates the correct event data for an event with multiple photos', async () => {
+    const url = 'https://www.facebook.com/events/2850462851803490/';
+    const eventData = await scrapeFbEvent(url);
+    expect(eventData).toMatchSnapshot();
+  });
 });

@@ -16,6 +16,8 @@ export interface EventData {
   /** Event timezone */
   timezone: string;
   photo: EventPhoto | null;
+  /** A list of photos if the event has multiple cover photos */
+  photos: EventPhoto[];
   video: EventVideo | null;
   url: string;
   isOnline: boolean;

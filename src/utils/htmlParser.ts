@@ -25,6 +25,7 @@ export const getBasicData = (
   | 'id'
   | 'name'
   | 'photo'
+  | 'photos'
   | 'video'
   | 'formattedDate'
   | 'startTimestamp'
@@ -57,6 +58,15 @@ export const getBasicData = (
             jsonData.cover_media_renderer.cover_photo.photo.full_image?.uri
         }
       : null,
+    photos: jsonData.cover_media_renderer?.cover_media
+      ? jsonData.cover_media_renderer.cover_media.map(
+          (photo: Record<string, any>) => ({
+            url: photo.url,
+            id: photo.id,
+            imageUri: photo.image?.uri ?? photo.full_image?.uri
+          })
+        )
+      : [],
     video: jsonData.cover_media_renderer?.cover_video
       ? {
           url: jsonData.cover_media_renderer.cover_video.url,

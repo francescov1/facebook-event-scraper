@@ -85,6 +85,7 @@ The scrape methods return a Promise with the scraped event data. See below for a
     "id": "595982989234742",
     "imageUri": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah"
   },
+  "photos": [],
   "video": {
     "id": "595982989234742",
     "thumbnailUri": "https://scontent.fyyc3-1.fna.fbcdn.net/v/blah-blah-blah",
