@@ -77,8 +77,14 @@ describe('scrapeEvent', () => {
 
   it('should pass the proxy option to fetchEvent', async () => {
     const aProxy = { host: 'test.com', port: 1234 };
-    await scrapeEvent('http://test.com', { proxy: aProxy });
-    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', aProxy);
+    await scrapeEvent('http://test.com', {
+      axiosOptions: {
+        proxy: aProxy
+      }
+    });
+    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', {
+      proxy: aProxy
+    });
   });
 
   it('should parse the basic event data from the HTML', async () => {

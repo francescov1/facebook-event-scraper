@@ -1,6 +1,9 @@
-import axios, { AxiosProxyConfig } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
-export const fetchEvent = async (url: string, proxy?: AxiosProxyConfig) => {
+export const fetchEvent = async (
+  url: string,
+  axiosOptions?: AxiosRequestConfig
+) => {
   try {
     const response = await axios.get(url, {
       headers: {
@@ -19,7 +22,7 @@ export const fetchEvent = async (url: string, proxy?: AxiosProxyConfig) => {
         'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
       },
-      proxy
+      ...(axiosOptions || {})
     });
 
     return response.data;

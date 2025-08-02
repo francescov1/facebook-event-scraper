@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { fetchEvent } from '../network';
 
 // Mock axios to simulate server responses
@@ -40,17 +40,20 @@ describe('fetchEvent', () => {
     expect(result).toEqual(responseData);
   });
 
-  it('calls axios with proxy data', async () => {
+  it('calls axios with addiotional axios options', async () => {
     const responseData = 'Some HTML event data';
     mockedAxios.get.mockResolvedValueOnce({ data: responseData });
 
-    const aProxy = { host: 'localhost', port: 8080 };
-    const result = await fetchEvent(eventUrl, aProxy);
+    const axiosConfig: AxiosRequestConfig = {
+      proxy: { host: 'localhost', port: 8080 },
+      maxRedirects: 1
+    };
+    const result = await fetchEvent(eventUrl, axiosConfig);
 
     expect(mockedAxios.get).toHaveBeenCalledTimes(1);
     expect(mockedAxios.get).toHaveBeenCalledWith(eventUrl, {
       headers: expect.any(Object),
-      proxy: aProxy
+      ...axiosConfig
     });
 
     expect(result).toEqual(responseData);
