@@ -1,9 +1,7 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
+import { ScrapeOptions } from '../types';
 
-export const fetchEvent = async (
-  url: string,
-  axiosOptions?: AxiosRequestConfig
-) => {
+export const fetchEvent = async (url: string, options?: ScrapeOptions) => {
   try {
     const response = await axios.get(url, {
       headers: {
@@ -22,7 +20,7 @@ export const fetchEvent = async (
         'user-agent':
           'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
       },
-      ...(axiosOptions || {})
+      ...(options || {})
     });
 
     return response.data;
