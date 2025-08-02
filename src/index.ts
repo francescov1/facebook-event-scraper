@@ -35,7 +35,7 @@ export const scrapeFbEventListFromPage = async (
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
   const formattedUrl = validateAndFormatEventPageUrl(url, type);
-  const dataString = await fetchEvent(formattedUrl, options.axiosOptions);
+  const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromPageOrProfile(dataString);
 };
@@ -46,7 +46,7 @@ export const scrapeFbEventListFromProfile = async (
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
   const formattedUrl = validateAndFormatEventProfileUrl(url, type);
-  const dataString = await fetchEvent(formattedUrl, options.axiosOptions);
+  const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromPageOrProfile(dataString);
 };
@@ -57,7 +57,7 @@ export const scrapeFbEventListFromGroup = async (
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
   const formattedUrl = validateAndFormatEventGroupUrl(url);
-  const dataString = await fetchEvent(formattedUrl, options.axiosOptions);
+  const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromGroup(dataString, type);
 };

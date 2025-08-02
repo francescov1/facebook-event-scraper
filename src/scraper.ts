@@ -6,7 +6,7 @@ export const scrapeEvent = async (
   urlFromUser: string,
   options: ScrapeOptions
 ): Promise<EventData> => {
-  const dataString = await fetchEvent(urlFromUser, options.axiosOptions);
+  const dataString = await fetchEvent(urlFromUser, options);
 
   // NOTE: If we want to pick up mutli-date events (technically this is just multiple events linked together), we can look at the comet_neighboring_siblings key
 

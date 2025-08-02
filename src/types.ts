@@ -95,9 +95,10 @@ export interface EventCategory {
   url: string;
 }
 
-export interface ScrapeOptions {
-  axiosOptions?: AxiosRequestConfig;
-}
+export type ScrapeOptions = Pick<
+  AxiosRequestConfig,
+  'proxy' | 'httpAgent' | 'httpsAgent'
+>;
 
 export interface ShortEventData {
   id: string;
