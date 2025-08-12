@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { fetchEvent } from '../network';
+import { ScrapeOptions } from '../../types';
 
 // Mock axios to simulate server responses
 jest.mock('axios');
@@ -40,17 +41,19 @@ describe('fetchEvent', () => {
     expect(result).toEqual(responseData);
   });
 
-  it('calls axios with proxy data', async () => {
+  it('calls axios with addiotional axios options', async () => {
     const responseData = 'Some HTML event data';
     mockedAxios.get.mockResolvedValueOnce({ data: responseData });
 
-    const aProxy = { host: 'localhost', port: 8080 };
-    const result = await fetchEvent(eventUrl, aProxy);
+    const options: ScrapeOptions = {
+      proxy: { host: 'localhost', port: 8080 }
+    };
+    const result = await fetchEvent(eventUrl, options);
 
     expect(mockedAxios.get).toHaveBeenCalledTimes(1);
     expect(mockedAxios.get).toHaveBeenCalledWith(eventUrl, {
       headers: expect.any(Object),
-      proxy: aProxy
+      ...options
     });
 
     expect(result).toEqual(responseData);

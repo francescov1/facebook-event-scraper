@@ -72,13 +72,17 @@ beforeEach(() => {
 describe('scrapeEvent', () => {
   it('should call fetchEvent with the provided URL', async () => {
     await scrapeEvent('http://test.com', {});
-    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', undefined);
+    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', {});
   });
 
   it('should pass the proxy option to fetchEvent', async () => {
     const aProxy = { host: 'test.com', port: 1234 };
-    await scrapeEvent('http://test.com', { proxy: aProxy });
-    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', aProxy);
+    await scrapeEvent('http://test.com', {
+      proxy: aProxy
+    });
+    expect(fetchEvent).toHaveBeenCalledWith('http://test.com', {
+      proxy: aProxy
+    });
   });
 
   it('should parse the basic event data from the HTML', async () => {
