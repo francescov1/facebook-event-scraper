@@ -21,6 +21,7 @@ export interface EventData {
   video: EventVideo | null;
   url: string;
   isOnline: boolean;
+  isCanceled: boolean;
   categories: EventCategory[];
   /** Only set if isOnline = true */
   onlineDetails: OnlineEventDetails | null;

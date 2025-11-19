@@ -8,6 +8,7 @@ jest.mock('../utils/htmlParser', () => ({
     name: 'Test Event',
     photo: 'test.jpg',
     isOnline: false,
+    isCanceled: false,
     url: 'http://test.com',
     startTimestamp: 1649116800,
     formattedDate: 'April 3, 2023'
@@ -91,6 +92,7 @@ describe('scrapeEvent', () => {
     expect(result).toHaveProperty('name', 'Test Event');
     expect(result).toHaveProperty('photo', 'test.jpg');
     expect(result).toHaveProperty('isOnline', false);
+    expect(result).toHaveProperty('isCanceled', false);
     expect(result).toHaveProperty('url', 'http://test.com');
     expect(result).toHaveProperty('startTimestamp', 1649116800);
     expect(result).toHaveProperty('formattedDate', 'April 3, 2023');
@@ -134,6 +136,7 @@ describe('scrapeEvent', () => {
       name: 'Test Online Event',
       photo: 'test.jpg',
       isOnline: true,
+      isCanceled: false,
       url: 'http://test.com',
       startTimestamp: 1649116800,
       formattedDate: 'April 3, 2023'
