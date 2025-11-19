@@ -30,6 +30,7 @@ export const getBasicData = (
   | 'formattedDate'
   | 'startTimestamp'
   | 'isOnline'
+  | 'isCanceled'
   | 'url'
   | 'siblingEvents'
   | 'parentEvent'
@@ -77,6 +78,7 @@ export const getBasicData = (
     formattedDate: jsonData.day_time_sentence,
     startTimestamp: jsonData.start_timestamp,
     isOnline: jsonData.is_online,
+    isCanceled: jsonData.is_canceled,
     url: jsonData.url,
     // Sibling events, for multi-date events
     siblingEvents:
