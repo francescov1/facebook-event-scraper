@@ -32,7 +32,7 @@ yarn add facebook-event-scraper
 
 ### Scrape event
 
-To scrape Facebook events, provide an event URL or ID. Here's an example of how you can scrape event details:
+To scrape Facebook events, provide an event URL, ID, or a share link (`facebook.com/share/...`). Share links are automatically resolved to the target event URL.
 
 ```javascript
 import { scrapeFbEvent, scrapeFbEventFromFbid } from 'facebook-event-scraper';
@@ -54,6 +54,18 @@ async function example2() {
   try {
     const eventData2 = await scrapeFbEventFromFbid('1234567890');
     console.log(eventData2);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Scrape event using a share link
+async function example3() {
+  try {
+    const eventData3 = await scrapeFbEvent(
+      'https://www.facebook.com/share/18f2uMn71o/'
+    );
+    console.log(eventData3);
   } catch (err) {
     console.error(err);
   }

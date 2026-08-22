@@ -1,5 +1,6 @@
 import {
   fbidToUrl,
+  isShareUrl,
   validateAndFormatEventGroupUrl,
   validateAndFormatEventPageUrl,
   validateAndFormatEventProfileUrl,
@@ -13,7 +14,7 @@ import {
 } from './types';
 import * as eventListParser from './utils/eventListParser';
 import { scrapeEvent } from './scraper';
-import { fetchEvent } from './utils/network';
+import { fetchEvent, resolveRedirectUrl } from './utils/network';
 import { EventType } from './enums';
 
 export { EventData, FacebookCookies, ScrapeOptions, ShortEventData, EventType };
@@ -22,7 +23,10 @@ export const scrapeFbEvent = async (
   url: string,
   options: ScrapeOptions = {}
 ): Promise<EventData> => {
-  const formattedUrl = validateAndFormatUrl(url);
+  const resolvedUrl = isShareUrl(url)
+    ? await resolveRedirectUrl(url, options)
+    : url;
+  const formattedUrl = validateAndFormatUrl(resolvedUrl);
   return await scrapeEvent(formattedUrl, options);
 };
 
@@ -39,7 +43,10 @@ export const scrapeFbEventListFromPage = async (
   type?: EventType,
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
-  const formattedUrl = validateAndFormatEventPageUrl(url, type);
+  const resolvedUrl = isShareUrl(url)
+    ? await resolveRedirectUrl(url, options)
+    : url;
+  const formattedUrl = validateAndFormatEventPageUrl(resolvedUrl, type);
   const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromPageOrProfile(dataString);
@@ -50,7 +57,10 @@ export const scrapeFbEventListFromProfile = async (
   type?: EventType,
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
-  const formattedUrl = validateAndFormatEventProfileUrl(url, type);
+  const resolvedUrl = isShareUrl(url)
+    ? await resolveRedirectUrl(url, options)
+    : url;
+  const formattedUrl = validateAndFormatEventProfileUrl(resolvedUrl, type);
   const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromPageOrProfile(dataString);
@@ -61,7 +71,10 @@ export const scrapeFbEventListFromGroup = async (
   type?: EventType,
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
-  const formattedUrl = validateAndFormatEventGroupUrl(url);
+  const resolvedUrl = isShareUrl(url)
+    ? await resolveRedirectUrl(url, options)
+    : url;
+  const formattedUrl = validateAndFormatEventGroupUrl(resolvedUrl);
   const dataString = await fetchEvent(formattedUrl, options);
 
   return eventListParser.getEventListFromGroup(dataString, type);
@@ -72,11 +85,15 @@ export const scrapeFbEventList = async (
   type?: EventType,
   options: ScrapeOptions = {}
 ): Promise<ShortEventData[]> => {
-  if (url.includes('/groups/')) {
-    return scrapeFbEventListFromGroup(url, type, options);
+  const resolvedUrl = isShareUrl(url)
+    ? await resolveRedirectUrl(url, options)
+    : url;
+
+  if (resolvedUrl.includes('/groups/')) {
+    return scrapeFbEventListFromGroup(resolvedUrl, type, options);
   }
-  if (url.includes('/profile.php')) {
-    return scrapeFbEventListFromProfile(url, type, options);
+  if (resolvedUrl.includes('/profile.php')) {
+    return scrapeFbEventListFromProfile(resolvedUrl, type, options);
   }
-  return scrapeFbEventListFromPage(url, type, options);
+  return scrapeFbEventListFromPage(resolvedUrl, type, options);
 };

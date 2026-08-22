@@ -1,11 +1,60 @@
 import {
   fbidToUrl,
+  isShareUrl,
   validateAndFormatEventGroupUrl,
   validateAndFormatEventPageUrl,
   validateAndFormatEventProfileUrl,
   validateAndFormatUrl
 } from '../url';
 import { EventType } from '../../enums';
+
+describe('isShareUrl', () => {
+  it('returns true for a valid share URL', () => {
+    expect(isShareUrl('https://www.facebook.com/share/18f2uMn71o/')).toBe(true);
+  });
+
+  it('returns true for a share URL with query parameters', () => {
+    expect(
+      isShareUrl('https://www.facebook.com/share/18f2uMn71o/?mibextid=wwXIfr')
+    ).toBe(true);
+  });
+
+  it('returns true for a post share URL', () => {
+    expect(isShareUrl('https://www.facebook.com/share/p/18f2uMn71o/')).toBe(
+      true
+    );
+  });
+
+  it('returns true for a video share URL', () => {
+    expect(isShareUrl('https://www.facebook.com/share/v/18f2uMn71o/')).toBe(
+      true
+    );
+  });
+
+  it('returns true for a reel share URL', () => {
+    expect(isShareUrl('https://www.facebook.com/share/r/18f2uMn71o/')).toBe(
+      true
+    );
+  });
+
+  it('returns false for a regular event URL', () => {
+    expect(isShareUrl('https://www.facebook.com/events/1234567890/')).toBe(
+      false
+    );
+  });
+
+  it('returns false for a page URL', () => {
+    expect(isShareUrl('https://www.facebook.com/lacalle8prague/events')).toBe(
+      false
+    );
+  });
+
+  it('returns false for a group URL', () => {
+    expect(
+      isShareUrl('https://www.facebook.com/groups/409785992417637/events')
+    ).toBe(false);
+  });
+});
 
 describe('fbidToUrl', () => {
   it('returns the correct URL for a valid FB ID', () => {
