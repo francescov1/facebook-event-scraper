@@ -1,5 +1,13 @@
 import { EventType } from '../enums';
 
+// Covers share links with the following formats:
+// https://www.facebook.com/share/18f2uMn71o/
+// https://www.facebook.com/share/p/18f2uMn71o/ (posts)
+// https://www.facebook.com/share/v/18f2uMn71o/ (videos)
+// https://www.facebook.com/share/r/18f2uMn71o/ (reels)
+export const isShareUrl = (url: string): boolean =>
+  /facebook\.com\/share\/(\w+\/)?\w+/.test(url);
+
 export const fbidToUrl = (fbid: string) => {
   if (!fbid.match(/^[0-9]{8,}$/)) {
     throw new Error('Invalid FB ID');
