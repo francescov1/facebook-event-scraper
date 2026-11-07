@@ -48,6 +48,28 @@ describe('findJsonInString', () => {
     expect(result.jsonData).toBeNull();
   });
 
+  test('skips a null value when looking for a desired value', () => {
+    const dataString =
+      '{"data":null,"other":{"data":{"start_timestamp":1,"end_timestamp":2}}}';
+
+    const result = findJsonInString(
+      dataString,
+      'data',
+      (candidate) => candidate.start_timestamp === 1
+    );
+
+    expect(result.startIndex).toBe(29);
+    expect(result.jsonData).toEqual({ start_timestamp: 1, end_timestamp: 2 });
+  });
+
+  test('returns null for a null value when isDesiredValue is undefined', () => {
+    const result = findJsonInString('{"data":null}', 'data');
+
+    expect(result.startIndex).toBe(8);
+    expect(result.endIndex).toBe(11);
+    expect(result.jsonData).toBeNull();
+  });
+
   test('returns null when isDesiredValue does not return true', () => {
     const key = 'name';
 

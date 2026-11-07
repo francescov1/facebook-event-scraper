@@ -36,6 +36,10 @@ export const findJsonInString = (
       startCharacter === 'n' &&
       dataString.slice(startIndex, startIndex + 4) === 'null'
     ) {
+      if (isDesiredValue) {
+        startPosition = startIndex + 4;
+        continue;
+      }
       return { startIndex, endIndex: startIndex + 3, jsonData: null };
     }
 
